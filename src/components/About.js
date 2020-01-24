@@ -15,6 +15,8 @@ const About = forwardRef((props, ref) => {
           My aim is to create products that innovate, satisfy, and ultimately
           make a difference in the way people interact digitally for the better.
         </p>
+        <br/>
+        <hr></hr>
       </div>
     </div>
   )

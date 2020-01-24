@@ -16,15 +16,15 @@ class App extends Component {
       const projects = document.querySelector('.projects')
       const contact = document.querySelector('.contact')
       if (window.scrollY < about.offsetTop) {
-        document.querySelectorAll('.page-titles p').forEach(title => title.style.color = 'white')
+        document.querySelectorAll('.page-titles li').forEach(title => title.style.color = '#2d3142')
       } else if (window.scrollY >= about.offsetTop && window.scrollY < projects.offsetTop) {
-        document.querySelectorAll('.page-titles p').forEach(title => title.style.color = 'white')
+        document.querySelectorAll('.page-titles li').forEach(title => title.style.color = '#2d3142')
         document.getElementById('about-title').style.color = '#ef8254'
       } else if (window.scrollY >= projects.offsetTop && window.scrollY < contact.offsetTop) {
-        document.querySelectorAll('.page-titles p').forEach(title => title.style.color = 'white')
+        document.querySelectorAll('.page-titles li').forEach(title => title.style.color = '#2d3142')
         document.getElementById('projects-title').style.color = '#ef8254'
       } else if (window.scrollY >= contact.offsetTop) {
-        document.querySelectorAll('.page-titles p').forEach(title => title.style.color = 'white')
+        document.querySelectorAll('.page-titles li').forEach(title => title.style.color = '#2d3142')
         document.getElementById('contact-title').style.color = '#ef8254'
       }
     })
@@ -61,9 +61,17 @@ class App extends Component {
           <div onClick={() => this.setPage(3)}></div>
         </div>
         <div className="page-titles">
-          <p id="about-title" onClick={() => this.setPage(1)}>ABOUT</p>
-          <p id="projects-title" onClick={() => this.setPage(2)}>PROJECTS</p>
-          <p id="contact-title" onClick={() => this.setPage(3)}>CONTACT</p>
+          <div id="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <input type="checkbox" id="toggle"/>
+          <ul id="nav-menu">
+            <li id="about-title" onClick={() => this.setPage(1)}>ABOUT</li>
+            <li id="projects-title" onClick={() => this.setPage(2)}>PROJECTS</li>
+            <li id="contact-title" onClick={() => this.setPage(3)}>CONTACT</li>
+          </ul>
         </div>
         <Home ref={(ref) => { this.ref[0] = ref }} />
         <About ref={(ref) => { this.ref[1] = ref }} />
