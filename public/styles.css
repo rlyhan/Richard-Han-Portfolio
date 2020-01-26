@@ -60,16 +60,16 @@ body {
 }
 
 #nav-menu {
-  list-style-type: none;
-  justify-content: center;
+  display: none;
+  float: left;
+  text-align: left;
   margin: 0;
-  padding: 0;
-  display: block;
+  padding: 10px 0 0 26px;
+  list-style-type: none;
 }
 
 #nav-menu > li {
-  padding: 0 40px;
-  display: block;
+  padding: 10px 0 10px 0;
 }
 
 #nav-menu > li:hover {
@@ -88,7 +88,7 @@ body {
 }
 
 #toggle {
-  /* opacity: 0; */
+  opacity: 0;
   top: 30px;
   left: 0;
   width: 25px;
@@ -102,12 +102,24 @@ body {
 }
 
 #toggle:checked ~ #nav-menu {
-  display: none;
+  display: block;
 }
 
 @media only screen and (min-width: 760px) {
 
-  .page-titles ul {
+  #nav-menu {
+    display: flex;
+    float: none;
+    justify-content: center;
+    padding: 0;
+  }
+
+  #nav-menu > li {
+    padding: 0 40px;
+    display: block;
+  }
+
+  #toggle:checked ~ #nav-menu {
     display: flex;
   }
 
