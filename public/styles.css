@@ -1,6 +1,7 @@
 html {
   background-color: white;
   font-family: 'Kulim Park', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -9,8 +10,8 @@ body {
 
 .home, .about, .projects, .contact {
   width: 100%;
-  min-height: 100vh;
-  padding-top: 130px;
+  min-height: 55vh;
+  margin-top: 80px;
 }
 
 /* Navigation dots */
@@ -20,21 +21,22 @@ body {
   right: 0;
   bottom: 0;
   margin-right: 30px;
-  margin-bottom: 20px;
+  margin-bottom: 25vh;
   display: none;
 }
 
 .nav-dots div {
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
   margin: 23px 0 23px 0;
-  background-color: #ef8254;
+  border: 3px solid #ef8254;
   border-radius: 100%;
+  transition: background-color .2s linear;
 }
 
 .nav-dots div:hover {
   cursor: pointer;
-  background-color: #2d3142;
+  background-color: #ef8254;
 }
 
 @media only screen and (min-width: 650px) {
@@ -47,7 +49,7 @@ body {
 
 /* Nav menu */
 
-.page-titles {
+.nav-menu {
   color: #161925;
   background-color: white;
   font-size: 22px;
@@ -57,9 +59,11 @@ body {
   left: 0;
   width: 100%;
   padding: 30px 0;
+  box-shadow: 0 3px 4px -2px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-#nav-menu {
+#page-titles {
   display: none;
   float: left;
   text-align: left;
@@ -68,11 +72,11 @@ body {
   list-style-type: none;
 }
 
-#nav-menu > li {
+#page-titles > li {
   padding: 10px 0 10px 0;
 }
 
-#nav-menu > li:hover {
+#page-titles > li:hover {
   cursor: pointer;
 }
 
@@ -101,25 +105,25 @@ body {
   cursor: pointer;
 }
 
-#toggle:checked ~ #nav-menu {
+#toggle:checked ~ #page-titles {
   display: block;
 }
 
 @media only screen and (min-width: 650px) {
 
-  #nav-menu {
+  #page-titles {
     display: flex;
     float: none;
     justify-content: center;
     padding: 0;
   }
 
-  #nav-menu > li {
+  #page-titles > li {
     padding: 0 40px;
     display: block;
   }
 
-  #toggle:checked ~ #nav-menu {
+  #toggle:checked ~ #page-titles {
     display: flex;
   }
 
@@ -140,7 +144,8 @@ body {
 @media only screen and (min-width: 650px) {
 
   .page-content {
-    margin: 0 25% 0 25%;
+    margin-left: 25%;
+    margin-right: 25%;
   }
 
 }
@@ -149,26 +154,44 @@ body {
 
 .home {
   text-align: center;
+  padding-top: 0;
+}
+
+.home > .page-content {
+  padding: 15vh 0 0 0;
 }
 
 .home h1 {
-  font-size: 4rem;
+  font-size: 20vw;
   color: #ef8254;
 }
 
-@media only screen and (min-width: 430px) {
+.home h2 {
+  font-size: 10vw;
+  color: #2d3142;
+}
+
+@media only screen and (min-width: 650px) {
+
+  .home > .page-content {
+    margin: 0;
+  }
 
   .home h1 {
-    font-size: 6rem;
+    font-size: 7vw;
+  }
+
+  .home h2 {
+    font-size: 2.5vw;
   }
 
 }
 
-.home h3 {
-  color: #2d3142;
-}
-
 /* About */
+
+.about {
+  padding-top: 20vh;
+}
 
 .about > .page-content {
   background-color: #2d3142;
@@ -183,20 +206,36 @@ body {
 
 /* Projects */
 
+.projects {
+  text-align: center;
+  margin-top: 10vh;
+}
+
 .projects > .page-content {
   display: inline-block;
   justify-content: center;
   padding: 0;
   margin: 0;
+  font-size: 16px;
 }
 
 @media only screen and (min-width: 650px) {
 
+  .projects {
+    padding-top: 15vh;
+  }
+
   .projects > .page-content {
     display: flex;
     justify-content: space-around;
+    margin-left: 12%;
+    margin-right: 12%;
   }
 
+}
+
+.project {
+  margin: 40px;
 }
 
 .project > p {
@@ -206,7 +245,6 @@ body {
 .project img {
   width: 210px;
   height: 210px;
-  border: 3px solid #A4BAB7;
   border-radius: 50%;
   object-fit: cover;
   transition: transform .2s;
@@ -219,8 +257,23 @@ body {
 
 /* Contact */
 
+.contact {
+  margin-top: 0;
+  padding: 80px 0 60px 0;
+}
+
 .contact > .page-content {
   color: #161925;
+  padding-top: 0;
+}
+
+.contact > .page-content > a {
+  color: #161925;
+  text-decoration: none;
+}
+
+.contact > .page-content > a:hover {
+  color: #ef8254;
 }
 
 .contact-icons {

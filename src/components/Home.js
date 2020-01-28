@@ -3,8 +3,10 @@ import React, { forwardRef } from 'react'
 const Home = forwardRef((props, ref) => {
   return (
     <div className="home" ref={ref}>
-      <h1>RICHARD HAN</h1>
-      <h3>Full Stack Web Developer</h3>
+      <div className="page-content">
+        <h1>RICHARD HAN</h1>
+        <h2>Full Stack Web Developer</h2>
+      </div>
     </div>
   )
 })

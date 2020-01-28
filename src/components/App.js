@@ -15,40 +15,27 @@ class App extends Component {
       const about = document.querySelector('.about')
       const projects = document.querySelector('.projects')
       const contact = document.querySelector('.contact')
-      if (window.scrollY < about.offsetTop) {
-        document.querySelectorAll('.page-titles li').forEach(title => title.style.color = '#2d3142')
-      } else if (window.scrollY >= about.offsetTop && window.scrollY < projects.offsetTop) {
-        document.querySelectorAll('.page-titles li').forEach(title => title.style.color = '#2d3142')
+      if (window.scrollY < about.offsetTop - 300) {
+        document.querySelectorAll('#page-titles > li').forEach(title => title.style.color = '#2d3142')
+      } else if (window.scrollY >= about.offsetTop - 300 && window.scrollY < projects.offsetTop - 300) {
+        document.querySelectorAll('#page-titles > li').forEach(title => title.style.color = '#2d3142')
         document.getElementById('about-title').style.color = '#ef8254'
-      } else if (window.scrollY >= projects.offsetTop && window.scrollY < contact.offsetTop) {
-        document.querySelectorAll('.page-titles li').forEach(title => title.style.color = '#2d3142')
+      } else if (window.scrollY >= projects.offsetTop - 300 && window.scrollY < contact.offsetTop - 300) {
+        document.querySelectorAll('#page-titles > li').forEach(title => title.style.color = '#2d3142')
         document.getElementById('projects-title').style.color = '#ef8254'
-      } else if (window.scrollY >= contact.offsetTop) {
-        document.querySelectorAll('.page-titles li').forEach(title => title.style.color = '#2d3142')
+      } else if (window.scrollY >= contact.offsetTop - 300) {
+        document.querySelectorAll('#page-titles > li').forEach(title => title.style.color = '#2d3142')
         document.getElementById('contact-title').style.color = '#ef8254'
       }
     })
   }
 
   setPage = (num) => {
-    // Scroll to page
-    this.ref[num].scrollIntoView({ behavior: 'smooth' })
-
-    // Changes title colors
-    // document.querySelectorAll('.page-titles p').forEach(title => title.style.color = 'white')
-    // switch(num) {
-    //   case 0:
-    //     break;
-    //   case 1:
-    //     document.getElementById('about-title').style.color = '#ef8254';
-    //     break;
-    //   case 2:
-    //     document.getElementById('projects-title').style.color = '#ef8254';
-    //     break;
-    //   case 3:
-    //     document.getElementById('contact-title').style.color = '#ef8254';
-    //     break;
-    // }
+    if (num == 0) {
+      window.scrollTo(0, 0)
+    } else {
+      this.ref[num].scrollIntoView()
+    }
   }
 
   render() {
@@ -60,14 +47,14 @@ class App extends Component {
           <div onClick={() => this.setPage(2)}></div>
           <div onClick={() => this.setPage(3)}></div>
         </div>
-        <div className="page-titles">
+        <div className="nav-menu">
           <div id="burger">
             <div></div>
             <div></div>
             <div></div>
           </div>
           <input type="checkbox" id="toggle"/>
-          <ul id="nav-menu">
+          <ul id="page-titles">
             <li id="about-title" onClick={() => this.setPage(1)}>ABOUT</li>
             <li id="projects-title" onClick={() => this.setPage(2)}>PROJECTS</li>
             <li id="contact-title" onClick={() => this.setPage(3)}>CONTACT</li>
