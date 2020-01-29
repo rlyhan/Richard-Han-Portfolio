@@ -1,5 +1,7 @@
 import React, { forwardRef } from 'react'
 
+// make message 'Click to visit site' appear on images?
+
 const Projects = forwardRef((props, ref) => {
   return (
     <div className="projects" ref={ref}>
@@ -11,7 +13,8 @@ const Projects = forwardRef((props, ref) => {
           <h2><strong>WELLY</strong></h2>
           <p>
             Personal project. Site used to browse through shops, restaurants,
-            bars and more in the city of Wellington, New Zealand.
+            bars and more in the city of Wellington, New Zealand. Uses
+            information from Yelp.
           </p>
         </div>
         <div className="project">

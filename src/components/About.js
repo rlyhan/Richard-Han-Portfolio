@@ -7,25 +7,21 @@ const About = forwardRef((props, ref) => {
         <h1>
           <strong>HI, I'M RICHARD!</strong>
         </h1>
-        <p>
-          I'm a full stack web developer, I work mainly with JavaScript, along
-          with technologies like React, Redux and Mongo.
-        </p>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
+        <hr></hr>
         <br></br>
         <p>
-          My aim is to create products that innovate, satisfy, and ultimately
-          make a difference in the way people interact digitally for the better.
+          I'm a full stack web developer. I work mainly with JavaScript/HTML/CSS,
+          along with technologies like React, Redux and Mongo.
         </p>
-        <br/>
+        <p>
+          I love building projects with modern designs and technologies and a
+          satisfying user experience. I'm both a positive collaborator and an
+          independent hard worker.
+        </p>
+        <p className="resume-link">
+          Check out my resume.
+        </p>
+        <br></br>
         <hr></hr>
       </div>
     </div>
