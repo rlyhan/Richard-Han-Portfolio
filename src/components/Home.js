@@ -4,7 +4,7 @@ const Home = forwardRef((props, ref) => {
   return (
     <div className="home" ref={ref}>
       <div className="page-content">
-        <h1>RICHARD HAN</h1>
+        <h1 style={{marginBottom: 0}}>RICHARD HAN</h1>
         <h2>Full Stack Web Developer</h2>
       </div>
     </div>

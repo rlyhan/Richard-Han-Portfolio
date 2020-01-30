@@ -62,8 +62,8 @@ body {
   width: 100%;
   padding: 30px 0;
   box-shadow: 0 3px 4px -2px rgba(0,0,0,0.2);
-  z-index: 1;
-  transition: height 0.3s ease-out;
+  z-index: 4;
+  transition: height 0.4s ease-in;
 }
 
 #page-titles {
@@ -74,15 +74,10 @@ body {
   padding: 10px 0 0 26px;
   list-style-type: none;
   transition: color 1s ease;
-  visibility: hidden;
 }
 
 #page-titles > li {
   padding: 10px 0 10px 0;
-  -webkit-animation: 0.2s ease fadeOut;
-  -moz-animation: 0.2s ease fadeOut;
-  -o-animation: 0.2s ease fadeOut;
-  -ms-animation: 0.2s ease fadeOut;
   opacity: 0;
 }
 
@@ -100,16 +95,40 @@ body {
     display: flex;
     float: none;
     justify-content: center;
-    visibility: visible;
     padding: 0;
   }
 
   #page-titles > li {
     padding: 0 40px;
     opacity: 1;
-    /* animation: none; */
   }
 
+}
+
+#burger, #toggle {
+  padding-left: 23px;
+}
+
+#burger > div {
+  background-color: #161925;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+}
+
+#toggle {
+  opacity: 0;
+  top: 30px;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  margin-left: 26px;
+  position: fixed;
+  z-index: 5;
+}
+
+#toggle:hover {
+  cursor: pointer;
 }
 
 #toggle:checked + .nav-menu {
@@ -117,28 +136,41 @@ body {
   transition: height 0.4s ease-in;
 }
 
-#toggle:checked + .nav-menu #page-titles {
-  visibility: visible;
+@media only screen and (min-width: 650px) {
+
+  #toggle {
+    left: -100px;
+  }
+
+  #toggle:checked + .nav-menu {
+    height: 29px;
+    transition: none;
+  }
+
+  #burger {
+    display: none;
+  }
+
 }
 
-#toggle:checked + .nav-menu #page-titles > li {
-  -webkit-animation: 0.3s ease fadeIn;
-  -moz-animation: 0.3s ease fadeIn;
-  -o-animation: 0.3s ease fadeIn;
-  -ms-animation: 0.3s ease fadeIn;
-  animation-fill-mode: forwards;
+#about-title.fade-in {
+  animation-delay: 0.1s !important;
 }
 
-#toggle:checked + .nav-menu #page-titles > li:nth-child(1) {
-  animation-delay: 0.1s;
+#projects-title.fade-in {
+  animation-delay: 0.26s !important;
 }
 
-#toggle:checked + .nav-menu #page-titles > li:nth-child(2) {
-  animation-delay: 0.26s;
+#contact-title.fade-in {
+  animation-delay: 0.3s !important;
 }
 
-#toggle:checked + .nav-menu #page-titles > li:nth-child(3) {
-  animation-delay: 0.3s;
+.fade-in {
+  -webkit-animation: 0.5s ease fadeIn !important;
+  -moz-animation: 0.5s ease fadeIn !important;
+  -o-animation: 0.5s ease fadeIn !important;
+  -ms-animation: 0.5s ease fadeIn !important;
+  animation-fill-mode: forwards !important;
 }
 
 @keyframes fadeIn {
@@ -186,6 +218,14 @@ body {
   }
 }
 
+.fade-out {
+  -webkit-animation: 0.4s ease fadeOut !important;
+  -moz-animation: 0.4s ease fadeOut !important;
+  -o-animation: 0.4s ease fadeOut !important;
+  -ms-animation: 0.4s ease fadeOut !important;
+  animation-fill-mode: forwards !important;
+}
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -231,45 +271,6 @@ body {
   }
 }
 
-#burger, #toggle {
-  padding-left: 23px;
-}
-
-#burger > div {
-  background-color: #161925;
-  width: 25px;
-  height: 3px;
-  margin: 5px;
-}
-
-#toggle {
-  opacity: 0;
-  top: 30px;
-  left: 0;
-  width: 25px;
-  height: 25px;
-  margin-left: 26px;
-  position: fixed;
-  z-index: 5;
-}
-
-#toggle:hover {
-  cursor: pointer;
-}
-
-@media only screen and (min-width: 650px) {
-
-  #toggle:checked + .nav-menu {
-    height: 29px;
-    transition: none;
-  }
-
-  #burger, #toggle {
-    display: none;
-  }
-
-}
-
 #toggle:checked + .nav-menu #burger > div {
   -webkit-animation: 0.6s ease spin;
   -moz-animation: 0.6s ease spin;
@@ -287,7 +288,7 @@ body {
 }
 
 #toggle:checked + .nav-menu #burger > div:nth-child(3) {
-  animation-delay: 0.18s;
+  animation-delay: 0.16s;
 }
 
 @keyframes spin {
@@ -320,6 +321,11 @@ body {
   }
 }
 
+.animation-stop {
+  animation: none !important;
+  transition: none !important;
+}
+
 /* Container box for each page */
 
 .page-content {
@@ -346,7 +352,7 @@ body {
 }
 
 .home > .page-content {
-  padding: 15vh 0 0 0;
+  padding: 12vh 0 0 0;
 }
 
 .home h1 {
@@ -360,6 +366,17 @@ body {
 }
 
 @media only screen and (min-width: 650px) {
+
+  .home {
+    z-index: -1;
+  }
+
+  .home > .page-content {
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+  }
 
   .home h1 {
     font-size: 7vw;
@@ -384,6 +401,10 @@ body {
 }
 
 @media only screen and (min-width: 650px) {
+
+  .about {
+    z-index: 2;
+  }
 
   .about > .page-content {
     margin-left: 15%;
@@ -469,6 +490,7 @@ body {
 /* Contact */
 
 .contact {
+  min-height: 70vh;
   margin-top: 0;
   padding: 80px 0 60px 0;
 }

@@ -11,10 +11,26 @@ class App extends Component {
   constructor() {
     super()
     this.ref = []
+
     window.addEventListener("scroll", function() {
+      const home = document.querySelector('.home > .page-content')
       const about = document.querySelector('.about')
       const projects = document.querySelector('.projects')
       const contact = document.querySelector('.contact')
+
+      // Change opacity of home page while scrolling
+      // Keep home page showing but start fading after a third of way to about page
+      if (window.scrollY >= (about.offsetTop / 3)) {
+        if (window.scrollY >= about.offsetTop) {
+          home.style.opacity = 0
+        } else {
+          home.style.opacity = 1 - ((window.scrollY - (about.offsetTop / 3)) / (about.offsetTop + (about.offsetTop / 3)))
+        }
+      } else {
+        home.style.opacity = 1
+      }
+
+      // Listen to change navlink/dot color based on scroll position
       if (window.scrollY < about.offsetTop - 300) {
         // Reset all navlink and dot colors
         document.querySelectorAll('#page-titles > li').forEach(title => title.style.color = '#2d3142')
@@ -44,9 +60,54 @@ class App extends Component {
         document.getElementById('contact-title').style.color = '#ef8254'
       }
     })
+    // If hamburger menu showing, make sure nav links fade in
+    if (window.innerWidth < 650) {
+      document.querySelectorAll('#page-titles > li').forEach(link => link.classList.add('fade-in'))
+    }
   }
 
-  setPage = (num) => {
+  componentDidMount() {
+    // Set first dot color
+    document.querySelector('.nav-dots > div:nth-child(1)').style.backgroundColor = '#ef8254'
+
+    // Make sure animations don't play on window resize
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 650) {
+        // Stop any animations and transitions on nav links
+        document.querySelectorAll('#page-titles > li').forEach(link => link.classList.add('animation-stop'))
+        // Uncheck the burger menu so it does not reopen when resized below 650px again
+        if (document.getElementById('toggle').checked == true) document.getElementById('toggle').checked = false
+      } else {
+        // If resized below 650 again
+          // If hamburger menu opened, make nav links fade in (and allow animations)
+        if (document.getElementById('toggle').checked == true) {
+          document.querySelectorAll('#page-titles > li')
+            .forEach(link => {
+              link.classList.remove('animation-stop', 'fade-out')
+              link.classList.add('fade-in')
+            })
+        }
+      }
+    })
+
+    // If hamburger menu opened, make nav links fade in (and allow animations)
+    // Else, make nav links fade out
+    document.getElementById('toggle').addEventListener('click', () => {
+      if (document.getElementById('toggle').checked == true) {
+        document.querySelectorAll('#page-titles > li').forEach(link => {
+          link.classList.add('fade-in')
+          link.classList.remove('fade-out', 'animation-stop')
+        })
+      } else {
+        document.querySelectorAll('#page-titles > li').forEach(link => {
+          link.classList.add('fade-out')
+          link.classList.remove('fade-in')
+        })
+      }
+    })
+  }
+
+  setPage = num => {
     document.querySelectorAll('.nav-dots > div').forEach(dot => dot.style.backgroundColor = 'white')
     document.querySelector(`.nav-dots > div:nth-child(${num})`).style.backgroundColor = '#ef8254'
     if (num == 1) {
