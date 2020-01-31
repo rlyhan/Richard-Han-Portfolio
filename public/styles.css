@@ -467,24 +467,48 @@ body {
 }
 
 .project {
+  width: 250px;
   margin: 40px;
 }
 
-.project > p {
-  max-width: 250px;
-}
-
-.project img {
-  width: 210px;
-  height: 210px;
-  border-radius: 50%;
-  object-fit: cover;
+.project .image {
+  width: 250px;
+  height: 220px;
   transition: transform .2s;
 }
 
-.project img:hover {
+.project .image img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.project .image:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+
+.project .image:hover img {
+  filter: brightness(75%);
+  transition: filter 1s ease;
+}
+
+.project .image p {
+  color: white;
+  font-size: 20px;
+  width: 250px;
+  height: 220px;
+  padding-top: 100px;
+  margin: 0;
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.project .image p:hover {
+  opacity: 1;
 }
 
 /* Contact */

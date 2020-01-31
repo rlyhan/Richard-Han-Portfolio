@@ -7,9 +7,12 @@ const Projects = forwardRef((props, ref) => {
     <div className="projects" ref={ref}>
       <div className="page-content">
         <div className="project">
-          <a href="https://explore-welly.herokuapp.com/" target="_blank">
-            <img src={require('../images/wellington-day.jpg')} />
-          </a>
+          <div class="image">
+            <a href="https://explore-welly.herokuapp.com/" target="_blank">
+              <p>CLICK TO VISIT</p>
+              <img src={require('../images/wellington-day.jpg')} />
+            </a>
+          </div>
           <h2><strong>WELLY</strong></h2>
           <p>
             Personal project. Site used to browse through shops, restaurants,
@@ -18,9 +21,12 @@ const Projects = forwardRef((props, ref) => {
           </p>
         </div>
         <div className="project">
-          <a href="https://foraged-and-found.herokuapp.com/" target="_blank">
-            <img src={require('../images/foraging.jpg')} style={{background: "#D25E5D"}} />
-          </a>
+          <div class="image">
+            <a href="https://foraged-and-found.herokuapp.com/" target="_blank">
+              <p>CLICK TO VISIT</p>
+              <img src={require('../images/foraging.jpg')} style={{background: "#D25E5D"}} />
+            </a>
+          </div>
           <h2><strong>FORAGED AND FOUND</strong></h2>
           <p>
             Final group project at Enspiral Dev Academy. An application for the
