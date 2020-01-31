@@ -19,12 +19,13 @@ class App extends Component {
       const contact = document.querySelector('.contact')
 
       // Change opacity of home page while scrolling
-      // Keep home page showing but start fading after a third of way to about page
-      if (window.scrollY >= (about.offsetTop / 3)) {
+      // Keep home page showing but start fading after a quarter of way to about page
+      // Hide if past the about page
+      if (window.scrollY >= (about.offsetTop / 4)) {
         if (window.scrollY >= about.offsetTop) {
           home.style.opacity = 0
         } else {
-          home.style.opacity = 1 - ((window.scrollY - (about.offsetTop / 3)) / (about.offsetTop + (about.offsetTop / 3)))
+          home.style.opacity = 1 - (((window.scrollY - (about.offsetTop / 4)) / (about.offsetTop + (about.offsetTop / 4)))*3.2)
         }
       } else {
         home.style.opacity = 1
