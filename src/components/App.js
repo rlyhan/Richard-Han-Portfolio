@@ -13,7 +13,7 @@ class App extends Component {
     this.ref = []
 
     window.addEventListener("scroll", function() {
-      const home = document.querySelector('.home > .page-content')
+      const home = document.querySelector('.home')
       const about = document.querySelector('.about')
       const projects = document.querySelector('.projects')
       const contact = document.querySelector('.contact')
@@ -45,6 +45,8 @@ class App extends Component {
         // Change 'About' navlink and second dot color
         document.getElementById('about-title').style.color = '#ef8254'
         document.querySelector('.nav-dots > div:nth-child(2)').style.backgroundColor = '#ef8254'
+        // Make 'About' page expand
+        document.querySelector('.about').classList.add('expand')
       } else if (window.scrollY >= projects.offsetTop - 300 && window.scrollY < contact.offsetTop - 300) {
         // Reset all navlink and dot colors
         document.querySelectorAll('#page-titles > li').forEach(title => title.style.color = '#2d3142')

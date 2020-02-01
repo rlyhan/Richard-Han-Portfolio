@@ -7,6 +7,17 @@ const Home = forwardRef((props, ref) => {
         <h1 style={{marginBottom: 0}}>RICHARD HAN</h1>
         <h2>Full Stack Web Developer</h2>
       </div>
+      <div className="circles">
+        <div className="ring">
+          <div className="dot"></div>
+        </div>
+        <div className="ring">
+          <div className="dot"></div>
+        </div>
+        <div className="ring">
+          <div className="dot"></div>
+        </div>
+      </div>
     </div>
   )
 })
