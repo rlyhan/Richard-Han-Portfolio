@@ -363,7 +363,7 @@ body {
 }
 
 .home > .page-content {
-  padding: 12vh 0 0 0;
+  padding: 6vh 0 0 0;
   z-index: 4;
 }
 
@@ -444,6 +444,7 @@ body {
   .home > .page-content {
     left: 0;
     right: 0;
+    padding: 16vh 0 0 0;
     position: fixed;
   }
 
