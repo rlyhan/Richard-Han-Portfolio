@@ -383,7 +383,7 @@ body {
 }
 
 .circles .ring {
-  border: 2px solid #C7BDC9;
+  border: 2px dotted #C7BDC9;
   border-radius: 50%;
   display: inline-block;
   text-align: center;
@@ -459,27 +459,28 @@ body {
 
 .about {
   padding-top: 20vh;
+  padding-bottom: 5px;
   position: relative;
   z-index: 5;
-  opacity: 0;
 }
 
 .about > .page-content {
+  color: white;
   background-color: #2d3142;
   box-shadow: 0 4px 5px 0 black;
-  color: white;
-}
-
-.expand {
-  opacity: 1;
-  animation: expand 1s;
-  animation-fill-mode: forwards;
+  transition: box-shadow 0.5s linear 3s;
 }
 
 @media only screen and (min-width: 650px) {
 
+  .about {
+    opacity: 0;
+  }
+
   .expand {
-    animation: expand 3s;
+    opacity: 1;
+    animation: expand 4s;
+    animation-fill-mode: forwards;
   }
 
 }
@@ -522,6 +523,7 @@ body {
 
 .about .resume-link {
   color: #ef8254;
+  text-decoration: none;
 }
 
 .about .resume-link:hover {
@@ -608,7 +610,7 @@ body {
 }
 
 .project .image img {
-  transition: filter 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: filter 0.5s ease-in-out, transform 0.4s ease-in-out;
 }
 
 .project .image p:hover {
