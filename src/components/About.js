@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react'
+import resume from '../Richard_Han_CV.pdf'
 
 const About = forwardRef((props, ref) => {
   return (
@@ -18,8 +19,10 @@ const About = forwardRef((props, ref) => {
           satisfying user experience. I'm both a positive collaborator and an
           independent hard worker.
         </p>
-        <p className="resume-link">
-          Check out my resume.
+        <p>
+          <a href={resume} download className="resume-link" target="_blank">
+            Check out my resume.
+          </a>
         </p>
         <br></br>
         <hr></hr>
