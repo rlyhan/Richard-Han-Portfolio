@@ -18,19 +18,6 @@ class App extends Component {
       const projects = document.querySelector('.projects')
       const contact = document.querySelector('.contact')
 
-      // Change opacity of home page while scrolling
-      // Keep home page showing but start fading after a quarter of way to about page
-      // Hide if past the about page
-      if (window.scrollY >= (about.offsetTop / 4)) {
-        if (window.scrollY >= about.offsetTop) {
-          home.style.opacity = 0
-        } else {
-          home.style.opacity = 1 - (((window.scrollY - (about.offsetTop / 4)) / (about.offsetTop + (about.offsetTop / 4)))*3.2)
-        }
-      } else {
-        home.style.opacity = 1
-      }
-
       // Listen to change navlink/dot color based on scroll position
       if (window.scrollY < about.offsetTop - 300) {
         // Reset all navlink and dot colors
@@ -63,6 +50,7 @@ class App extends Component {
         document.getElementById('contact-title').style.color = '#ef8254'
       }
     })
+
     // If hamburger menu showing, make sure nav links fade in
     if (window.innerWidth < 650) {
       document.querySelectorAll('#page-titles > li').forEach(link => link.classList.add('fade-in'))
@@ -108,6 +96,64 @@ class App extends Component {
         })
       }
     })
+
+    // Scrolling to change opacity of pages
+    window.addEventListener("scroll", () => {
+      const home = document.querySelector('.home')
+      const about = document.querySelector('.about')
+      const projects = document.querySelector('.projects')
+      const contact = document.querySelector('.contact')
+
+      let aboutTop = about.offsetTop
+      let projectsTop = projects.offsetTop - 180
+      let contactTop = contact.offsetTop - 180
+
+      // Change opacity of home page while scrolling
+      // Keep home page showing but start fading after a quarter of way to about page
+      // Hide if past the about page
+      if (window.scrollY >= (aboutTop / 4)) {
+        if (window.scrollY >= aboutTop) {
+          home.style.opacity = 0
+        } else {
+          home.style.opacity = 1 - (((window.scrollY - (aboutTop / 4)) / (aboutTop + (aboutTop / 4)))*3.2)
+        }
+      } else {
+        home.style.opacity = 1
+      }
+
+      // For screen size >= 650px...
+      if (window.innerWidth >= 650) {
+        // Change opacity of projects while scrolling
+        if (window.scrollY >= this.getHalfPoint(aboutTop, projectsTop) && window.scrollY < projectsTop) {
+          // Start increasing opacity of projects if half way between about and projects
+          projects.style.opacity = this.getDistanceOpacity(this.getHalfPoint(aboutTop, projectsTop), projectsTop)
+        } else if (window.scrollY >= projectsTop && window.scrollY < this.getHalfPoint(projectsTop, contactTop)) {
+          // Set opacity of projects to 1 if past top of page and before half way between projects and contact
+          projects.style.opacity = 1
+        } else if (window.scrollY >= this.getHalfPoint(projectsTop, contactTop)) {
+          // Start decreasing opacity of projects if half way between projects and contact
+          projects.style.opacity = 1 - this.getDistanceOpacity(this.getHalfPoint(projectsTop, contactTop), contactTop)
+        } else {
+          // Elsewhere, set opacity of projects to 0
+          projects.style.opacity = 0
+        }
+
+        // Change opacity of contact while scrolling
+        if (window.scrollY >= this.getHalfPoint(projectsTop, contactTop) && window.scrollY < contactTop) {
+          // Start increasing opacity of contact if half way between projects and contact
+          contact.style.opacity = this.getDistanceOpacity(this.getHalfPoint(projectsTop, contactTop), contactTop)
+        } else if (window.scrollY >= contactTop) {
+          // Set opacity of contact to 1 if past top of page
+          contact.style.opacity = 1
+        } else {
+          // Elsewhere, set opacity of contact to 0
+          contact.style.opacity = 0
+        }
+      } else {
+        projects.style.opacity = 1
+        contact.style.opacity = 1
+      }
+    })
   }
 
   setPage = num => {
@@ -118,6 +164,18 @@ class App extends Component {
     } else {
       this.ref[num].scrollIntoView()
     }
+  }
+
+  /* Helper functions to calculate distance */
+
+  getHalfPoint = (page1, page2) => {
+    // Returns the half way point between two pages
+    return page1 + ((page2 - page1) / 2)
+  }
+
+  getDistanceOpacity = (origin, dest) => {
+    // Returns opacity based on scroll position between= origin and destination points
+    return ((window.scrollY - origin) / (dest - origin))
   }
 
   render() {

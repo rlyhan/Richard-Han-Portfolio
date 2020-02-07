@@ -291,7 +291,7 @@ body {
 }
 
 #toggle:checked + .nav-menu #burger > div:nth-child(1) {
-  animation-delay: 0.08s;
+  animation-delay: 0.03s;
 }
 
 #toggle:checked + .nav-menu #burger > div:nth-child(2) {
@@ -299,7 +299,7 @@ body {
 }
 
 #toggle:checked + .nav-menu #burger > div:nth-child(3) {
-  animation-delay: 0.16s;
+  animation-delay: 0.21s;
 }
 
 @keyframes spin {
@@ -486,7 +486,7 @@ body {
 
   .expand {
     opacity: 1;
-    animation: expand 4s;
+    animation: expand 2.5s;
     animation-fill-mode: forwards;
   }
 
@@ -498,8 +498,10 @@ body {
     clip-path: polygon(50% 100%,50% 0,50% 0,50% 100%);
     -webkit-clip-path: polygon(50% 100%,50% 0,50% 0,50% 100%);
  }
-  100% {
+ 40% {
     opacity: 1;
+ }
+  100% {
     clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
     -webkit-clip-path: polygon(0 100%, 0 0, 100% 0, 100% 100%);
   }
@@ -536,6 +538,25 @@ body {
 .about .resume-link:hover {
   color: white;
   cursor: pointer;
+}
+
+.tech-logos {
+  justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tech-logos > img {
+  max-width: 25%;
+  margin: 0 5px 30px 5px;
+}
+
+@media only screen and (min-width: 530px) {
+
+  .tech-logos > img {
+    max-width: 40px;
+  }
+
 }
 
 /* Projects */
