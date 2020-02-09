@@ -541,18 +541,20 @@ body {
 }
 
 .tech-logos {
-  height: auto;
+  height: 10%;
   justify-content: space-around;
   display: flex;
 }
 
 .tech-logos > img {
-  max-width: 12%;
-  height: auto;
-  margin: 0 5px 30px 5px;
+  width: 10%;
+  height: 10%;
+  /* max-width: 12%;
+  height: auto; */
+  padding: 0 5px 30px 5px;
 }
 
-@media only screen and (min-width: 290px) {
+/* @media only screen and (min-width: 290px) {
 
   .tech-logos > img {
     max-width: 15%;
@@ -566,7 +568,7 @@ body {
     max-width: 40px;
   }
 
-}
+} */
 
 /* Projects */
 
