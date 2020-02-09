@@ -541,9 +541,9 @@ body {
 }
 
 .tech-logos {
+  height: auto;
   justify-content: space-around;
   display: flex;
-  flex-wrap: wrap;
 }
 
 .tech-logos > img {
