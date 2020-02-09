@@ -547,9 +547,17 @@ body {
 }
 
 .tech-logos > img {
-  max-width: 25%;
-  max-height: auto;
+  max-width: 12%;
+  height: auto;
   margin: 0 5px 30px 5px;
+}
+
+@media only screen and (min-width: 290px) {
+
+  .tech-logos > img {
+    max-width: 15%;
+  }
+
 }
 
 @media only screen and (min-width: 530px) {
