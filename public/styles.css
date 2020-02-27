@@ -549,26 +549,8 @@ body {
 .tech-logos > img {
   width: 10%;
   height: 10%;
-  /* max-width: 12%;
-  height: auto; */
   padding: 0 5px 30px 5px;
 }
-
-/* @media only screen and (min-width: 290px) {
-
-  .tech-logos > img {
-    max-width: 15%;
-  }
-
-}
-
-@media only screen and (min-width: 530px) {
-
-  .tech-logos > img {
-    max-width: 40px;
-  }
-
-} */
 
 /* Projects */
 
