@@ -10,21 +10,12 @@ const About = forwardRef((props, ref) => {
         </h1>
         <hr></hr>
         <br></br>
+        <h2>A LITTLE BIT ABOUT ME...</h2>
         <p>
-          I have been coding since 2015, but later on I found a passion for web
-          development which I first started learning through Treehouse, where I
-          earned the Full Stack JavaScript Techdegree.
-        </p>
-        <p>
-          In 2019, I attended Enspiral Dev Academy, a web development bootcamp.
-          There, I refined my established web development technical skills and
-          gained a strong ability to work and communicate in teams in order to
-          deliver projects efficiently.
-        </p>
-        <p>
-          I love building projects with modern designs and technologies, a
-          satisfying user experience, and strong ambitions. I'm both a positive
-          collaborator and an independent hard worker.
+          I have been coding since 2015, and eventually found a passion for web
+          development. I love building web-based products with modern designs
+          and technologies, a satisfying user experience, and strong ambitions.
+          I'm a positive collaborator and an independent hard worker.
         </p>
         <br></br>
         <p>Some of the languages and technologies in my skillset...</p>
@@ -43,6 +34,20 @@ const About = forwardRef((props, ref) => {
           <img src={require('../images/redux.png')} />
           <img src={require('../images/bootstrap.png')} />
         </div>
+        <br></br>
+        <h3>ENSPIRAL DEV ACADEMY GRADUATE</h3>
+        <p>
+          In 2019, I attended Enspiral Dev Academy, a web development bootcamp.
+          There, I refined my established web development technical skills and
+          gained a strong ability to work and communicate in teams in order to
+          deliver projects efficiently.
+        </p>
+        <br></br>
+        <h3>TREEHOUSE FULL STACK JAVASCRIPT TECHDEGREE</h3>
+        <p>
+          Online curriculum teaching full stack web development with JavaScript.
+          I completed twelve projects, including WELLY (check it out below).
+        </p>
         <br></br>
         <p>
           <a href={resume} download className="resume-link" target="_blank">
