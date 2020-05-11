@@ -15,6 +15,7 @@ const Projects = forwardRef((props, ref) => {
             <p className="project-link"><a href="https://covid19-data-nz.herokuapp.com/" target="_blank">COVID-19 DATA - NEW ZEALAND</a></p>
             <hr></hr>
             <ul className="project-description">
+              <li><a href="https://github.com/rlyhan/COVID19-Data-NZ" target="_blank">View project on GitHub</a></li>
               <li>Data visualiser for the COVID-19 pandemic in New Zealand</li>
               <li>Interactive map and graph</li>
               <li>React, REST APIs</li>
@@ -27,6 +28,7 @@ const Projects = forwardRef((props, ref) => {
             <p className="project-link"><a href="https://foraged-and-found.herokuapp.com/" target="_blank">FORAGED AND FOUND</a></p>
             <hr></hr>
             <ul className="project-description">
+              <li><a href="https://github.com/rlyhan/Foraged-And-Found" target="_blank">View project on GitHub</a></li>
               <li>An app aimed towards the foraging community</li>
               <li>Locate foragable items (like fruits and herbs) on a Google Map</li>
               <li>Add items to map (can set either private for own reference, or public to share with others)</li>
@@ -40,6 +42,7 @@ const Projects = forwardRef((props, ref) => {
             <p className="project-link"><a href="https://explore-welly.herokuapp.com/" target="_blank">WELLY</a></p>
             <hr></hr>
             <ul className="project-description">
+              <li><a href="https://github.com/rlyhan/Welly-Site" target="_blank">View project on GitHub</a></li>
               <li>Browse through shops, restaurants,
               bars and more in the city of Wellington, New Zealand</li>
               <li>Uses information from Yelp</li>
@@ -53,6 +56,7 @@ const Projects = forwardRef((props, ref) => {
             <p className="project-link"><a href="https://rlyhan.github.io/Tic-Tac-Toe/" target="_blank">TIC TAC TOE</a></p>
             <hr></hr>
             <ul className="project-description">
+              <li><a href="https://github.com/rlyhan/Tic-Tac-Toe" target="_blank">View project on GitHub</a></li>
               <li>Play against a programmed opponent</li>
               <li>HTML/CSS/JS</li>
             </ul>

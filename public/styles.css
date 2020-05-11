@@ -632,6 +632,10 @@ hr {
     z-index: 30;
   }
 
+  .project-description a {
+    text-decoration: none;
+  }
+
 @media only screen and (min-width: 850px) and (orientation: landscape) {
   .projects > .page-content {
     padding-right: 10%;
@@ -673,7 +677,6 @@ hr {
 
   .contact > .page-content {
     padding-top: 100px;
-    /* min-height: 70vh; */
     color: #161925;
   }
 
