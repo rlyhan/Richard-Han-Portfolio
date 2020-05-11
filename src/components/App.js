@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Home from './Home'
 import About from './About'
@@ -14,7 +13,6 @@ class App extends Component {
 
     window.addEventListener("scroll", function() {
       const navMenu = document.querySelector('.nav-menu')
-      const home = document.querySelector('.home')
       const about = document.querySelector('.about')
       const projects = document.querySelector('.projects')
       const contact = document.querySelector('.contact')
@@ -92,11 +90,11 @@ class App extends Component {
         // Stop any animations and transitions on nav links
         document.querySelectorAll('#page-titles > li').forEach(link => link.classList.add('animation-stop'))
         // Uncheck the burger menu so it does not reopen when resized below 650px again
-        if (document.getElementById('toggle').checked == true) document.getElementById('toggle').checked = false
+        if (document.getElementById('toggle').checked === true) document.getElementById('toggle').checked = false
       } else {
         // If resized below 650 again
           // If hamburger menu opened, make nav links fade in (and allow animations)
-        if (document.getElementById('toggle').checked == true) {
+        if (document.getElementById('toggle').checked === true) {
           document.querySelectorAll('#page-titles > li')
             .forEach(link => {
               link.classList.remove('animation-stop', 'fade-out')
@@ -124,7 +122,7 @@ class App extends Component {
 
     const home = document.querySelector('.home > .page-content')
     const about = document.querySelector('.about')
-    home.style.display = 'block'
+    home.style.display = 'flex'
     let aboutTop = about.offsetTop - 180
 
     // Change opacity of home page while scrolling
@@ -137,7 +135,7 @@ class App extends Component {
           home.style.display = 'none'
         } else {
           home.style.opacity = 1 - (((window.scrollY - (aboutTop / 4)) / (aboutTop + (aboutTop / 4)))*3.2)
-          home.style.display = 'block'
+          home.style.display = 'flex'
         }
       } else {
         home.style.opacity = 1

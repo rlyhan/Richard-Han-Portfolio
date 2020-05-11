@@ -21,8 +21,8 @@ body {
 @media only screen and (min-width: 870px) {
   .about > .page-content,
   .contact > .page-content {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 17.5%;
+    padding-right: 17.5%;
   }
 }
 
@@ -44,7 +44,7 @@ hr {
   position: fixed;
   right: 0;
   bottom: 0;
-  margin-right: 30px;
+  margin-right: 20px;
   margin-bottom: 25vh;
   display: none;
   z-index: 90;
@@ -106,7 +106,7 @@ hr {
     top: 0;
     bottom: auto;
     background-color: white;
-    box-shadow: 0 2px 5px -2px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
     -webkit-animation: 0.5s ease collapseNavbarDown !important;
     -moz-animation: 0.5s ease collapseNavbarDown !important;
     -o-animation: 0.5s ease collapseNavbarDown !important;
@@ -407,38 +407,38 @@ hr {
 }
 
   .home > .page-content {
-    display: none;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
   }
 
 .title, .circles {
-  top: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   position: absolute;
 }
 
 .title {
-  left: 50%;
+  align-self: center;
   z-index: 3;
 }
 
 .title h1 {
+  margin: 0;
   color: #ef8254;
   text-shadow: 1px 1px 1px black;
 }
 
 .title h2 {
+  padding-top: 25px;
+  margin: 0;
   color: #34384c;
 }
 
 .circles {
-  left: 50%;
-  height: 70%;
+  top: 50%;
   width: 100%;
   justify-content: center;
   align-items: center;
   z-index: 2;
-  display: none;
 }
 
 .circles .ring {
@@ -513,7 +513,7 @@ hr {
 
 .bio p {
   font-size: 0.9em;
-  color: #a6a6a6;
+  /* color: #a6a6a6; */
 }
 
 .education p, ul {
@@ -612,7 +612,7 @@ hr {
   }
 
   .project-link {
-    font-size: 1.3em;
+    font-size: 1.2em;
   }
 
   .project-link a {
@@ -633,25 +633,32 @@ hr {
 
 @media only screen and (min-width: 850px) and (orientation: landscape) {
   .projects > .page-content {
-    padding-right: 15%;
-    padding-left: 15%;
+    padding-right: 10%;
+    padding-left: 10%;
   }
   .project-list {
-    grid-template-columns: 47.5% 47.5%;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media only screen and (min-width: 1070px) and (orientation: landscape) {
+@media only screen and (min-width: 1280px) and (orientation: landscape) {
   .projects > .page-content {
-    padding-right: 15%;
-    padding-left: 15%;
+    padding-right: 10%;
+    padding-left: 10%;
   }
   .project-list {
-    grid-template-columns: 30% 30% 30%;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-@media only screen and (min-width: 850px) and (orientation: portrait) {
+@media only screen and (min-width: 1670px) and (orientation: landscape) {
+  .project-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+
+@media only screen and (min-width: 1200px) and (orientation: portrait) {
   .project-list {
     grid-template-columns: 30% 30% 30%;
   }

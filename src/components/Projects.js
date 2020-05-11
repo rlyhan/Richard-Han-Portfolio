@@ -10,15 +10,14 @@ const Projects = forwardRef((props, ref) => {
         <div className="project-list">
           <div className="project">
             <div className="image">
-              <img src={require('../images/projects/welly.PNG')} />
+              <img src={require('../images/projects/covid19.PNG')} />
             </div>
-            <p className="project-link"><a href="https://explore-welly.herokuapp.com/" target="_blank">WELLY</a></p>
+            <p className="project-link"><a href="https://covid19-data-nz.herokuapp.com/" target="_blank">COVID-19 DATA - NEW ZEALAND</a></p>
             <hr></hr>
             <ul className="project-description">
-              <li>Browse through shops, restaurants,
-              bars and more in the city of Wellington, New Zealand</li>
-              <li>Uses information from Yelp</li>
-              <li>React, Redux, REST APIs, MongoDB</li>
+              <li>Data visualiser for the COVID-19 pandemic in New Zealand</li>
+              <li>Interactive map and graph</li>
+              <li>React, REST APIs</li>
             </ul>
           </div>
           <div className="project">
@@ -32,6 +31,19 @@ const Projects = forwardRef((props, ref) => {
               <li>Locate foragable items (like fruits and herbs) on a Google Map</li>
               <li>Add items to map (can set either private for own reference, or public to share with others)</li>
               <li>React, Redux, REST APIs, SQLite</li>
+            </ul>
+          </div>
+          <div className="project">
+            <div className="image">
+              <img src={require('../images/projects/welly.PNG')} />
+            </div>
+            <p className="project-link"><a href="https://explore-welly.herokuapp.com/" target="_blank">WELLY</a></p>
+            <hr></hr>
+            <ul className="project-description">
+              <li>Browse through shops, restaurants,
+              bars and more in the city of Wellington, New Zealand</li>
+              <li>Uses information from Yelp</li>
+              <li>React, Redux, REST APIs, MongoDB</li>
             </ul>
           </div>
           <div className="project">
