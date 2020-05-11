@@ -439,6 +439,7 @@ hr {
   justify-content: center;
   align-items: center;
   z-index: 2;
+  display: none;
 }
 
 .circles .ring {
@@ -680,15 +681,15 @@ hr {
       display: block;
     }
 
-  .contact-details h2 {
+  .contact-details h3 {
     text-align: center;
   }
 
-    .contact-details h2 > a {
+    .contact-details h3 > a {
       color: #161925;
     }
 
-    .contact-details > h2 > a:hover {
+    .contact-details > h3 > a:hover {
       cursor: pointer;
       color: #ef8254;
     }
@@ -719,5 +720,5 @@ hr {
     display: flex;
     justify-content: space-between;
   }
-  .contact-details h2 { text-align: right; }
+  .contact-details h3 { text-align: right; }
 }

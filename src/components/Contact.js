@@ -16,8 +16,8 @@ const Contact = forwardRef((props, ref) => {
             </a>
           </div>
           <div className="contact-details">
-            <h2>EMAIL: <a href="mailto:richard.ly.han@gmail.com">richard.ly.han@gmail.com</a></h2>
-            <h2>PHONE: <a href="tel:+642102518876">+64 21 025 18876</a></h2>
+            <h3>EMAIL: <a href="mailto:richard.ly.han@gmail.com">richard.ly.han@gmail.com</a></h3>
+            <h3>PHONE: <a href="tel:+642102518876">+64 21 025 18876</a></h3>
           </div>
         </div>
       </div>
