@@ -22,21 +22,21 @@ const About = forwardRef((props, ref) => {
         </div>
         <div className="qualification">
           <div className="skills">
-            <p>MY SKILLSET INCLUDES...</p>
+            <h4>MY SKILLSET INCLUDES...</h4>
             <br></br>
             <div className="tech-logos">
-              <img src={require('../images/javascript.png')} />
-              <img src={require('../images/html.png')} />
-              <img src={require('../images/css.png')} />
-              <img src={require('../images/java.png')} />
-              <img src={require('../images/python.png')} />
+              <img src={require('../images/javascript.png')} alt="tech-logo" />
+              <img src={require('../images/html.png')} alt="tech-logo" />
+              <img src={require('../images/css.png')} alt="tech-logo" />
+              <img src={require('../images/java.png')} alt="tech-logo" />
+              <img src={require('../images/python.png')} alt="tech-logo" />
             </div>
             <div className="tech-logos">
-              <img src={require('../images/nodejs.png')} />
-              <img src={require('../images/mongodb.png')} />
-              <img src={require('../images/react.png')} />
-              <img src={require('../images/redux.png')} />
-              <img src={require('../images/bootstrap.png')} />
+              <img src={require('../images/nodejs.png')} alt="tech-logo" />
+              <img src={require('../images/mongodb.png')} alt="tech-logo" />
+              <img src={require('../images/react.png')} alt="tech-logo" />
+              <img src={require('../images/redux.png')} alt="tech-logo" />
+              <img src={require('../images/bootstrap.png')} alt="tech-logo" />
             </div>
           </div>
           <div className="education">
