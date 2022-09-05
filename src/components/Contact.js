@@ -1,10 +1,12 @@
 import React, { forwardRef } from 'react'
 
 const Contact = forwardRef((props, ref) => {
+  // parallax scroll giant text on bottom left eg. "Let's Talk"
+  // ie. scrolls out from under page on left slower than scroll speed
   return (
     <div className="contact" ref={ref}>
       <div className="page-content">
-        <h1>GET IN TOUCH</h1>
+        <h2>GET IN TOUCH</h2>
         <hr></hr>
         <div>
           <div className="contact-icons">

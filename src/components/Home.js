@@ -4,19 +4,14 @@ const Home = forwardRef((props, ref) => {
   return (
     <div className="home" ref={ref}>
       <div className="page-content">
-        <div className="title">
-          <h1 style={{marginBottom: 0}}>RICHARD HAN</h1>
-          <h2>Full Stack Web Developer</h2>
-        </div>
-        <div className="circles">
-          <div className="ring">
-            <div className="dot"></div>
+        <div className='circle'></div>
+        <div className='circle clone'></div>
+        <div className="title-wrap">
+          <div className="title">
+            <h1>RICHARD HAN</h1>
           </div>
-          <div className="ring">
-            <div className="dot"></div>
-          </div>
-          <div className="ring">
-            <div className="dot"></div>
+          <div className="subtitle">
+            <p>DIGITAL CREATOR.</p>
           </div>
         </div>
       </div>

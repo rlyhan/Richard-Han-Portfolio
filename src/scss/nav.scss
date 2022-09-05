@@ -1,0 +1,348 @@
+@import './_styles.scss';
+
+.nav-menu {
+  $nav-col-design-width: 85px;
+  $nav-col-design-margin: 45px;
+  width: 100%;
+  position: fixed;
+  top: 8vh;
+  right: 0;
+  display: flex;
+  justify-content: right;
+  z-index: 99;
+  // transition: all 0.4s ease-in-out;
+
+  .page-titles {
+    transform: translate(-5vh, -5vh);
+    li {
+      @include roboto;
+      @include vw-font(18px);
+      padding: 0;
+      margin-left: 2em;
+      letter-spacing: -.15vw;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $golden-grey;
+      transition: opacity .25s ease-in-out;
+
+      &:hover {
+        cursor: pointer;
+        opacity: .5;
+      }
+
+      &:first-child {
+        visibility: hidden;
+      }
+
+      &.current {
+        opacity: .5;
+      }
+    }
+  }
+}
+
+@include tablet {
+  // .nav-menu {
+  //   top: auto;
+  //   transition: none;
+  // }
+  // /* Moves nav menu to bottom on certain scroll pos */
+  // .nav-to-bottom {
+  //   top: auto;
+  //   bottom: 0;
+  //   -webkit-animation: 0.5s ease collapseNavbarUp !important;
+  //   -moz-animation: 0.5s ease collapseNavbarUp !important;
+  //   -o-animation: 0.5s ease collapseNavbarUp !important;
+  //   -ms-animation: 0.5s ease collapseNavbarUp !important;
+  //   animation-fill-mode: forwards !important;
+  // }
+  // /* Moves nav menu to top on certain scroll pos */
+  // .nav-to-top {
+  //   top: 0;
+  //   bottom: auto;
+  //   background-color: white;
+  //   box-shadow: 0 2px 4px -2px rgba(0,0,0,0.2);
+  //   -webkit-animation: 0.5s ease collapseNavbarDown !important;
+  //   -moz-animation: 0.5s ease collapseNavbarDown !important;
+  //   -o-animation: 0.5s ease collapseNavbarDown !important;
+  //   -ms-animation: 0.5s ease collapseNavbarDown !important;
+  //   animation-fill-mode: forwards !important;
+  // }
+}
+
+/* Animation: Collapse navbar down for scrolling down */
+
+@keyframes collapseNavbarDown {
+  0% { top: -100px; }
+  100% { top: 0; }
+}
+
+@-moz-keyframes collapseNavbarDown {
+  0% { top: -100px; }
+  100% { top: 0; }
+}
+
+@-webkit-keyframes collapseNavbarDown {
+  0% { top: -100px; }
+  100% { top: 0; }
+}
+
+@-o-keyframes collapseNavbarDown {
+  0% { top: -100px; }
+  100% { top: 0; }
+}
+
+@-ms-keyframes collapseNavbarDown {
+  0% { top: -100px; }
+  100% { top: 0; }
+}
+
+/* Animation: Collapse navbar up when scrolled at top of site */
+
+@keyframes collapseNavbarUp {
+  0% { bottom: -100px; }
+  100% { bottom: 0; }
+}
+
+@-moz-keyframes collapseNavbarUp {
+  0% { bottom: -100px; }
+  100% { bottom: 0; }
+}
+
+@-webkit-keyframes collapseNavbarUp {
+  0% { bottom: -100px; }
+  100% { bottom: 0; }
+}
+
+@-o-keyframes collapseNavbarUp {
+  0% { bottom: -100px; }
+  100% { bottom: 0; }
+}
+
+@-ms-keyframes collapseNavbarUp {
+  0% { bottom: -100px; }
+  100% { bottom: 0; }
+}
+
+.page-titles {
+  display: block;
+  float: left;
+  text-align: left;
+  font-size: 1em;
+  margin: 0;
+  padding: 10px 0 0 10%;
+  list-style-type: none;
+}
+
+.page-titles > li {
+  padding: 10px 0 10px 0;
+  opacity: 0;
+  transition: color .2s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+.page-titles > li:hover {
+  cursor: pointer;
+}
+
+@include tablet {
+
+  .nav-menu {
+    height: 29px;
+  }
+
+  .page-titles {
+    display: flex;
+    float: none;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .page-titles > li {
+    padding: 0 40px;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+}
+
+#burger, #toggle {
+  padding-left: 9%;
+}
+
+#burger {
+  z-index: 98;
+}
+
+#burger > div {
+  background-color: #161925;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+}
+
+#toggle {
+  opacity: 0;
+  top: 30px;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  margin-left: 10%;
+  position: fixed;
+  z-index: 99;
+}
+
+#toggle:hover {
+  cursor: pointer;
+}
+
+#toggle:checked + .nav-menu {
+  height: 171px;
+  background-color: white;
+  box-shadow: 0 3px 4px -2px rgba(0,0,0,0.2);
+}
+
+#toggle:checked + .nav-menu > .page-titles > li {
+  pointer-events: all;
+}
+
+@include tablet {
+
+  #toggle {
+    left: -100px;
+  }
+
+  #toggle:checked + .nav-menu {
+    height: 29px;
+    transition: none;
+  }
+
+  #burger {
+    display: none;
+  }
+
+}
+
+#about-title.fade-in {
+  animation-delay: 0.1s !important;
+}
+
+#projects-title.fade-in {
+  animation-delay: 0.26s !important;
+}
+
+#contact-title.fade-in {
+  animation-delay: 0.3s !important;
+}
+
+.fade-in {
+  -webkit-animation: 0.5s ease fadeIn !important;
+  -moz-animation: 0.5s ease fadeIn !important;
+  -o-animation: 0.5s ease fadeIn !important;
+  -ms-animation: 0.5s ease fadeIn !important;
+  animation-fill-mode: forwards !important;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.fade-out {
+  -webkit-animation: 0.4s ease fadeOut !important;
+  -moz-animation: 0.4s ease fadeOut !important;
+  -o-animation: 0.4s ease fadeOut !important;
+  -ms-animation: 0.4s ease fadeOut !important;
+  animation-fill-mode: forwards !important;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-moz-keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-webkit-keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-o-keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@-ms-keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+#toggle:checked + .nav-menu #burger > div {
+  -webkit-animation: 0.6s ease spin;
+  -moz-animation: 0.6s ease spin;
+  -o-animation: 0.6s ease spin;
+  -ms-animation: 0.6s ease spin;
+  animation-fill-mode: forwards;
+}
+
+#toggle:checked + .nav-menu #burger > div:nth-child(1) {
+  animation-delay: 0.03s;
+}
+
+#toggle:checked + .nav-menu #burger > div:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+#toggle:checked + .nav-menu #burger > div:nth-child(3) {
+  animation-delay: 0.21s;
+}
+
+@keyframes spin {
+   100% { transform: rotate(180deg); }
+ }
+
+@-moz-keyframes spin {
+  100% { -moz-transform: rotate(180deg); }
+}
+
+@-webkit-keyframes spin {
+  100% { -webkit-transform: rotate(180deg); }
+}
+
+@-o-keyframes spin {
+  100% { -o-transform: rotate(180deg); }
+}
+
+@-ms-keyframes spin {
+  100% { -ms-transform: rotate(180deg); }
+}
+
+.animation-stop {
+  animation: none !important;
+  transition: none !important;
+}

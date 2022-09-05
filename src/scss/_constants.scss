@@ -1,0 +1,71 @@
+// Responsive
+
+$tablet: 650px;
+$tablet-landscape: 870px;
+$desktop: 1280px;
+$above-max-width: 2180px;
+
+@mixin tablet {
+  @media screen and (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin tablet-landscape {
+  @media screen and (min-width: $tablet-landscape) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin above-max-width {
+  @media screen and (min-width: $above-max-width) {
+    @content;
+  }
+}
+
+// Z indexes
+$nav-z-index: 99;
+
+// Widths
+
+$design-width: 1457px;
+$design-height: 955px;
+$design-margin: 55px;
+$design-margin-percentage: percentage(55px / 1457px);
+
+// Colours
+
+$beige: #F6F0ED;
+$golden-grey: #B8B29D;
+
+// Fonts
+
+@mixin vw-font($font-size, $screen-size: $design-width) {
+  font-size: calc(($font-size / $screen-size) * 100vw);
+}
+
+@mixin vh-font($font-size, $screen-size: $design-width) {
+  font-size: calc(($font-size / $screen-size) * 100vh);
+}
+
+h1 {
+  font-weight: 100;
+  @include desktop {
+    font-size: 100px;
+  }
+  @include above-max-width {
+    font-size: 120px;
+  }
+}
+
+h2 {
+  font-size: 40px;
+  color: #2d3142;
+  text-align: center;
+}

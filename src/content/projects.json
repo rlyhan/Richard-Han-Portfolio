@@ -1,0 +1,90 @@
+[
+  {
+    "name": "Coloursmith",
+    "url": "https://plantme.io/",
+    "file_name": "coloursmith.png",
+    "featured": true,
+    "client": true,
+    "html_description": "<p>An website made in collaboration with <a href='https://www.greenbackme.com/' target='_blank'>Greenback.</a></p><p>An online marketplace for gardening with a multitude of features where you can:</p><ul><li>Buy, sell, gift and request seeds, plants, produce, gardening equipment, and more from your local community.</li><li>Access detailed guides to growing plants, fruits and vegetables.</li><li>Keep track of the growth of your plants with the planting log.</li></ul>"
+  },
+  {
+    "name": "Deadly Ponies",
+    "url": "https://deadlyponies.com/",
+    "file_name": "deadlyponies.png",
+    "featured": true,
+    "client": true,
+    "html_description": "<p>An website made in collaboration with <a href='https://www.greenbackme.com/' target='_blank'>Greenback.</a></p><p>An online marketplace for gardening with a multitude of features where you can:</p><ul><li>Buy, sell, gift and request seeds, plants, produce, gardening equipment, and more from your local community.</li><li>Access detailed guides to growing plants, fruits and vegetables.</li><li>Keep track of the growth of your plants with the planting log.</li></ul>"
+  },
+  {
+    "name": "The Physics Room",
+    "url": "https://physicsroom.org.nz/",
+    "file_name": "physicsroom.png",
+    "featured": true,
+    "client": true,
+    "html_description": "<p>An website made in collaboration with <a href='https://www.greenbackme.com/' target='_blank'>Greenback.</a></p><p>An online marketplace for gardening with a multitude of features where you can:</p><ul><li>Buy, sell, gift and request seeds, plants, produce, gardening equipment, and more from your local community.</li><li>Access detailed guides to growing plants, fruits and vegetables.</li><li>Keep track of the growth of your plants with the planting log.</li></ul>"
+  },
+  {
+    "name": "ECC",
+    "url": "https://ecc.co.nz/",
+    "file_name": "ecc.png",
+    "featured": true,
+    "client": true,
+    "html_description": "<p>An website made in collaboration with <a href='https://www.greenbackme.com/' target='_blank'>Greenback.</a></p><p>An online marketplace for gardening with a multitude of features where you can:</p><ul><li>Buy, sell, gift and request seeds, plants, produce, gardening equipment, and more from your local community.</li><li>Access detailed guides to growing plants, fruits and vegetables.</li><li>Keep track of the growth of your plants with the planting log.</li></ul>"
+  },
+  {
+    "name": "West Cost Tas",
+    "url": "https://westcoasttas.com.au/",
+    "file_name": "westcoasttas.png",
+    "featured": false,
+    "client": true,
+    "html_description": "<p>An website made in collaboration with <a href='https://www.greenbackme.com/' target='_blank'>Greenback.</a></p><p>An online marketplace for gardening with a multitude of features where you can:</p><ul><li>Buy, sell, gift and request seeds, plants, produce, gardening equipment, and more from your local community.</li><li>Access detailed guides to growing plants, fruits and vegetables.</li><li>Keep track of the growth of your plants with the planting log.</li></ul>"
+  },
+  {
+    "name": "Neat Places",
+    "url": "https://neatplaces.co.nz/",
+    "file_name": "neatplaces.png",
+    "featured": true,
+    "client": true,
+    "html_description": "<p>An website made in collaboration with <a href='https://www.greenbackme.com/' target='_blank'>Greenback.</a></p><p>An online marketplace for gardening with a multitude of features where you can:</p><ul><li>Buy, sell, gift and request seeds, plants, produce, gardening equipment, and more from your local community.</li><li>Access detailed guides to growing plants, fruits and vegetables.</li><li>Keep track of the growth of your plants with the planting log.</li></ul>"
+  },
+  {
+    "name": "James Dunlop Textiles",
+    "url": "https://www.jamesdunloptextiles.com/",
+    "file_name": "jamesdunlop.png",
+    "featured": true,
+    "client": true,
+    "html_description": "<p>An website made in collaboration with <a href='https://www.greenbackme.com/' target='_blank'>Greenback.</a></p><p>An online marketplace for gardening with a multitude of features where you can:</p><ul><li>Buy, sell, gift and request seeds, plants, produce, gardening equipment, and more from your local community.</li><li>Access detailed guides to growing plants, fruits and vegetables.</li><li>Keep track of the growth of your plants with the planting log.</li></ul>"
+  },
+  {
+    "name": "PlantMe",
+    "url": "https://plantme.io/",
+    "file_name": "plantme.png",
+    "featured": false,
+    "client": true,
+    "html_description": "<p>An website made in collaboration with <a href='https://www.greenbackme.com/' target='_blank'>Greenback.</a></p><p>An online marketplace for gardening with a multitude of features where you can:</p><ul><li>Buy, sell, gift and request seeds, plants, produce, gardening equipment, and more from your local community.</li><li>Access detailed guides to growing plants, fruits and vegetables.</li><li>Keep track of the growth of your plants with the planting log.</li></ul>"
+  },
+  {
+    "name": "Welly",
+    "url": "https://explore-welly.herokuapp.com/",
+    "file_name": "welly.png",
+    "featured": false,
+    "client": false,
+    "html_description": "<p>An website made in collaboration with <a href='https://www.greenbackme.com/' target='_blank'>Greenback.</a></p><p>An online marketplace for gardening with a multitude of features where you can:</p><ul><li>Buy, sell, gift and request seeds, plants, produce, gardening equipment, and more from your local community.</li><li>Access detailed guides to growing plants, fruits and vegetables.</li><li>Keep track of the growth of your plants with the planting log.</li></ul>"
+  },
+  {
+    "name": "RTA Studio",
+    "url": "https://rtastudio.co.nz/",
+    "file_name": "rtastudio.png",
+    "featured": false,
+    "client": true,
+    "html_description": "<p>An website made in collaboration with <a href='https://www.greenbackme.com/' target='_blank'>Greenback.</a></p><p>An online marketplace for gardening with a multitude of features where you can:</p><ul><li>Buy, sell, gift and request seeds, plants, produce, gardening equipment, and more from your local community.</li><li>Access detailed guides to growing plants, fruits and vegetables.</li><li>Keep track of the growth of your plants with the planting log.</li></ul>"
+  },
+  {
+    "name": "My Big Moments",
+    "url": "https://mybigmoments.com/",
+    "file_name": "rtastudio.png",
+    "featured": false,
+    "client": true,
+    "html_description": "<p>An website made in collaboration with <a href='https://www.greenbackme.com/' target='_blank'>Greenback.</a></p><p>An online marketplace for gardening with a multitude of features where you can:</p><ul><li>Buy, sell, gift and request seeds, plants, produce, gardening equipment, and more from your local community.</li><li>Access detailed guides to growing plants, fruits and vegetables.</li><li>Keep track of the growth of your plants with the planting log.</li></ul>"
+  }
+]

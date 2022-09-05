@@ -1,0 +1,107 @@
+@import './_styles.scss';
+
+.about {
+  .page-content {
+    @include desktop {
+      padding-left: 10vw;
+      overflow: hidden;
+    }
+
+    .main-text,
+    .body-text {
+      color: black;
+      span.coloured {
+        color: $golden-grey;
+      }
+    }
+
+    .body-text {
+      @include vh-font(27px);
+      line-height: 1.4;
+    }
+
+    .top-text-container {
+      padding-top: 5vw;
+
+      .top-section-wrap {
+        display: flex;
+        .main-text {
+          @include vh-font(75px);
+          @include prata();
+          line-height: 1.2;
+          width: percentage(820px / $design-width);
+          margin-bottom: 1em;
+        }
+
+        .map-container {
+          float: left;
+          width: 10vh;
+          height: 10vh;
+          position: relative;
+          background-color: $golden-grey;
+          border-radius: 50%;
+          padding: 2rem;
+          margin-left: 5vh;
+          .map {
+            background-image: url('../images/nzmap.png');
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 10vh;
+            padding-top: 100%;
+          }
+          #pinpoint-animation {
+            position: absolute;
+            top: 6.5vh;
+            left: 6vh;
+            width: 3rem;
+          }
+        }
+      }
+
+      .body-text {
+        width: percentage(650px / $design-width);
+        margin-bottom: 10vh;
+      }
+    }
+
+    .decorative {
+      clear: both;
+      $translate-amount: percentage(($design-width - 640px) / $design-width);
+      width: 200vw;
+      border-top: 1px solid black;
+      position: relative;
+      transform: translateX(#{$translate-amount});
+      &::before {
+        content: '';
+        left: 0;
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        background: black;
+        margin-top: -.75rem;
+      }
+    }
+
+    .bottom-text-container {
+      width: 100vw;
+      .body-text {
+        margin-top: 2em;
+        width: percentage(900px / $design-width);
+        margin-left: percentage(400px / $design-width);
+
+        .project-attributes {
+          padding-left: 2em;
+          li {
+            list-style-type: none;
+            span.coloured {
+              @include prata;
+              @include vh-font(65px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

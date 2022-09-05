@@ -1,0 +1,249 @@
+@import './_styles.scss';
+
+.toggle-all-projects {
+  position: absolute;
+  bottom: 3vw;
+  right: 3vw;
+  width: 3vw;
+  height: 3vw;
+  padding: .25vw;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  transition: background-color .5s ease, color .5s ease;
+  z-index: 2;
+  // text
+  @include vw-font(9px);
+  @include prata;
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: .5px;
+  text-align: center;
+  text-transform: uppercase;
+  color: black;
+
+  &.sticky {
+    position: sticky !important;
+    -webkit-position: sticky !important;
+    margin-left: auto;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+  }
+}
+
+
+.project-list,
+.project-list-full {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  box-sizing: border-box;
+}
+
+.project-list {
+  padding: 5vh 10vw;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1;
+  justify-content: center;
+
+  .project {
+    &:nth-child(1) {
+      width: 23vw;
+    }
+
+    &:nth-child(2) {
+      width: 25vw;
+      margin-top: 15vh;
+    }
+
+    &:nth-child(3) {
+      width: 19vw;
+    }
+
+    &:nth-child(4) {
+      width: 20vw;
+      margin-top: -24vh;
+    }
+
+    &:nth-child(5) {
+      width: 17vw;
+    }
+
+    &:nth-child(6) {
+      width: 24vw;
+      margin-top: -5vh;
+    }
+
+    .project-wrap {
+      .image {
+        overflow: hidden;
+        position: relative;
+        opacity: 0.7;
+        padding: 2em 2em .5em;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .project-title {
+        padding: 0 2em;
+        text-align: center;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity .5s ease, visibility .5s ease;
+
+        & > p {
+          @include vw-font(10px);
+          color: white;
+          text-transform: uppercase;
+          margin: 0 0 1em;
+        }
+      }
+
+      .links {
+        display: none;
+        span, a {
+          color: black;
+        }
+        span {
+          background: white;
+          padding: 1em;
+          border-radius: 2em;
+          display: inline-block;
+          &.popup-link {
+            margin-right: 1em;
+          }
+        }
+        a {
+          text-decoration: none;
+        }
+      }
+
+      .project-description {
+        font-size: 0.9em;
+        font-weight: bold;
+        z-index: 30;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        .project-title {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.project-list-full {
+  z-index: $nav-z-index + 1;
+  background: black;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: auto;
+
+  .project-list-wrap {
+    height: auto;
+    min-height: 100vh;
+    padding: 5vh 10vw;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: baseline;
+  }
+
+  .project-section {
+    @include vw-font(35px);
+    @include prata;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    width: 100%;
+    border-bottom: 1px solid white;
+    margin-bottom: .5em;
+  }
+
+  .project {
+    width: 50%;
+    .project-title,
+    .project-wrap {
+      margin-right: 1em;
+    }
+
+    .project-title {
+      @include prata;
+      @include vw-font(25px);
+      letter-spacing: .5px;
+      border-bottom: 1px solid white;
+      margin-right: 1em;
+      transition: opacity .5s ease;
+      opacity: 1;
+
+      p {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        opacity: 0.5;
+        cursor: pointer;
+      }
+    }
+
+    .project-wrap {
+      display: none;
+      .image,
+      .project-description,
+      .links {
+        width: 100%;
+      }
+      .image {
+        margin-bottom: 1em;
+        img {
+          width: 20vw;
+        }
+      }
+      .links {
+        span {
+          @include vw-font(12px);
+          background-color: white;
+          padding: 1em 2em;
+          border-radius: 2em;
+          a {
+            color: black;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.projects {
+  color: white;
+
+  .page-content {
+    padding: 0 !important;
+    position: relative;
+  }
+
+  .project-list {
+    padding: 5vh 10vw;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

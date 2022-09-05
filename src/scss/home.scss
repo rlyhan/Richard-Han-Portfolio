@@ -1,0 +1,76 @@
+@import './_styles.scss';
+
+$title-z-index: 1;
+$circle-z-index: -1;
+
+.home {
+  text-align: right;
+  z-index: 4;
+
+  > .page-content {
+    height: 100vh;
+    position: relative;
+
+    .circle {
+      content: '';
+      width: 45vw;
+      height: auto;
+      padding-top: 45vw;
+      background: $beige;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: $circle-z-index;
+
+      &.clone {
+        opacity: 0;
+        z-index: $title-z-index + 1;
+        transition: opacity .4s ease;
+
+        &:hover {
+          transition: opacity .4s ease 3s;
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .h2 {
+      font-size: 1vw;
+    }
+
+    .title-wrap {
+      top: percentage(400px / $design-height);
+      left: percentage(128px / $design-width);
+      width: 74vw;
+      color: $golden-grey;
+      position: relative;
+      z-index: $title-z-index;
+
+      .title {
+        text-align: left;
+        h1 {
+          @include vw-font(140px);
+          @include prata();
+          margin: 0;
+          line-height: 0.81;
+        }
+      }
+
+      .subtitle {
+        text-align: right;
+        margin-right: -5em;
+        margin-top: 1em;
+        p {
+          @include vw-font(50px);
+          @include roboto;
+          font-style: italic;
+          margin: 0;
+          letter-spacing: -.35vw;
+        }
+      }
+    }
+  }
+}

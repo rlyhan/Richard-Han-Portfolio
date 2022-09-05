@@ -1,0 +1,55 @@
+@import './_styles.scss';
+
+.contact {
+}
+
+  .contact > .page-content {
+    padding-top: 100px;
+    color: #161925;
+  }
+
+    .contact > .page-content > div {
+      display: block;
+    }
+
+  .contact-details h3 {
+    text-align: center;
+  }
+
+    .contact-details h3 > a {
+      color: #161925;
+    }
+
+    .contact-details > h3 > a:hover {
+      cursor: pointer;
+      color: #ef8254;
+    }
+
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+    .contact-icons > a {
+      width: 4rem;
+      margin: 0 14px;
+      transition: transform .2s;
+    }
+
+    .contact-icons > a:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+
+    .contact-icons img {
+      max-width: 100%;
+    }
+
+/* @media only screen and (min-width: 830px) {
+  .contact > .page-content > div {
+    display: flex;
+    justify-content: space-between;
+  }
+  .contact-details h3 { text-align: right; }
+} */

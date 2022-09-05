@@ -1,58 +1,40 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useState, useEffect } from 'react'
 import resume from '../Richard_Han_CV.pdf'
 
 const About = forwardRef((props, ref) => {
   return (
     <div className="about" ref={ref}>
       <div className="page-content">
-        <div className="bio">
-          <h1>
-            <strong>ABOUT ME</strong>
-          </h1>
-          <hr></hr>
-          <p>
-            I have been coding since 2015, and eventually found a passion for web
-            development. I love building web-based products with modern designs
-            and technologies, a satisfying user experience, and strong ambitions.
-            I'm a positive collaborator and an independent hard worker.&nbsp;
-            <a href={resume} download className="resume-link" target="_blank">
-              Check out my resumé to find out more.
-            </a>
-          </p>
-        </div>
-        <div className="qualification">
-          <div className="skills">
-            <h4>MY SKILLSET INCLUDES...</h4>
-            <br></br>
-            <div className="tech-logos">
-              <img src={require('../images/javascript.png')} alt="tech-logo" />
-              <img src={require('../images/html.png')} alt="tech-logo" />
-              <img src={require('../images/css.png')} alt="tech-logo" />
-              <img src={require('../images/java.png')} alt="tech-logo" />
-              <img src={require('../images/python.png')} alt="tech-logo" />
+        <div className="top-text-container">
+          <div className="top-section-wrap">
+            <div className="main-text">
+              <span className="coloured">Richard</span> is a contract full stack web developer
+              currently based in Christchurch, New Zealand.
             </div>
-            <div className="tech-logos">
-              <img src={require('../images/nodejs.png')} alt="tech-logo" />
-              <img src={require('../images/mongodb.png')} alt="tech-logo" />
-              <img src={require('../images/react.png')} alt="tech-logo" />
-              <img src={require('../images/redux.png')} alt="tech-logo" />
-              <img src={require('../images/bootstrap.png')} alt="tech-logo" />
+            <div className='map-container'>
+              <div className='map'></div>
+              <div id='pinpoint-animation'></div>
             </div>
           </div>
-          <div className="education">
-            <h4>ENSPIRAL DEV ACADEMY GRADUATE</h4>
-            <hr></hr>
-            <ul>
-              <li>Web development bootcamp (graduated 2019)</li>
-              <li>Refined my technical skills</li>
-              <li>Gained strong ability to work and communicate in teams to
-              efficiently deliver projects</li>
-            </ul>
-            <h4>TREEHOUSE FULL STACK JAVASCRIPT TECHDEGREE</h4>
-            <hr></hr>
-            <ul>
-              <li>Online curriculum teaching full stack web development with JavaScript</li>
-              <li>12 projects completed</li>
+          <div className="body-text">
+            From online stores and architectural portfolios to art galleries and
+            tourism, he has built numerous digital applications for a diverse
+            range of clients.<br/><br/>
+            One of his first projects was PlantMe, an eCommerce platform with
+            an environmental focus - trading produce and gardening goods, as
+            well as plant growing guides.<br/><br/>
+            Since 2020, he has worked with Sons & Co and built websites for
+            clients such as Deadly Ponies, Neat Places, and James Dunlop, with
+            a strong focus on visual aesthetic and customised interfaces.
+          </div>
+        </div>
+        <div className="decorative"></div>
+        <div className="bottom-text-container">
+          <div className="body-text">
+            <ul className="project-attributes">
+              <li><span className="coloured">Tailored</span> to the best of the client's needs</li>
+              <li><span className="coloured">Fully responsive</span> and utilise <span className="coloured">modern frameworks</span></li>
+              <li><span className="coloured">Fully customisable </span>content management systems</li>
             </ul>
           </div>
         </div>
