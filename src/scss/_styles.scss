@@ -4,10 +4,13 @@
 html {
   scroll-behavior: smooth;
   @include roboto;
+  height: 100vh;
 }
 
 body {
+  scroll-behavior: smooth;
   margin: 0;
+  height: 100vh;
 }
 
 .App {
@@ -53,6 +56,12 @@ $contact-z-index: 1;
     @include desktop {
       height: 100vh;
     }
+  }
+  @include below-desktop {
+    padding: 3rem;
+    box-sizing: border-box;
+    overflow: hidden;
+    min-height: 100vh;
   }
 }
 

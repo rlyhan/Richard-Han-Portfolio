@@ -1,55 +1,82 @@
 @import './_styles.scss';
 
 .contact {
+  .page-content {
+    @include desktop {
+      padding: 5vh 10vw;
+      box-sizing: border-box;
+    }
+
+    .contact-heading {
+      @include vh-font(200px);
+      @include prata();
+      margin: .75em 0 .25em;
+      color: white;
+      text-transform: uppercase;
+
+      @include phone {
+        @include vw-font(200px);
+        margin: 0 0 .75em;
+      }
+    }
+
+    .contact-detail {
+      @include vh-font(90px);
+      @include roboto();
+      color: black;
+      margin: .25em 0;
+
+      @include phone {
+        @include vw-font(90px);
+        margin-bottom: 1.5em;
+      }
+
+      a {
+        color: black;
+      }
+    }
+
+    .more-about {
+      width: 40%;
+      margin-left: auto;
+
+      @include phone {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 8rem;
+      }
+
+      p {
+        @include vh-font(27px);
+        line-height: 1.4;
+        &.heading {
+          @include vh-font(40px);
+          margin: 3rem 0 0;
+        }
+        @include phone {
+          @include vw-font(50px);
+        }
+      }
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 40px;
+
+      & > a {
+        width: 4rem;
+        margin: 0 14px;
+        transition: transform .2s;
+
+        &:hover {
+          transform: scale(1.2);
+          cursor: pointer;
+        }
+      }
+      img {
+        max-width: 100%;
+      }
+    }
+  }
 }
-
-  .contact > .page-content {
-    padding-top: 100px;
-    color: #161925;
-  }
-
-    .contact > .page-content > div {
-      display: block;
-    }
-
-  .contact-details h3 {
-    text-align: center;
-  }
-
-    .contact-details h3 > a {
-      color: #161925;
-    }
-
-    .contact-details > h3 > a:hover {
-      cursor: pointer;
-      color: #ef8254;
-    }
-
-  .contact-icons {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-  }
-
-    .contact-icons > a {
-      width: 4rem;
-      margin: 0 14px;
-      transition: transform .2s;
-    }
-
-    .contact-icons > a:hover {
-      transform: scale(1.2);
-      cursor: pointer;
-    }
-
-    .contact-icons img {
-      max-width: 100%;
-    }
-
-/* @media only screen and (min-width: 830px) {
-  .contact > .page-content > div {
-    display: flex;
-    justify-content: space-between;
-  }
-  .contact-details h3 { text-align: right; }
-} */

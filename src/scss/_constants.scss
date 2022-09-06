@@ -5,6 +5,12 @@ $tablet-landscape: 870px;
 $desktop: 1280px;
 $above-max-width: 2180px;
 
+@mixin phone {
+  @media screen and (max-width: $tablet - 1px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media screen and (min-width: $tablet) {
     @content;
@@ -13,6 +19,12 @@ $above-max-width: 2180px;
 
 @mixin tablet-landscape {
   @media screen and (min-width: $tablet-landscape) {
+    @content;
+  }
+}
+
+@mixin below-desktop {
+  @media screen and (max-width: $desktop - 1px) {
     @content;
   }
 }

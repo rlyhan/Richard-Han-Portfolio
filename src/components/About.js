@@ -34,7 +34,7 @@ const About = forwardRef((props, ref) => {
             <ul className="project-attributes">
               <li><span className="coloured">Tailored</span> to the best of the client's needs</li>
               <li><span className="coloured">Fully responsive</span> and utilise <span className="coloured">modern frameworks</span></li>
-              <li><span className="coloured">Fully customisable </span>content management systems</li>
+              <li><span className="coloured">Bespoke</span> interfaces and content management systems</li>
             </ul>
           </div>
         </div>

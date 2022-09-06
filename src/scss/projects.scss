@@ -25,10 +25,27 @@
   text-transform: uppercase;
   color: black;
 
+  @include below-desktop {
+    @include vw-font(30px);
+    width: 10vw;
+    height: 10vw;
+    right: 0;
+    bottom: 0;
+
+    // @include phone {
+    //   @include vw-font(30px);
+    // }
+  }
+
   &.sticky {
     position: sticky !important;
     -webkit-position: sticky !important;
     margin-left: auto;
+
+    @include below-desktop {
+      right: 3rem;
+      bottom: 3rem;
+    }
   }
 
   &:hover {
@@ -41,45 +58,61 @@
 
 .project-list,
 .project-list-full {
-  width: 100vw;
-  height: 100vh;
-  max-height: 100vh;
-  box-sizing: border-box;
+  @include desktop {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    box-sizing: border-box;
+  }
 }
 
 .project-list {
-  padding: 5vh 10vw;
-  display: flex;
-  flex-wrap: wrap;
-  z-index: 1;
-  justify-content: center;
+  @include desktop {
+    padding: 5vh 10vw;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 1;
+    justify-content: center;
+  }
 
   .project {
-    &:nth-child(1) {
-      width: 23vw;
+    @include desktop {
+      &:nth-child(1) {
+        width: 23vw;
+      }
+
+      &:nth-child(2) {
+        width: 25vw;
+        margin-top: 15vh;
+      }
+
+      &:nth-child(3) {
+        width: 19vw;
+      }
+
+      &:nth-child(4) {
+        width: 20vw;
+        margin-top: -24vh;
+      }
+
+      &:nth-child(5) {
+        width: 17vw;
+      }
+
+      &:nth-child(6) {
+        width: 24vw;
+        margin-top: -5vh;
+      }
     }
 
-    &:nth-child(2) {
-      width: 25vw;
-      margin-top: 15vh;
-    }
+    @include below-desktop {
+      &:nth-child(6) {
+        padding-bottom: 8rem;
 
-    &:nth-child(3) {
-      width: 19vw;
-    }
-
-    &:nth-child(4) {
-      width: 20vw;
-      margin-top: -24vh;
-    }
-
-    &:nth-child(5) {
-      width: 17vw;
-    }
-
-    &:nth-child(6) {
-      width: 24vw;
-      margin-top: -5vh;
+        @include phone {
+          padding-bottom: 0;
+        }
+      }
     }
 
     .project-wrap {
@@ -88,6 +121,11 @@
         position: relative;
         opacity: 0.7;
         padding: 2em 2em .5em;
+
+        @include below-desktop {
+          padding: 0;
+          margin-bottom: 5rem;
+        }
 
         img {
           width: 100%;
@@ -176,10 +214,17 @@
     width: 100%;
     border-bottom: 1px solid white;
     margin-bottom: .5em;
+
+    @include phone {
+      @include vw-font(90px);
+    }
   }
 
   .project {
     width: 50%;
+    @include phone {
+      width: 100%;
+    }
     .project-title,
     .project-wrap {
       padding-right: 3rem;
@@ -193,6 +238,10 @@
       margin-right: 1em;
       transition: opacity .5s ease;
       opacity: 1;
+
+      @include phone {
+        @include vw-font(64px);
+      }
 
       p {
         margin-bottom: 0;
@@ -215,15 +264,29 @@
       }
       .image {
         margin: 2rem 0;
+
+        @include phone {
+          margin-bottom: 1rem;
+        }
+
         img {
           width: 100%;
         }
       }
       .project-description {
         margin-bottom: 2rem;
+
+        @include phone {
+          margin-bottom: 1rem;
+        }
+
         p {
           @include vw-font(14px);
           margin: 0;
+
+          @include phone {
+            @include vw-font(50px);
+          }
         }
       }
       .links {
@@ -235,6 +298,10 @@
           display: inline-block;
           transition: opacity .5s ease;
           opacity: 1;
+
+          @include phone {
+            @include vw-font(40px);
+          }
 
           &:hover {
             cursor: pointer;
@@ -254,14 +321,12 @@
 .projects {
   color: white;
 
+  @include phone {
+    padding-top: 5rem;
+  }
+
   .page-content {
     padding: 0 !important;
     position: relative;
-  }
-
-  .project-list {
-    padding: 5vh 10vw;
-    display: flex;
-    flex-wrap: wrap;
   }
 }

@@ -7,6 +7,12 @@ $circle-z-index: -1;
   text-align: right;
   z-index: 4;
 
+  // @include phone {
+  //   visibility: hidden;
+  //   height: 0;
+  //   width: 0;
+  // }
+
   > .page-content {
     height: 100vh;
     position: relative;
@@ -24,17 +30,17 @@ $circle-z-index: -1;
       transform: translate(-50%, -50%);
       z-index: $circle-z-index;
 
-      &.clone {
-        opacity: 0;
-        z-index: $title-z-index + 1;
-        transition: opacity .4s ease;
-
-        &:hover {
-          transition: opacity .4s ease 3s;
-          opacity: 1;
-          cursor: pointer;
-        }
-      }
+      // &.clone {
+      //   opacity: 0;
+      //   z-index: $title-z-index + 1;
+      //   transition: opacity .4s ease;
+      //
+      //   &:hover {
+      //     transition: opacity .4s ease 3s;
+      //     opacity: 1;
+      //     cursor: pointer;
+      //   }
+      // }
     }
 
     .h2 {
@@ -56,6 +62,7 @@ $circle-z-index: -1;
           @include prata();
           margin: 0;
           line-height: 0.81;
+          user-select: none;
         }
       }
 
@@ -63,12 +70,16 @@ $circle-z-index: -1;
         text-align: right;
         margin-right: -5em;
         margin-top: 1em;
+        @include phone {
+          margin-right: 0;
+        }
         p {
           @include vw-font(50px);
           @include roboto;
           font-style: italic;
           margin: 0;
           letter-spacing: -.35vw;
+          user-select: none;
         }
       }
     }

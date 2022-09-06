@@ -6,21 +6,14 @@ const Contact = forwardRef((props, ref) => {
   return (
     <div className="contact" ref={ref}>
       <div className="page-content">
-        <h2>GET IN TOUCH</h2>
-        <hr></hr>
-        <div>
-          <div className="contact-icons">
-            <a href="https://github.com/rlyhan" target="_blank">
-              <img src={require('../images/github.png')} alt="github" style={{width: "calc(100% - 8px)"}} />
-            </a>
-            <a href="https://www.linkedin.com/in/richard-ly-han/" target="_blank">
-              <img src={require('../images/linkedin.svg')} alt="linkedin" />
-            </a>
-          </div>
-          <div className="contact-details">
-            <h3>EMAIL: <a href="mailto:richard.ly.han@gmail.com">richard.ly.han@gmail.com</a></h3>
-            <h3>PHONE: <a href="tel:+642102518876">+64 21 025 18876</a></h3>
-          </div>
+        <p className="contact-heading">Let's talk.</p>
+        <p className="contact-detail">Email: <a href="mailto:richard.ly.han@gmail.com">richard.ly.han@gmail.com</a></p>
+        <p className="contact-detail"><a href="https://www.linkedin.com/in/richard-ly-han/" target="_blank">LinkedIn.</a></p>
+        <p className="contact-detail"><a href="https://github.com/rlyhan" target="_blank">GitHub.</a></p>
+        <div className="more-about">
+          <p className="heading">A little more about me...</p>
+          <p>I am passionate about music and like to jam, write and attend live gigs,
+              and enjoy a good outdoor adventure such as skiing or kayaking.</p>
         </div>
       </div>
     </div>

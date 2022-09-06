@@ -1,4 +1,5 @@
 import { gsap } from "gsap";
+import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import bodymovin from 'lottie-web'
 
 import React, { Component } from 'react'
@@ -8,6 +9,10 @@ import About from './About'
 import { FeaturedProjects, AllProjects } from './Projects'
 import Contact from './Contact'
 
+gsap.registerPlugin(ScrollToPlugin)
+
+const DESKTOP_WIDTH = 1280
+const TABLET_WIDTH = 650
 
 class App extends Component {
 
@@ -57,35 +62,23 @@ class App extends Component {
       name: 'Pinpoint', // optional
     })
 
-    // const moveDecoration = entries => {
-    //   entries.forEach((entry) => {
-    //     if (entry.isIntersecting) {
-    //
-    //     }
-    //   })
-    // }
-    // const decorationObserver = new IntersectionObserver(moveDecoration, {
-    //   root: document.querySelector('body'),
-    //   threshold: 0.1
-    // })
-    // decorationObserver.observe(this.decoration)
-
-
     const setPage = entries => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           this.setPage(entry.target)
-          gsap.to(this.decoration, {
-            x: this.currentPage == this.aboutPage ? 0 : this.decorationOriginalPosition,
-            ease: 'out',
-            duration: 2
-          })
+          if (this.container.clientWidth >= DESKTOP_WIDTH) {
+            gsap.to(this.decoration, {
+              x: this.currentPage == this.aboutPage ? 0 : this.decorationOriginalPosition,
+              ease: 'out',
+              duration: 2
+            })
+          }
         }
       })
     }
     const currentPageObserver = new IntersectionObserver(setPage, {
-      root: document.querySelector('body'),
-      threshold: 0.2
+      root: this.container.clientWidth >= DESKTOP_WIDTH ? document.body : null,
+      threshold: this.container.clientWidth >= DESKTOP_WIDTH ? 0.2 : 0.1
     })
     this.pages.forEach(page => {
       currentPageObserver.observe(page)
@@ -93,35 +86,37 @@ class App extends Component {
 
     window.addEventListener("resize", e => {
       // uncomment this before pushing live
-      // window.location.reload();
+      window.location.reload();
     })
 
     window.addEventListener("mousemove", e => {
-      const mouseX = e.clientX
-      const mouseY = e.clientY
+      if (this.container.clientWidth >= DESKTOP_WIDTH) {
+        const mouseX = e.clientX
+        const mouseY = e.clientY
 
-      const screenCenterX = document.querySelector('.home').offsetWidth / 2
-      const screenCenterY = document.querySelector('.home').offsetHeight / 2
-      const mouseXToCenterDiff = screenCenterX - mouseX
-      const mouseYToCenterDiff = screenCenterY - mouseY
+        const screenCenterX = document.querySelector('.home').offsetWidth / 2
+        const screenCenterY = document.querySelector('.home').offsetHeight / 2
+        const mouseXToCenterDiff = screenCenterX - mouseX
+        const mouseYToCenterDiff = screenCenterY - mouseY
 
-      const titleElement = document.querySelector('.home .title-wrap')
-      const title = titleElement.querySelector('.title')
-      const subtitle = titleElement.querySelector('.subtitle')
+        const titleElement = document.querySelector('.home .title-wrap')
+        const title = titleElement.querySelector('.title')
+        const subtitle = titleElement.querySelector('.subtitle')
 
-      title.style.transform = `translate(${mouseXToCenterDiff * 0.01}px)`
-      subtitle.style.transform = `translate(${mouseXToCenterDiff * -0.01}px)`
+        title.style.transform = `translate(${mouseXToCenterDiff * 0.01}px)`
+        subtitle.style.transform = `translate(${mouseXToCenterDiff * -0.01}px)`
 
-      const circles = document.querySelectorAll('.home > .page-content .circle')
-      circles.forEach(circle => {
-        const circleXOffset = `calc(-50% - ${mouseXToCenterDiff * -0.01}px)`
-        const circleYOffset = `calc(-50% - ${mouseYToCenterDiff * -0.01}px)`
-        circle.style.transform = `translate(${circleXOffset}, ${circleYOffset})`
-      })
+        const circles = document.querySelectorAll('.home > .page-content .circle')
+        circles.forEach(circle => {
+          const circleXOffset = `calc(-50% - ${mouseXToCenterDiff * -0.01}px)`
+          const circleYOffset = `calc(-50% - ${mouseYToCenterDiff * -0.01}px)`
+          circle.style.transform = `translate(${circleXOffset}, ${circleYOffset})`
+        })
+      }
     })
 
     this.container.addEventListener("wheel", e => {
-      if (this.container.clientWidth >= 1280) {
+      if (this.container.clientWidth >= DESKTOP_WIDTH) {
         e.preventDefault();
 
         let scrollAmount = e.deltaY
@@ -139,9 +134,7 @@ class App extends Component {
       }
 
       gsap.to(this.container, {
-        x: this.containerTranslateAmount,
-        // ease: 'out',
-        // duration: 2
+        x: this.containerTranslateAmount
       })
     }
   }
@@ -154,7 +147,13 @@ class App extends Component {
 
   setPageByIndex = pageIdx => {
     this.setPage(this.pages[pageIdx])
-    this.setContainerPosition(this.currentPage.getBoundingClientRect().left)
+    if (this.container.clientWidth < DESKTOP_WIDTH) {
+      gsap.set(window, {
+        scrollTo: this.currentPage
+      })
+    } else {
+      this.setContainerPosition(this.currentPage.getBoundingClientRect().left)
+    }
   }
 
   setNavLink = pageIdx => {
@@ -206,6 +205,9 @@ class App extends Component {
       gsap.timeline().to(newProject.querySelector('.project-wrap'), {
         duration: 0.5,
         height: 'auto'
+      }).to(this.projectListFull, {
+        duration: 0.5,
+        scrollTo: newProject
       })
     }
 
@@ -217,8 +219,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <input type="checkbox" id="toggle"/>
         <div className="nav-menu nav-to-bottom">
+          <input type="checkbox" id="toggle"/>
           <div id="burger">
             <div></div>
             <div></div>
