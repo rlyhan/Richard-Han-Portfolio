@@ -7,8 +7,6 @@ import projects from '../content/projects.json'
 class FeaturedProjects extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-    }
     // when this page is visited, scale each featured project
     // from 0 to 1, one by one in random order with a bounce effect
     // (ie. briefly scaling to 1.3 or so before going to 1)
@@ -20,9 +18,13 @@ class FeaturedProjects extends Component {
       this.props.toggleAllProjects()
     })
 
-    const projects = this.refs.projectList.querySelectorAll('.project > .project-wrap')
+    const projects = this.refs.projectList.querySelectorAll('.project')
     projects.forEach(project => {
-      project.addEventListener("mouseenter", e => {
+      project.querySelector('.project-wrap').addEventListener("click", e => {
+        this.props.toggleAllProjects()
+        this.props.toggleProject(project.dataset.id)
+      })
+      project.querySelector('.project-wrap').addEventListener("mouseenter", e => {
         gsap.to(project, {
           duration: 0.5,
           scale: 1.25,
@@ -32,7 +34,7 @@ class FeaturedProjects extends Component {
           opacity: 1
         })
       })
-      project.addEventListener("mouseleave", e => {
+      project.querySelector('.project-wrap').addEventListener("mouseleave", e => {
         gsap.to(project, {
           duration: 0.5,
           scale: 1
@@ -54,7 +56,7 @@ class FeaturedProjects extends Component {
               projects.map((project, index) => {
                 if (project["featured"]) {
                   return (
-                    <div className="project" key={index}>
+                    <div className="project" key={index} data-id={project["id"]}>
                       <div className="project-wrap">
                         <div className="image">
                           <img src={require(`../images/projects/${project["file_name"]}`)} alt="project-thumb"/>
@@ -81,25 +83,21 @@ class FeaturedProjects extends Component {
 class AllProjects extends Component {
   constructor(props) {
     super(props)
-    this.state = {
-      selectedProject: null
-    }
   }
 
   componentDidMount() {
     const hide = this.refs.hideAll
     hide.addEventListener("click", e => {
+      if (this.props.currentProject) {
+        this.props.toggleProject(this.props.currentProject.dataset.id)
+      }
       this.props.toggleAllProjects()
     })
 
     const projects = this.refs.projectList.querySelectorAll('.project')
     projects.forEach(project => {
-      project.addEventListener("click", e => {
-        if (this.state.selectedProject) this.state.selectedProject.classList.remove('current')
-        this.setState({
-          selectedProject: project
-        })
-        project.classList.add('current')
+      project.querySelector('.project-title').addEventListener("click", e => {
+        this.props.toggleProject(project.dataset.id)
       })
     })
   }
@@ -124,7 +122,7 @@ class AllProjects extends Component {
           {
             sortedClientProjects.map((project, index) => {
               return (
-                <div className="project" key={index}>
+                <div className="project" key={index} data-id={project["id"]}>
                   <div className="project-title">
                     <p>{ project["name"] }</p>
                   </div>
@@ -133,7 +131,7 @@ class AllProjects extends Component {
                       <img src={require(`../images/projects/${project["file_name"]}`)} alt="project-thumb"/>
                     </div>
                     <div className="project-description">
-                      { project["description"] }
+                      <p>{ project["description"] }</p>
                     </div>
                     <div className="links">
                       <span><a href={ project["url"] } target="_blank">VIEW SITE</a></span>
@@ -147,7 +145,7 @@ class AllProjects extends Component {
           {
             sortedBeginnerProjects.map((project, index) => {
               return (
-                <div className="project" key={index}>
+                <div className="project" key={index} data-id={project["id"]}>
                   <div className="project-title">
                     <p>{ project["name"] }</p>
                   </div>
@@ -156,7 +154,7 @@ class AllProjects extends Component {
                       <img src={require(`../images/projects/${project["file_name"]}`)} alt="project-thumb"/>
                     </div>
                     <div className="project-description">
-                      { project["description"] }
+                      <p>{ project["description"] }</p>
                     </div>
                     <div className="links">
                       <span><a href={ project["url"] } target="_blank">VIEW SITE</a></span>

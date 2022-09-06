@@ -16,6 +16,7 @@ class App extends Component {
     this.ref = []
     this.currentPage = null
     this.state = {
+      currentProject: null,
       allProjectsHidden: true
     }
   }
@@ -91,6 +92,7 @@ class App extends Component {
     })
 
     window.addEventListener("resize", e => {
+      // uncomment this before pushing live
       // window.location.reload();
     })
 
@@ -184,6 +186,34 @@ class App extends Component {
     }
   }
 
+  toggleProject = newProjectId => {
+    let prevProject = this.state.currentProject
+    let newProject = this.projectListFull.querySelector(
+      `.project[data-id="${newProjectId}"]`)
+    if (!newProject) return
+    if (prevProject) {
+      gsap.timeline().to(prevProject.querySelector('.project-wrap'), {
+        duration: 0.5,
+        height: 0
+      })
+      if (!(newProject === prevProject)) {
+        gsap.timeline().to(newProject.querySelector('.project-wrap'), {
+          duration: 0.5,
+          height: 'auto'
+        })
+      }
+    } else {
+      gsap.timeline().to(newProject.querySelector('.project-wrap'), {
+        duration: 0.5,
+        height: 'auto'
+      })
+    }
+
+    this.setState({
+      currentProject: newProject === prevProject ? null : newProject
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -201,11 +231,15 @@ class App extends Component {
             <li onClick={() => this.setPageByIndex(3)}>GET IN TOUCH</li>
           </ul>
         </div>
-        <AllProjects ref="allProjects" toggleAllProjects={this.toggleAllProjects} />
+        <AllProjects ref="allProjects" currentProject={this.state.currentProject}
+                                       toggleProject={this.toggleProject}
+                                       toggleAllProjects={this.toggleAllProjects} />
         <div className="pages-wrap">
           <Home ref="home" />
           <About ref="about" />
-          <FeaturedProjects ref="projects" toggleAllProjects={this.toggleAllProjects} />
+          <FeaturedProjects ref="projects" currentProject={this.state.currentProject}
+                            toggleProject={this.toggleProject}
+                            toggleAllProjects={this.toggleAllProjects} />
           <Contact ref="contact" />
         </div>
       </div>

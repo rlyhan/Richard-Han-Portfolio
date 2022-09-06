@@ -182,7 +182,7 @@
     width: 50%;
     .project-title,
     .project-wrap {
-      margin-right: 1em;
+      padding-right: 3rem;
     }
 
     .project-title {
@@ -205,24 +205,42 @@
     }
 
     .project-wrap {
-      display: none;
+      height: 0;
+      overflow: hidden;
+
       .image,
       .project-description,
       .links {
         width: 100%;
       }
       .image {
-        margin-bottom: 1em;
+        margin: 2rem 0;
         img {
-          width: 20vw;
+          width: 100%;
+        }
+      }
+      .project-description {
+        margin-bottom: 2rem;
+        p {
+          @include vw-font(14px);
+          margin: 0;
         }
       }
       .links {
         span {
-          @include vw-font(12px);
+          @include vw-font(9px);
           background-color: white;
           padding: 1em 2em;
           border-radius: 2em;
+          display: inline-block;
+          transition: opacity .5s ease;
+          opacity: 1;
+
+          &:hover {
+            cursor: pointer;
+            opacity: 0.5;
+          }
+
           a {
             color: black;
             text-decoration: none;
