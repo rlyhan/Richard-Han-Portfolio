@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 
-import technologies from '../content/technologies.json'
+const technologies = require('../content/technologies.json')
 
 const Contact = forwardRef((props, ref) => {
   // parallax scroll giant text on bottom left eg. "Let's Talk"

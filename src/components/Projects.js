@@ -2,7 +2,7 @@ import { gsap } from "gsap";
 
 import React, { Component, forwardRef } from 'react'
 
-import projects from '../content/projects.json'
+const projects = require('../content/projects.json')
 
 class FeaturedProjects extends Component {
   constructor(props) {
