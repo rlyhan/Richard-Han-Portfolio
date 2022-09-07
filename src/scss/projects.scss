@@ -321,7 +321,7 @@
 .projects {
   color: white;
 
-  @include phone {
+  @include below-desktop {
     padding-top: 5rem;
   }
 

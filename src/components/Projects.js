@@ -128,7 +128,9 @@ class AllProjects extends Component {
                   </div>
                   <div className="project-wrap">
                     <div className="image">
-                      <img src={require(`../images/projects/${project["file_name"]}`)} alt="project-thumb"/>
+                      <a href={ project["url"] } target="_blank">
+                        <img src={require(`../images/projects/${project["file_name"]}`)} alt="project-thumb"/>
+                      </a>
                     </div>
                     <div className="project-description">
                       <p>{ project["description"] }</p>
@@ -151,7 +153,9 @@ class AllProjects extends Component {
                   </div>
                   <div className="project-wrap">
                     <div className="image">
-                      <img src={require(`../images/projects/${project["file_name"]}`)} alt="project-thumb"/>
+                      <a href={ project["url"] } target="_blank">
+                        <img src={require(`../images/projects/${project["file_name"]}`)} alt="project-thumb"/>
+                      </a>
                     </div>
                     <div className="project-description">
                       <p>{ project["description"] }</p>

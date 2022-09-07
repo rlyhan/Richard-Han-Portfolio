@@ -15,7 +15,6 @@ const DESKTOP_WIDTH = 1280
 const TABLET_WIDTH = 650
 
 class App extends Component {
-
   constructor() {
     super()
     this.ref = []

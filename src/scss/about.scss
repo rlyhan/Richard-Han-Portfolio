@@ -22,6 +22,10 @@
       @include below-desktop {
         @include vw-font(18px);
 
+        @include tablet {
+          @include vw-font(30px);
+        }
+
         @include phone {
           @include vw-font(50px);
         }

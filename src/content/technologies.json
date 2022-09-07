@@ -1,0 +1,34 @@
+[
+  {
+    "name": "React",
+    "colour": "#52C2DE"
+  },
+  {
+    "name": "Django",
+    "colour": "#003A2A"
+  },
+  {
+    "name": "Node.JS",
+    "colour": "#8BC402"
+  },
+  {
+    "name": "MongoDB",
+    "colour": "#4EAA41"
+  },
+  {
+    "name": "HTML",
+    "colour": "#EF652A"
+  },
+  {
+    "name": "CSS + SASS",
+    "colour": "#CD6799"
+  },
+  {
+    "name": "JavaScript",
+    "colour": "#E7A52B"
+  },
+  {
+    "name": "Python",
+    "colour": "#366D9E"
+  }
+]
