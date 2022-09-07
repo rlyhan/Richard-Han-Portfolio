@@ -12,12 +12,12 @@ const Contact = forwardRef((props, ref) => {
         <p className="contact-detail">Email: <a href="mailto:richard.ly.han@gmail.com">richard.ly.han@gmail.com</a></p>
         <p className="contact-detail"><a href="https://www.linkedin.com/in/richard-ly-han/" target="_blank">LinkedIn.</a></p>
         <p className="contact-detail"><a href="https://github.com/rlyhan" target="_blank">GitHub.</a></p>
-        <div class="bottom-text-container">
+        <div className="bottom-text-container">
           <div className="technologies">
             {
               technologies.map((tech, index) => {
                 return (
-                  <span className="tech" style={{ background: tech["colour"] }}>
+                  <span className="tech" key={index} style={{ background: tech["colour"] }}>
                     { tech["name"] }
                   </span>
                 )
