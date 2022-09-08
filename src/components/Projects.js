@@ -59,7 +59,7 @@ class FeaturedProjects extends Component {
                     <div className="project" key={index} data-id={project["id"]}>
                       <div className="project-wrap">
                         <div className="image">
-                          <img src={require(`../images/projects/${project["file_name"]}`)} alt="project-thumb"/>
+                          <img src={ require(`../images/projects/${project["file_name"]}`).default } alt="project-thumb"/>
                         </div>
                         <div className="project-title">
                           <p>{ project["name"] }</p>
@@ -121,7 +121,6 @@ class AllProjects extends Component {
           <h4 className="project-section">Client work</h4>
           {
             sortedClientProjects.map((project, index) => {
-              const imagePath = require(`../images/projects/${project["file_name"]}`)
               return (
                 <div className="project" key={index} data-id={project["id"]}>
                   <div className="project-title">
@@ -130,7 +129,7 @@ class AllProjects extends Component {
                   <div className="project-wrap">
                     <div className="image">
                       <a href={ project["url"] } target="_blank">
-                        <img src={ imagePath } alt="project-thumb"/>
+                        <img src={ require(`../images/projects/${project["file_name"]}`).default } alt="project-thumb"/>
                       </a>
                     </div>
                     <div className="project-description">
@@ -147,7 +146,6 @@ class AllProjects extends Component {
           <h4 className="project-section">Personal work</h4>
           {
             sortedBeginnerProjects.map((project, index) => {
-              const imagePath = require(`../images/projects/${project["file_name"]}`)
               return (
                 <div className="project" key={index} data-id={project["id"]}>
                   <div className="project-title">
@@ -156,7 +154,7 @@ class AllProjects extends Component {
                   <div className="project-wrap">
                     <div className="image">
                       <a href={ project["url"] } target="_blank">
-                        <img src={ imagePath } alt="project-thumb"/>
+                        <img src={ require(`../images/projects/${project["file_name"]}`).default } alt="project-thumb"/>
                       </a>
                     </div>
                     <div className="project-description">
