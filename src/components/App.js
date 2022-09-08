@@ -84,8 +84,9 @@ class App extends Component {
     })
 
     window.addEventListener("resize", e => {
-      // uncomment this before pushing live
-      window.location.reload();
+      if (this.container.clientWidth >= DESKTOP_WIDTH) {
+        window.location.reload();
+      }
     })
 
     window.addEventListener("mousemove", e => {
