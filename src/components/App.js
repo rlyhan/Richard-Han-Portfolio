@@ -2,6 +2,8 @@ import { gsap } from "gsap";
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import bodymovin from 'lottie-web'
 
+import { DESKTOP_WIDTH } from '../content/widths.js'
+
 import React, { Component } from 'react'
 
 import Home from './Home'
@@ -10,9 +12,6 @@ import { FeaturedProjects, AllProjects } from './Projects'
 import Contact from './Contact'
 
 gsap.registerPlugin(ScrollToPlugin)
-
-const DESKTOP_WIDTH = 1280
-const TABLET_WIDTH = 650
 
 class App extends Component {
   constructor() {

@@ -1,5 +1,4 @@
 import React, { forwardRef, useState, useEffect } from 'react'
-import resume from '../Richard_Han_CV.pdf'
 
 const About = forwardRef((props, ref) => {
   return (

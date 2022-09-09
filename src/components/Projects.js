@@ -1,5 +1,7 @@
 import { gsap } from "gsap";
 
+import { TABLET_WIDTH } from '../content/widths.js'
+
 import React, { Component, forwardRef } from 'react'
 
 const projects = require('../content/projects.json')
@@ -25,24 +27,28 @@ class FeaturedProjects extends Component {
         this.props.toggleProject(project.dataset.id)
       })
       project.querySelector('.project-wrap').addEventListener("mouseenter", e => {
-        gsap.to(project, {
-          duration: 0.5,
-          scale: 1.25,
-        })
-        gsap.to(project.querySelector('.image'), {
-          duration: 0.5,
-          opacity: 1
-        })
+        if (window.innerWidth >= TABLET_WIDTH) {
+          gsap.to(project, {
+            duration: 0.5,
+            scale: 1.25,
+          })
+          gsap.to(project.querySelector('.image'), {
+            duration: 0.5,
+            opacity: 1
+          })
+        }
       })
       project.querySelector('.project-wrap').addEventListener("mouseleave", e => {
-        gsap.to(project, {
-          duration: 0.5,
-          scale: 1
-        })
-        gsap.to(project.querySelector('.image'), {
-          duration: 0.5,
-          opacity: 0.7
-        })
+        if (window.innerWidth >= TABLET_WIDTH) {
+          gsap.to(project, {
+            duration: 0.5,
+            scale: 1
+          })
+          gsap.to(project.querySelector('.image'), {
+            duration: 0.5,
+            opacity: 0.7
+          })
+        }
       })
     })
   }

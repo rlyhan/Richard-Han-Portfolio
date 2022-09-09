@@ -106,6 +106,10 @@
     }
 
     @include below-desktop {
+      @include tablet {
+        margin-bottom: 5rem;
+      }
+
       &:nth-child(6) {
         padding-bottom: 8rem;
 
@@ -124,7 +128,10 @@
 
         @include below-desktop {
           padding: 0;
-          margin-bottom: 5rem;
+
+          @include phone {
+            margin-bottom: 5rem;
+          }
         }
 
         img {
@@ -144,6 +151,13 @@
           color: white;
           text-transform: uppercase;
           margin: 0 0 1em;
+
+          @include below-desktop {
+            margin-top: 1em;
+            @include tablet {
+              @include vw-font(40px);
+            }
+          }
         }
       }
 
@@ -323,6 +337,12 @@
 
   @include below-desktop {
     padding-top: 5rem;
+
+    @include tablet {
+      padding-top: 8rem;
+      padding-left: 8rem;
+      padding-right: 8rem;
+    }
   }
 
   .page-content {
