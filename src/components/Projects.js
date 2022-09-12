@@ -142,7 +142,9 @@ class AllProjects extends Component {
                       <p>{ project["description"] }</p>
                     </div>
                     <div className="links">
-                      <span><a href={ project["url"] } target="_blank">VIEW SITE</a></span>
+                      <a href={ project["url"] } target="_blank">
+                        <span>VIEW SITE</span>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -167,7 +169,9 @@ class AllProjects extends Component {
                       <p>{ project["description"] }</p>
                     </div>
                     <div className="links">
-                      <span><a href={ project["url"] } target="_blank">VIEW SITE</a></span>
+                      <a href={ project["url"] } target="_blank">
+                        <span>VIEW SITE</span>
+                      </a>
                     </div>
                   </div>
                 </div>
