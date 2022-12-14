@@ -19,12 +19,13 @@
   },
   {
     "id": 2,
-    "name": "The Physics Room",
-    "url": "https://physicsroom.org.nz/",
-    "file_name": "physicsroom.png",
+    "name": "Neat Places",
+    "url": "https://neatplaces.co.nz/",
+    "best_awards_url": "https://bestawards.co.nz/digital/large-scale-websites/sons-co/neat-places-1/",
+    "file_name": "neatplaces.png",
     "featured": true,
     "client": true,
-    "description": "Christchurch, New Zealand based art gallery."
+    "description": "New Zealand based tourism website with curated city guides and a large directory of places within them."
   },
   {
     "id": 3,
@@ -46,12 +47,12 @@
   },
   {
     "id": 5,
-    "name": "Neat Places",
-    "url": "https://neatplaces.co.nz/",
-    "file_name": "neatplaces.png",
+    "name": "The Physics Room",
+    "url": "https://physicsroom.org.nz/",
+    "file_name": "physicsroom.png",
     "featured": true,
     "client": true,
-    "description": "New Zealand based tourism website with curated city guides and a large directory of places within them."
+    "description": "Christchurch, New Zealand based art gallery."
   },
   {
     "id": 6,

@@ -71,8 +71,8 @@
           }
           #pinpoint-animation {
             position: absolute;
-            top: 6.5vh;
-            left: 6vh;
+            top: 4.4vh;
+            left: 7.7vh;
             width: 3rem;
           }
         }
@@ -81,6 +81,11 @@
       .body-text {
         width: percentage(500px / $design-width);
         margin-bottom: 5vh;
+
+        a {
+          text-decoration: none;
+          color: $golden-grey;
+        }
 
         @include below-desktop {
           width: 60%;

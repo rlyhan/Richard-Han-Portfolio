@@ -8,7 +8,7 @@ const About = forwardRef((props, ref) => {
           <div className="top-section-wrap">
             <div className="main-text">
               <span className="coloured">Richard</span> is a contract full stack web developer
-              currently based in Christchurch, New Zealand.
+              currently based in Wellington, New Zealand.
             </div>
             <div className='map-container'>
               <div className='map'></div>
@@ -17,14 +17,12 @@ const About = forwardRef((props, ref) => {
           </div>
           <div className="body-text">
             From online stores and architectural portfolios to art galleries and
-            tourism, he has built numerous digital applications for a diverse
+            tourism, Richard has built numerous digital applications for a diverse
             range of clients.<br/><br/>
-            One of his first projects was PlantMe, an eCommerce platform with
-            an environmental focus - trading produce and gardening goods, as
-            well as plant growing guides.<br/><br/>
-            Since 2020, he has worked with Sons & Co and built websites for
-            clients such as Deadly Ponies, Neat Places, and James Dunlop, with
-            a strong focus on visual aesthetic and customised interfaces.
+            In collaboration with <a href='https://bestawards.co.nz/studios/sons-co/' target="_blank">Sons & Co,</a> he
+            has built websites for clients such as Deadly Ponies, Coloursmith, and <a href="https://bestawards.co.nz/digital/large-scale-websites/sons-co/neat-places-1/" target="_blank">
+            Neat Places (see on Best Awards)</a> with a strong focus on visual aesthetic and customised interfaces.<br/><br/>
+            He is currently contracting for <a href='https://voyage.studio/' target="_blank">Voyage.</a>
           </div>
         </div>
         <div className="decorative"></div>

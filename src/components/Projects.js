@@ -59,7 +59,7 @@ class FeaturedProjects extends Component {
         <div className="page-content">
           <div className="project-list" ref="projectList">
             {
-              projects.map((project, index) => {
+              projects.sort((a, b) => a["id"] - b["id"]).map((project, index) => {
                 if (project["featured"]) {
                   return (
                     <div className="project" key={index} data-id={project["id"]}>
@@ -145,6 +145,11 @@ class AllProjects extends Component {
                       <a href={ project["url"] } target="_blank">
                         <span>VIEW SITE</span>
                       </a>
+                      { project["best_awards_url"] &&
+                        <a href={ project["best_awards_url"] } target="_blank">
+                          <span>VIEW ON BEST AWARDS</span>
+                        </a>
+                      }
                     </div>
                   </div>
                 </div>

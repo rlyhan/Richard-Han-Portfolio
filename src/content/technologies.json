@@ -4,6 +4,14 @@
     "colour": "#52C2DE"
   },
   {
+    "name": "Next.JS",
+    "colour": "#313131"
+  },
+  {
+    "name": "TypeScript",
+    "colour": "#2F71BC"
+  },
+  {
     "name": "Django",
     "colour": "#003A2A"
   },
