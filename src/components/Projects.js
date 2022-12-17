@@ -1,56 +1,60 @@
 import { gsap } from "gsap";
 
-import { TABLET_WIDTH } from '../content/widths.js'
+import { TABLET_WIDTH } from "../content/widths.js";
 
-import React, { Component, forwardRef } from 'react'
+import React, { Component, forwardRef } from "react";
 
-const projects = require('../content/projects.json')
+const projects = require("../content/projects.json");
 
 class FeaturedProjects extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     // when this page is visited, scale each featured project
     // from 0 to 1, one by one in random order with a bounce effect
     // (ie. briefly scaling to 1.3 or so before going to 1)
   }
 
   componentDidMount() {
-    const viewMore = this.refs.viewMore
-    viewMore.addEventListener("click", e => {
-      this.props.toggleAllProjects()
-    })
+    const viewMore = this.refs.viewMore;
+    viewMore.addEventListener("click", (e) => {
+      this.props.toggleAllProjects();
+    });
 
-    const projects = this.refs.projectList.querySelectorAll('.project')
-    projects.forEach(project => {
-      project.querySelector('.project-wrap').addEventListener("click", e => {
-        this.props.toggleAllProjects()
-        this.props.toggleProject(project.dataset.id)
-      })
-      project.querySelector('.project-wrap').addEventListener("mouseenter", e => {
-        if (window.innerWidth >= TABLET_WIDTH) {
-          gsap.to(project, {
-            duration: 0.5,
-            scale: 1.25,
-          })
-          gsap.to(project.querySelector('.image'), {
-            duration: 0.5,
-            opacity: 1
-          })
-        }
-      })
-      project.querySelector('.project-wrap').addEventListener("mouseleave", e => {
-        if (window.innerWidth >= TABLET_WIDTH) {
-          gsap.to(project, {
-            duration: 0.5,
-            scale: 1
-          })
-          gsap.to(project.querySelector('.image'), {
-            duration: 0.5,
-            opacity: 0.7
-          })
-        }
-      })
-    })
+    const projects = this.refs.projectList.querySelectorAll(".project");
+    projects.forEach((project) => {
+      project.querySelector(".project-wrap").addEventListener("click", (e) => {
+        this.props.toggleAllProjects();
+        this.props.toggleProject(project.dataset.id);
+      });
+      project
+        .querySelector(".project-wrap")
+        .addEventListener("mouseenter", (e) => {
+          if (window.innerWidth >= TABLET_WIDTH) {
+            gsap.to(project, {
+              duration: 0.5,
+              scale: 1.25,
+            });
+            gsap.to(project.querySelector(".image"), {
+              duration: 0.5,
+              opacity: 1,
+            });
+          }
+        });
+      project
+        .querySelector(".project-wrap")
+        .addEventListener("mouseleave", (e) => {
+          if (window.innerWidth >= TABLET_WIDTH) {
+            gsap.to(project, {
+              duration: 0.5,
+              scale: 1,
+            });
+            gsap.to(project.querySelector(".image"), {
+              duration: 0.5,
+              opacity: 0.7,
+            });
+          }
+        });
+    });
   }
 
   render() {
@@ -58,139 +62,162 @@ class FeaturedProjects extends Component {
       <div className="projects">
         <div className="page-content">
           <div className="project-list" ref="projectList">
-            {
-              projects.sort((a, b) => a["id"] - b["id"]).map((project, index) => {
+            {projects
+              .sort((a, b) => a["id"] - b["id"])
+              .map((project, index) => {
                 if (project["featured"]) {
                   return (
-                    <div className="project" key={index} data-id={project["id"]}>
+                    <div
+                      className="project"
+                      key={index}
+                      data-id={project["id"]}
+                    >
                       <div className="project-wrap">
                         <div className="image">
-                          <img src={ require(`../images/projects/${project["file_name"]}`).default } alt="project-thumb"/>
+                          <img
+                            src={
+                              require(`../images/projects/${project["file_name"]}`)
+                                .default
+                            }
+                            alt="project-thumb"
+                          />
                         </div>
                         <div className="project-title">
-                          <p>{ project["name"] }</p>
+                          <p>{project["name"]}</p>
                         </div>
                       </div>
                     </div>
-                  )
+                  );
                 }
-              })
-            }
+              })}
             <div className="toggle-all-projects" ref="viewMore">
-              View<br/>All
+              View
+              <br />
+              More
             </div>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
 class AllProjects extends Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   componentDidMount() {
-    const hide = this.refs.hideAll
-    hide.addEventListener("click", e => {
+    const hide = this.refs.hideAll;
+    hide.addEventListener("click", (e) => {
       if (this.props.currentProject) {
-        this.props.toggleProject(this.props.currentProject.dataset.id)
+        this.props.toggleProject(this.props.currentProject.dataset.id);
       }
-      this.props.toggleAllProjects()
-    })
+      this.props.toggleAllProjects();
+    });
 
-    const projects = this.refs.projectList.querySelectorAll('.project')
-    projects.forEach(project => {
-      project.querySelector('.project-title').addEventListener("click", e => {
-        this.props.toggleProject(project.dataset.id)
-      })
-    })
+    const projects = this.refs.projectList.querySelectorAll(".project");
+    projects.forEach((project) => {
+      project.querySelector(".project-title").addEventListener("click", (e) => {
+        this.props.toggleProject(project.dataset.id);
+      });
+    });
   }
 
   render() {
-    const sortedClientProjects = Array.prototype.slice.call(
+    const sortedClientProjects = Array.prototype.slice
+      .call(
         projects.sort((a, b) => {
-          return a["name"].localeCompare(b["name"])
+          return a["name"].localeCompare(b["name"]);
         })
-      ).filter(project => project["client"])
+      )
+      .filter((project) => project["client"]);
 
-    const sortedBeginnerProjects = Array.prototype.slice.call(
+    const sortedBeginnerProjects = Array.prototype.slice
+      .call(
         projects.sort((a, b) => {
-          return a["name"].localeCompare(b["name"])
+          return a["name"].localeCompare(b["name"]);
         })
-      ).filter(project => !project["client"])
+      )
+      .filter((project) => !project["client"]);
 
     return (
       <div className="project-list-full">
         <div className="project-list-wrap" ref="projectList">
           <h4 className="project-section">Client work</h4>
-          {
-            sortedClientProjects.map((project, index) => {
-              return (
-                <div className="project" key={index} data-id={project["id"]}>
-                  <div className="project-title">
-                    <p>{ project["name"] }</p>
+          {sortedClientProjects.map((project, index) => {
+            return (
+              <div className="project" key={index} data-id={project["id"]}>
+                <div className="project-title">
+                  <p>{project["name"]}</p>
+                </div>
+                <div className="project-wrap">
+                  <div className="image">
+                    <a href={project["url"]} target="_blank">
+                      <img
+                        src={
+                          require(`../images/projects/${project["file_name"]}`)
+                            .default
+                        }
+                        alt="project-thumb"
+                      />
+                    </a>
                   </div>
-                  <div className="project-wrap">
-                    <div className="image">
-                      <a href={ project["url"] } target="_blank">
-                        <img src={ require(`../images/projects/${project["file_name"]}`).default } alt="project-thumb"/>
+                  <div className="project-description">
+                    <p>{project["description"]}</p>
+                  </div>
+                  <div className="links">
+                    <a href={project["url"]} target="_blank">
+                      <span>VIEW SITE</span>
+                    </a>
+                    {project["best_awards_url"] && (
+                      <a href={project["best_awards_url"]} target="_blank">
+                        <span>VIEW ON BEST AWARDS</span>
                       </a>
-                    </div>
-                    <div className="project-description">
-                      <p>{ project["description"] }</p>
-                    </div>
-                    <div className="links">
-                      <a href={ project["url"] } target="_blank">
-                        <span>VIEW SITE</span>
-                      </a>
-                      { project["best_awards_url"] &&
-                        <a href={ project["best_awards_url"] } target="_blank">
-                          <span>VIEW ON BEST AWARDS</span>
-                        </a>
-                      }
-                    </div>
+                    )}
                   </div>
                 </div>
-              )
-            })
-          }
+              </div>
+            );
+          })}
           <h4 className="project-section">Personal work</h4>
-          {
-            sortedBeginnerProjects.map((project, index) => {
-              return (
-                <div className="project" key={index} data-id={project["id"]}>
-                  <div className="project-title">
-                    <p>{ project["name"] }</p>
+          {sortedBeginnerProjects.map((project, index) => {
+            return (
+              <div className="project" key={index} data-id={project["id"]}>
+                <div className="project-title">
+                  <p>{project["name"]}</p>
+                </div>
+                <div className="project-wrap">
+                  <div className="image">
+                    <a href={project["url"]} target="_blank">
+                      <img
+                        src={
+                          require(`../images/projects/${project["file_name"]}`)
+                            .default
+                        }
+                        alt="project-thumb"
+                      />
+                    </a>
                   </div>
-                  <div className="project-wrap">
-                    <div className="image">
-                      <a href={ project["url"] } target="_blank">
-                        <img src={ require(`../images/projects/${project["file_name"]}`).default } alt="project-thumb"/>
-                      </a>
-                    </div>
-                    <div className="project-description">
-                      <p>{ project["description"] }</p>
-                    </div>
-                    <div className="links">
-                      <a href={ project["url"] } target="_blank">
-                        <span>VIEW SITE</span>
-                      </a>
-                    </div>
+                  <div className="project-description">
+                    <p>{project["description"]}</p>
+                  </div>
+                  <div className="links">
+                    <a href={project["url"]} target="_blank">
+                      <span>VIEW SITE</span>
+                    </a>
                   </div>
                 </div>
-              )
-            })
-          }
+              </div>
+            );
+          })}
         </div>
         <div className="toggle-all-projects sticky" ref="hideAll">
           Hide
         </div>
       </div>
-    )
+    );
   }
 }
 
-
-export { FeaturedProjects, AllProjects }
+export { FeaturedProjects, AllProjects };
