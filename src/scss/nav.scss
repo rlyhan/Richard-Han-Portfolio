@@ -1,4 +1,4 @@
-@import './_styles.scss';
+@import "./_styles.scss";
 
 .nav-menu {
   $nav-col-design-width: 85px;
@@ -9,7 +9,8 @@
   z-index: 99;
   // transition: all 0.4s ease-in-out;
 
-  #burger, #toggle {
+  #burger,
+  #toggle {
     top: 2rem;
     right: 2rem;
     position: fixed;
@@ -66,23 +67,23 @@
       @include vw-font(20px);
       padding: 0;
       margin-left: 2em;
-      letter-spacing: -.15vw;
+      letter-spacing: -0.15vw;
       text-decoration: none;
       text-transform: uppercase;
       color: $golden-grey;
-      transition: opacity .25s ease-in-out;
+      transition: opacity 0.25s ease-in-out;
 
       @include below-desktop {
         font-size: 20px;
         @include phone {
           margin-left: 0;
-          margin-bottom: .5em;
+          margin-bottom: 0.5em;
         }
       }
 
       &:hover {
         cursor: pointer;
-        opacity: .5;
+        opacity: 0.5;
       }
 
       &:first-child {
@@ -94,7 +95,7 @@
       }
 
       &.current {
-        opacity: .5;
+        opacity: 0.5;
       }
     }
   }

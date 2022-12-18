@@ -1,4 +1,4 @@
-@import './_styles.scss';
+@import "./_styles.scss";
 
 .about {
   .page-content {
@@ -16,8 +16,8 @@
     }
 
     .body-text {
-      @include vh-font(25px);
-      line-height: 1.4;
+      @include vh-font(29px);
+      line-height: 1.5;
 
       @include below-desktop {
         @include vw-font(18px);
@@ -30,6 +30,11 @@
           @include vw-font(50px);
         }
       }
+
+      &.large {
+        @include roboto-bold();
+        @include vh-font(49px);
+      }
     }
 
     .top-text-container {
@@ -37,12 +42,15 @@
 
       .top-section-wrap {
         display: flex;
+        align-items: center;
         .main-text {
-          @include vh-font(75px);
+          @include vw-font(39px);
           @include prata();
-          line-height: 1.2;
-          width: percentage(820px / $design-width);
-          margin-bottom: 1em;
+          line-height: 1.4;
+          letter-spacing: 0;
+          width: percentage(563px / $design-width);
+          text-align: right;
+          margin-bottom: 0;
 
           @include phone {
             @include vw-font(90px);
@@ -51,8 +59,8 @@
 
         .map-container {
           float: left;
-          width: 10vh;
-          height: 10vh;
+          width: 8vh;
+          height: 8vh;
           position: relative;
           background-color: $golden-grey;
           border-radius: 50%;
@@ -62,25 +70,27 @@
             margin-left: auto;
           }
           .map {
-            background-image: url('../images/nzmap.png');
+            background-image: url("../images/nzmap.png");
             background-position: center;
             background-size: contain;
             background-repeat: no-repeat;
-            width: 10vh;
+            width: 8vh;
             padding-top: 100%;
           }
           #pinpoint-animation {
             position: absolute;
-            top: 4.4vh;
-            left: 7.7vh;
+            top: 3.5vh;
+            left: 6.5vh;
             width: 3rem;
           }
         }
       }
 
       .body-text {
-        width: percentage(500px / $design-width);
+        width: percentage(563px / $design-width);
+        margin-top: 3vh;
         margin-bottom: 5vh;
+        text-align: right;
 
         a {
           text-decoration: none;
@@ -104,30 +114,32 @@
       position: relative;
       transform: translateX(#{$translate-amount});
       &::before {
-        content: '';
+        content: "";
         left: 0;
         position: absolute;
         width: 1.5rem;
         height: 1.5rem;
         border-radius: 50%;
         background: black;
-        margin-top: -.75rem;
+        margin-top: -0.75rem;
         @include phone {
           width: 1rem;
           height: 1rem;
-          margin-top: -.5rem;
+          margin-top: -0.5rem;
         }
       }
     }
 
     .bottom-text-container {
       @include desktop {
-        width: 100vw;
+        width: 100%;
       }
       .body-text {
-        margin-top: 2em;
-        width: percentage(900px / $design-width);
-        margin-left: percentage(400px / $design-width);
+        width: percentage(610px / $design-width);
+        margin-top: 1em;
+        margin-right: 1em;
+        margin-left: auto;
+        text-align: right;
 
         @include below-desktop {
           margin-left: auto;
@@ -135,6 +147,11 @@
           @include phone {
             width: 100%;
           }
+        }
+
+        a {
+          text-decoration: none;
+          color: $golden-grey;
         }
 
         .project-attributes {

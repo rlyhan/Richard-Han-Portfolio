@@ -1,8 +1,16 @@
 @mixin prata() {
-  font-family: 'Prata', serif;
-  letter-spacing: -.2vw;
+  font-family: "Prata", serif;
+  letter-spacing: -0.2vw;
 }
 
 @mixin roboto() {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+@mixin roboto-bold() {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -3%;
 }

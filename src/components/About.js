@@ -24,8 +24,11 @@ const About = forwardRef((props, ref) => {
             <br />
             From online stores and architectural portfolios to art galleries and
             tourism, Richard has produced work for a diverse range of clients.
-            <br />
-            <br />
+          </div>
+        </div>
+        <div className="decorative"></div>
+        <div className="bottom-text-container">
+          <div className="body-text large">
             In collaboration with{" "}
             <a href="https://bestawards.co.nz/studios/sons-co/" target="_blank">
               Sons & Co,
@@ -45,12 +48,7 @@ const About = forwardRef((props, ref) => {
             <a href="https://voyage.studio/" target="_blank">
               Voyage.
             </a>
-          </div>
-        </div>
-        <div className="decorative"></div>
-        <div className="bottom-text-container">
-          <div className="body-text">
-            <ul className="project-attributes">
+            {/* <ul className="project-attributes">
               <li>
                 <span className="coloured">Tailored</span> to the best of the
                 client's needs
@@ -63,7 +61,7 @@ const About = forwardRef((props, ref) => {
                 <span className="coloured">Bespoke</span> interfaces and content
                 management systems
               </li>
-            </ul>
+            </ul> */}
           </div>
         </div>
       </div>
