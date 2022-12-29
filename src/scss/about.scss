@@ -9,6 +9,7 @@
 
     .right-column {
       p {
+        @include subtitle();
         margin-top: 8em;
       }
       .image-wrap {

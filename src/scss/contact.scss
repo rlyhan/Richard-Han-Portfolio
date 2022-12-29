@@ -52,7 +52,7 @@
             display: block;
           }
           .email {
-            @include significant-text-sans-serif();
+            @include significant-text();
             text-transform: uppercase;
             text-decoration: underline;
             margin-top: 1em;

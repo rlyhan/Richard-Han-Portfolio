@@ -23,7 +23,7 @@ const About = forwardRef((props, ref) => {
               alt="profile-image"
             />
           </div>
-          <p className="bold">
+          <p>
             In collaboration with{" "}
             <a href="https://bestawards.co.nz/studios/sons-co/" target="_blank">
               Sons & Co,

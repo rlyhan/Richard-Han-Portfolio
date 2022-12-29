@@ -111,54 +111,57 @@ const FeaturedProjects = forwardRef((props, ref) => {
     <>
       <AllProjects toggleProject={toggleProject} ref={allProjectsRef} />
       <div className="projects site-page" ref={ref}>
-        <div className="page-content column-layout">
-          <div className="left-column">
-            <p className="significant">
-              Django Python React NextJS TypeScript Node.JS MongoDB SASS HTML
-              JavaScript CSS
-            </p>
-          </div>
-          <div className="right-column">
-            <ul className="project-list">
-              {projects
-                .sort((a, b) => a["id"] - b["id"])
-                .map((project, index) => {
-                  if (project["featured"]) {
-                    return (
-                      <li key={index} className="project">
-                        <a>{project["name"]}</a>
-                      </li>
-                      // <div
-                      //   className="project"
-                      //   key={index}
-                      //   data-id={project["id"]}
-                      // >
-                      //   <div className="project-wrap">
-                      //     <div className="image">
-                      //       <img
-                      //         src={
-                      //           require(`../images/projects/${project["file_name"]}`)
-                      //             .default
-                      //         }
-                      //         alt="project-thumb"
-                      //       />
-                      //     </div>
-                      //     <div className="project-title">
-                      //       <p>{project["name"]}</p>
-                      //     </div>
-                      //   </div>
-                      // </div>
-                    );
-                  }
-                })}
-              <li
-                className="toggle-all-projects"
-                onClick={() => toggleAllProjects}
-              >
-                <a>View all projects</a>
-              </li>
-            </ul>
-          </div>
+        <div className="page-content">
+          <h3>Selected Works</h3>
+          <hr></hr>
+          <ul className="project-list">
+            {projects
+              .sort((a, b) => a["id"] - b["id"])
+              .map((project, index) => {
+                if (project["featured"]) {
+                  return (
+                    <li key={index} className="project">
+                      <a>
+                        <div className="project-heading">
+                          <span class="project-number">0{index + 1} /</span>
+                          <span class="project-title">{project["name"]}</span>
+                        </div>
+                        <p className="project-attributes">
+                          {project["association"]}&nbsp;/&nbsp;
+                          {project["category"]}&nbsp;/
+                        </p>
+                      </a>
+                    </li>
+                    // <div
+                    //   className="project"
+                    //   key={index}
+                    //   data-id={project["id"]}
+                    // >
+                    //   <div className="project-wrap">
+                    //     <div className="image">
+                    //       <img
+                    //         src={
+                    //           require(`../images/projects/${project["file_name"]}`)
+                    //             .default
+                    //         }
+                    //         alt="project-thumb"
+                    //       />
+                    //     </div>
+                    //     <div className="project-title">
+                    //       <p>{project["name"]}</p>
+                    //     </div>
+                    //   </div>
+                    // </div>
+                  );
+                }
+              })}
+            <li
+              className="toggle-all-projects"
+              onClick={() => toggleAllProjects}
+            >
+              <a>View all projects</a>
+            </li>
+          </ul>
         </div>
       </div>
     </>

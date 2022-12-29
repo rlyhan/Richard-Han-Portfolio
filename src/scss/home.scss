@@ -21,25 +21,24 @@ $circle-z-index: -1;
       @include large-title();
       text-transform: uppercase;
       $design-top: 363px - ($y-padding * 2);
-      margin-top: percentage($design-top / $design-width);
+      margin-top: ($design-top / $design-height) * 100vh;
       margin-bottom: 0;
       margin-left: auto;
-      width: percentage(590px / $design-width);
+      width: (590px / $inner-design-width) * 100vw;
       position: absolute;
       $design-right: 130px;
-      right: percentage($design-right / $design-width);
+      right: ($design-right / $design-width) * 100vw;
     }
 
     .subtitle {
-      @include paragraph-text();
-      font-weight: bold;
+      @include subtitle();
       text-transform: uppercase;
       width: percentage(287px / $design-width);
       position: absolute;
       $design-left: 345px;
       $design-top: 736px - ($y-padding * 2);
       left: percentage($design-left / $design-width);
-      margin-top: percentage($design-top / $design-width);
+      margin-top: ($design-top / $design-height) * 100vh;
     }
   }
 }

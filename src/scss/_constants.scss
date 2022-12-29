@@ -61,6 +61,7 @@ $inner-design-height: $design-height - ($y-padding * 2);
 
 $beige: #fff5f0;
 $golden-grey: #b8b29d;
+$hr-color: #958e8e;
 
 // Fonts
 
@@ -71,7 +72,13 @@ $golden-grey: #b8b29d;
 
 @mixin vh-font($font-size, $screen-size: $design-height) {
   font-size: calc(($font-size / $screen-size) * 100vh);
-  letter-spacing: calc(((-0.03 * $font-size) / $screen-size) * 100vw);
+  letter-spacing: calc(((-0.03 * $font-size) / $design-height) * 100v);
+}
+
+@mixin light-text($font-size: 24px) {
+  @include roboto-light();
+  @include vw-font($font-size);
+  line-height: 1.33;
 }
 
 @mixin paragraph-text($font-size: 24px) {
@@ -80,20 +87,26 @@ $golden-grey: #b8b29d;
   line-height: 1.33;
 }
 
-@mixin significant-text-serif($font-size: 64px) {
-  @include roboto-bold();
-  @include vw-font($font-size);
-  line-height: 1.1;
-}
-
-@mixin significant-text-sans-serif($font-size: 32px) {
-  @include roboto-bold();
+@mixin significant-text($font-size: 32px) {
+  @include roboto-medium();
   @include vw-font($font-size);
   line-height: 1;
 }
 
 @mixin large-title($font-size: 80px) {
   @include roboto-bold();
+  @include vh-font($font-size);
+  line-height: 1;
+}
+
+@mixin subtitle($font-size: 32px) {
+  @include roboto-bold();
   @include vw-font($font-size);
+  line-height: 1;
+}
+
+@mixin nav-logo() {
+  @include libre-caslon-display();
+  @include vw-font(64px);
   line-height: 1;
 }

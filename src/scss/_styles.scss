@@ -12,6 +12,10 @@ body {
   margin: 0;
 }
 
+hr {
+  border: 1px solid $hr-color;
+}
+
 a {
   color: black;
   text-decoration: none;
@@ -21,12 +25,6 @@ p {
   @include paragraph-text();
   text-align: right;
   margin-top: 0;
-  &.bold {
-    @include roboto-bold();
-  }
-  &.significant {
-    @include significant-text-sans-serif();
-  }
 }
 
 .App {
@@ -37,8 +35,7 @@ p {
     z-index: 100;
 
     p {
-      @include libre-caslon-display();
-      font-size: 6.6vw;
+      @include nav-logo();
       text-transform: uppercase;
       margin: 0;
     }
@@ -47,8 +44,8 @@ p {
     .site-page {
       .page-content {
         height: 100%;
-        padding: percentage($y-padding / $design-width)
-          percentage($x-padding / $design-width);
+        padding: (($y-padding / $design-height) * 100vh)
+          (($x-padding / $design-width) * 100vw);
         box-sizing: border-box;
         &.column-layout {
           display: flex;
@@ -120,8 +117,4 @@ $contact-z-index: 1;
   @include desktop {
     z-index: $contact-z-index;
   }
-}
-
-hr {
-  border: 0.6px solid #a6a6a6;
 }

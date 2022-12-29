@@ -6,8 +6,14 @@
     "best_awards_url": "https://bestawards.co.nz/digital/large-scale-websites/sons-co/neat-places-1/",
     "file_name": "neatplaces.png",
     "featured": true,
+    "category": "Travel and tourism",
     "client": true,
-    "description": "New Zealand based tourism website with curated city guides and a large directory of places within them."
+    "association": "Sons & Co.",
+    "description": "New Zealand based tourism website with curated city guides and a large directory of places within them.",
+    "work_involved": [
+      "Front end functionality, styling",
+      "Content management system"
+    ]
   },
   {
     "id": 1,
@@ -15,8 +21,14 @@
     "url": "https://coloursmith.com.au/",
     "file_name": "coloursmith.png",
     "featured": true,
+    "category": "Paints",
     "client": true,
-    "description": "Australia based paint company."
+    "association": "Sons & Co.",
+    "description": "Australia based paint company.",
+    "work_involved": [
+      "Front end functionality, styling",
+      "Content management system"
+    ]
   },
   {
     "id": 2,
@@ -24,8 +36,14 @@
     "url": "https://mybigmoments.com/",
     "file_name": "mybigmoments.png",
     "featured": true,
+    "category": "Children's custom books",
     "client": true,
-    "description": "Custom children's book creation."
+    "association": "Sons & Co.",
+    "description": "Custom children's book creation.",
+    "work_involved": [
+      "Front end functionality, styling",
+      "Content management system"
+    ]
   },
   {
     "id": 3,
@@ -33,8 +51,14 @@
     "url": "https://deadlyponies.com/",
     "file_name": "deadlyponies.png",
     "featured": true,
+    "category": "Fashion",
     "client": true,
-    "description": "Australia based handbag and apparel brand."
+    "association": "Sons & Co.",
+    "description": "Australia based handbag and apparel brand.",
+    "work_involved": [
+      "Front end functionality, styling",
+      "Content management system"
+    ]
   },
   {
     "id": 4,
@@ -42,8 +66,14 @@
     "url": "https://physicsroom.org.nz/",
     "file_name": "physicsroom.png",
     "featured": true,
+    "category": "Art galleries",
     "client": true,
-    "description": "Christchurch, New Zealand based art gallery."
+    "association": "Sons & Co.",
+    "description": "Christchurch, New Zealand based art gallery.",
+    "work_involved": [
+      "Front end functionality, styling",
+      "Content management system"
+    ]
   },
   {
     "id": 5,
@@ -51,8 +81,14 @@
     "url": "https://ecc.co.nz/",
     "file_name": "ecc.png",
     "featured": false,
+    "category": "Furniture",
     "client": true,
-    "description": "New Zealand based furniture company."
+    "association": "Sons & Co.",
+    "description": "New Zealand based furniture company.",
+    "work_involved": [
+      "Front end functionality, styling",
+      "Content management system"
+    ]
   },
   {
     "id": 6,
@@ -60,8 +96,14 @@
     "url": "https://westcoasttas.com.au/",
     "file_name": "westcoasttas.png",
     "featured": false,
+    "category": "Travel and tourism",
     "client": true,
-    "description": "Tasmania, Australia tourism website."
+    "association": "Sons & Co.",
+    "description": "Tasmania, Australia tourism website.",
+    "work_involved": [
+      "Front end functionality, styling",
+      "Content management system"
+    ]
   },
   {
     "id": 7,
@@ -69,8 +111,14 @@
     "url": "https://www.jamesdunloptextiles.com/",
     "file_name": "jamesdunlop.png",
     "featured": false,
+    "category": "Textiles",
     "client": true,
-    "description": "International textiles company."
+    "association": "Sons & Co.",
+    "description": "International textiles company.",
+    "work_involved": [
+      "Front end functionality, styling",
+      "Content management system"
+    ]
   },
   {
     "id": 8,
@@ -78,8 +126,14 @@
     "url": "https://plantme.io/",
     "file_name": "plant_me.png",
     "featured": false,
+    "category": "Ecommerce platform / Sustainability",
     "client": true,
-    "description": "Founded by startup Greenback, a TradeMe-like eCommerce platform with an environmental focus - trade plants, seeds, produce, gardening equipment and more, along with guides to growing things in your garden."
+    "association": "Greenback",
+    "description": "Founded by startup Greenback, a TradeMe-like eCommerce platform with an environmental focus - trade plants, seeds, produce, gardening equipment and more, along with guides to growing things in your garden.",
+    "work_involved": [
+      "Front end functionality, styling",
+      "Content management system"
+    ]
   },
   {
     "id": 9,
@@ -87,8 +141,14 @@
     "url": "https://explore-welly.herokuapp.com/",
     "file_name": "welly_site.png",
     "featured": false,
+    "category": "Travel and tourism",
     "client": false,
-    "description": "My final personal project at Enspiral Dev Academy: A tourism guide dedicated to the city of Wellington that pulls information about restaurants, bars, shops and more from the Yelp API. Includes an authentication system and search engine."
+    "association": "Personal project",
+    "description": "My final personal project at Enspiral Dev Academy: A tourism guide dedicated to the city of Wellington that pulls information about restaurants, bars, shops and more from the Yelp API. Includes an authentication system and search engine.",
+    "work_involved": [
+      "Front end functionality, styling",
+      "Content management system"
+    ]
   },
   {
     "id": 10,
@@ -96,7 +156,13 @@
     "url": "https://rtastudio.co.nz/",
     "file_name": "rtastudio.png",
     "featured": false,
+    "category": "Architects",
     "client": true,
-    "description": "New Zealand based architects."
+    "association": "Sons & Co.",
+    "description": "New Zealand based architects.",
+    "work_involved": [
+      "Front end functionality, styling",
+      "Content management system"
+    ]
   }
 ]

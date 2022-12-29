@@ -2,22 +2,47 @@
 
 .projects {
   .page-content {
-    display: flex;
-    justify-content: space-between;
-    .left-column {
-      .significant {
-        opacity: 0.2;
-      }
+    h3 {
+      @include light-text(80px);
+      text-align: right;
+      margin-bottom: 0;
     }
-    .right-column {
-      .project-list {
-        margin: 0;
-        padding-left: 0;
-        list-style-type: none;
-        li {
-          @include significant-text-serif();
-          &.toggle-all-projects {
-            margin-top: 1em;
+    hr {
+      width: 100%;
+    }
+    .project-list {
+      width: percentage(835px / $design-width);
+      margin-left: auto;
+      padding-left: 0;
+      list-style-type: none;
+      .project {
+        text-align: right;
+        margin: percentage(59px / $inner-design-height) 0;
+        a {
+          display: block;
+          transition: opacity 0.25s ease-in-out;
+          &:hover {
+            opacity: 0.5;
+            cursor: pointer;
+          }
+          .project-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            border-bottom: 1px solid $hr-color;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+            line-height: 1;
+            .project-number {
+              @include paragraph-text();
+            }
+            .project-title {
+              @include significant-text(64px);
+            }
+          }
+          .project-attributes {
+            @include light-text();
+            text-transform: uppercase;
           }
         }
       }
