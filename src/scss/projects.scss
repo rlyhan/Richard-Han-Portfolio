@@ -1,197 +1,24 @@
-@import './_styles.scss';
+@import "./_styles.scss";
 
-.toggle-all-projects {
-  position: absolute;
-  bottom: 3vw;
-  right: 3vw;
-  width: 3vw;
-  height: 3vw;
-  padding: .25vw;
-  border: 2px solid white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  transition: background-color .5s ease, color .5s ease;
-  z-index: 2;
-  // text
-  @include vw-font(9px);
-  @include prata;
-  margin: 0;
-  line-height: 1.4;
-  letter-spacing: .5px;
-  text-align: center;
-  text-transform: uppercase;
-  color: black;
-
-  @include below-desktop {
-    @include vw-font(30px);
-    width: 10vw;
-    height: 10vw;
-    right: 0;
-    bottom: 0;
-
-    // @include phone {
-    //   @include vw-font(30px);
-    // }
-  }
-
-  &.sticky {
-    position: sticky !important;
-    -webkit-position: sticky !important;
-    margin-left: auto;
-
-    @include below-desktop {
-      right: 3rem;
-      bottom: 3rem;
-    }
-  }
-
-  &:hover {
-    cursor: pointer;
-    background-color: black;
-    color: white;
-  }
-}
-
-
-.project-list,
-.project-list-full {
-  @include desktop {
-    width: 100vw;
-    height: 100vh;
-    max-height: 100vh;
-    box-sizing: border-box;
-  }
-}
-
-.project-list {
-  @include desktop {
-    padding: 5vh 10vw;
+.projects {
+  .page-content {
     display: flex;
-    flex-wrap: wrap;
-    z-index: 1;
-    justify-content: center;
-  }
-
-  .project {
-    @include desktop {
-      &:nth-child(1) {
-        width: 23vw;
-      }
-
-      &:nth-child(2) {
-        width: 25vw;
-        margin-top: 15vh;
-      }
-
-      &:nth-child(3) {
-        width: 19vw;
-      }
-
-      &:nth-child(4) {
-        width: 20vw;
-        margin-top: -24vh;
-      }
-
-      &:nth-child(5) {
-        width: 17vw;
-      }
-
-      &:nth-child(6) {
-        width: 24vw;
-        margin-top: -5vh;
+    justify-content: space-between;
+    .left-column {
+      .significant {
+        opacity: 0.2;
       }
     }
-
-    @include below-desktop {
-      @include tablet {
-        margin-bottom: 5rem;
-      }
-
-      &:nth-child(6) {
-        padding-bottom: 8rem;
-
-        @include phone {
-          padding-bottom: 0;
-        }
-      }
-    }
-
-    .project-wrap {
-      .image {
-        overflow: hidden;
-        position: relative;
-        opacity: 0.7;
-        padding: 2em 2em .5em;
-
-        @include below-desktop {
-          padding: 0;
-
-          @include phone {
-            margin-bottom: 5rem;
-          }
-        }
-
-        img {
-          width: 100%;
-        }
-      }
-
-      .project-title {
-        padding: 0 2em;
-        text-align: center;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity .5s ease, visibility .5s ease;
-
-        & > p {
-          @include vw-font(10px);
-          color: white;
-          text-transform: uppercase;
-          margin: 0 0 1em;
-
-          @include below-desktop {
+    .right-column {
+      .project-list {
+        margin: 0;
+        padding-left: 0;
+        list-style-type: none;
+        li {
+          @include significant-text-serif();
+          &.toggle-all-projects {
             margin-top: 1em;
-            @include tablet {
-              @include vw-font(40px);
-            }
           }
-        }
-      }
-
-      .links {
-        display: none;
-        span, a {
-          color: black;
-        }
-        span {
-          background: white;
-          padding: 1em;
-          border-radius: 2em;
-          display: inline-block;
-          &.popup-link {
-            margin-right: 1em;
-          }
-        }
-        a {
-          text-decoration: none;
-        }
-      }
-
-      .project-description {
-        font-size: 0.9em;
-        font-weight: bold;
-        z-index: 30;
-      }
-
-      &:hover {
-        cursor: pointer;
-
-        .project-title {
-          visibility: visible;
-          opacity: 1;
         }
       }
     }
@@ -199,6 +26,7 @@
 }
 
 .project-list-full {
+  width: 100vw;
   z-index: $nav-z-index + 1;
   background: black;
   color: white;
@@ -222,12 +50,11 @@
 
   .project-section {
     @include vw-font(35px);
-    @include prata;
-    letter-spacing: .5px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     width: 100%;
     border-bottom: 1px solid white;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
 
     @include phone {
       @include vw-font(90px);
@@ -245,12 +72,11 @@
     }
 
     .project-title {
-      @include prata;
       @include vw-font(25px);
-      letter-spacing: .5px;
+      letter-spacing: 0.5px;
       border-bottom: 1px solid white;
       margin-right: 1em;
-      transition: opacity .5s ease;
+      transition: opacity 0.5s ease;
       opacity: 1;
 
       @include phone {
@@ -315,7 +141,7 @@
             padding: 1em 2em;
             border-radius: 2em;
             display: inline-block;
-            transition: opacity .5s ease;
+            transition: opacity 0.5s ease;
             opacity: 1;
 
             @include phone {
@@ -330,24 +156,5 @@
         }
       }
     }
-  }
-}
-
-.projects {
-  color: white;
-
-  @include below-desktop {
-    padding-top: 5rem;
-
-    @include tablet {
-      padding-top: 8rem;
-      padding-left: 8rem;
-      padding-right: 8rem;
-    }
-  }
-
-  .page-content {
-    padding: 0 !important;
-    position: relative;
   }
 }

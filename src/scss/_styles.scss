@@ -1,32 +1,74 @@
-@import './_constants.scss';
-@import './fonts.scss';
+@import "./_constants.scss";
+@import "./fonts.scss";
 
 html {
   scroll-behavior: smooth;
   @include roboto;
-  height: 100vh;
 }
 
 body {
+  background-color: $beige;
   scroll-behavior: smooth;
   margin: 0;
-  height: 100vh;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+p {
+  @include paragraph-text();
+  text-align: right;
+  margin-top: 0;
+  &.bold {
+    @include roboto-bold();
+  }
+  &.significant {
+    @include significant-text-sans-serif();
+  }
 }
 
 .App {
-  @include desktop {
-    height: 100vh;
-    width: 100vw;
-    overflow-x: hidden;
-    position: relative;
-  }
+  .nav-bar {
+    position: fixed;
+    left: percentage($y-padding / $design-width);
+    top: percentage($x-padding / $design-width);
+    z-index: 100;
 
+    p {
+      @include libre-caslon-display();
+      font-size: 6.6vw;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
   .pages-wrap {
-    height: 100vh;
-    width: 100vw;
-    max-width: 200vw;
-    max-height: 100vh;
-    transition: transform .4s ease-out;
+    .site-page {
+      .page-content {
+        height: 100%;
+        padding: percentage($y-padding / $design-width)
+          percentage($x-padding / $design-width);
+        box-sizing: border-box;
+        &.column-layout {
+          display: flex;
+          justify-content: space-between;
+        }
+        .left-column {
+          $width: 409px;
+          $left: 223px;
+          width: percentage($width / $inner-design-width);
+          margin-left: percentage(($left - $x-padding) / $inner-design-width);
+        }
+
+        .right-column {
+          $width: 476px;
+          $right: 127px;
+          width: percentage($width / $inner-design-width);
+          margin-right: percentage(($right - $x-padding) / $inner-design-width);
+        }
+      }
+    }
   }
 }
 
@@ -34,48 +76,17 @@ $home-z-index: 30;
 $about-z-index: 20;
 $projects-z-index: 10;
 $contact-z-index: 1;
-.home, .about, .projects, .contact {
-  @include desktop {
-    height: 100vh;
-    max-height: 100vh;
-    overflow: hidden;
-    top: 0;
-    position: absolute;
-  }
-}
 
-.home, .about, .projects, .contact {
-  @include desktop {
-    width: 100vw;
-    max-width: 100vw;
-  }
-}
-
-.about, .projects, .contact {
-  .page-content {
-    @include desktop {
-      height: 100vh;
-    }
-  }
-  @include below-desktop {
-    padding: 3rem;
-    box-sizing: border-box;
-    overflow: hidden;
-    min-height: 100vh;
-  }
-}
-
-.home, .projects {
-  background: black;
-}
-
-.about, .contact {
-  background: $beige;
+.home,
+.about,
+.projects,
+.contact {
+  background-color: $beige;
 }
 
 @mixin curved-divider($z-index, $color: white) {
   &::after {
-    content: '';
+    content: "";
     background: $color;
     z-index: $z-index + 1;
     border-top-right-radius: 5vw;
@@ -96,37 +107,21 @@ $contact-z-index: 1;
 }
 .about {
   @include desktop {
-    @include curved-divider($about-z-index, $color: black);
     z-index: $about-z-index;
-    transform: translateX(100vw);
     display: flex;
   }
 }
 .projects {
   @include desktop {
-    @include curved-divider($projects-z-index, $color: $beige);
     z-index: $projects-z-index;
-    transform: translateX(200vw);
   }
 }
 .contact {
   @include desktop {
-    @include curved-divider($projects-z-index, $color: black);
     z-index: $contact-z-index;
-    transform: translateX(300vw);
   }
 }
 
 hr {
   border: 0.6px solid #a6a6a6;
 }
-
-/* Container box for each page */
-
-.page-content {
-  font-size: 18px;
-  margin: 0;
-}
-
-/* Temporary */
-.circles { display: none; }

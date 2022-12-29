@@ -1,24 +1,6 @@
 [
   {
     "id": 0,
-    "name": "Coloursmith",
-    "url": "https://coloursmith.com.au/",
-    "file_name": "coloursmith.png",
-    "featured": true,
-    "client": true,
-    "description": "Australia based paint company."
-  },
-  {
-    "id": 1,
-    "name": "Deadly Ponies",
-    "url": "https://deadlyponies.com/",
-    "file_name": "deadlyponies.png",
-    "featured": true,
-    "client": true,
-    "description": "Australia based handbag and apparel brand."
-  },
-  {
-    "id": 2,
     "name": "Neat Places",
     "url": "https://neatplaces.co.nz/",
     "best_awards_url": "https://bestawards.co.nz/digital/large-scale-websites/sons-co/neat-places-1/",
@@ -28,25 +10,34 @@
     "description": "New Zealand based tourism website with curated city guides and a large directory of places within them."
   },
   {
-    "id": 3,
-    "name": "ECC",
-    "url": "https://ecc.co.nz/",
-    "file_name": "ecc.png",
+    "id": 1,
+    "name": "Coloursmith",
+    "url": "https://coloursmith.com.au/",
+    "file_name": "coloursmith.png",
     "featured": true,
     "client": true,
-    "description": "New Zealand based furniture company."
+    "description": "Australia based paint company."
+  },
+  {
+    "id": 2,
+    "name": "My Big Moments",
+    "url": "https://mybigmoments.com/",
+    "file_name": "mybigmoments.png",
+    "featured": true,
+    "client": true,
+    "description": "Custom children's book creation."
+  },
+  {
+    "id": 3,
+    "name": "Deadly Ponies",
+    "url": "https://deadlyponies.com/",
+    "file_name": "deadlyponies.png",
+    "featured": true,
+    "client": true,
+    "description": "Australia based handbag and apparel brand."
   },
   {
     "id": 4,
-    "name": "West Cost Tas",
-    "url": "https://westcoasttas.com.au/",
-    "file_name": "westcoasttas.png",
-    "featured": false,
-    "client": true,
-    "description": "Tasmania, Australia tourism website."
-  },
-  {
-    "id": 5,
     "name": "The Physics Room",
     "url": "https://physicsroom.org.nz/",
     "file_name": "physicsroom.png",
@@ -55,7 +46,25 @@
     "description": "Christchurch, New Zealand based art gallery."
   },
   {
+    "id": 5,
+    "name": "ECC",
+    "url": "https://ecc.co.nz/",
+    "file_name": "ecc.png",
+    "featured": false,
+    "client": true,
+    "description": "New Zealand based furniture company."
+  },
+  {
     "id": 6,
+    "name": "West Cost Tas",
+    "url": "https://westcoasttas.com.au/",
+    "file_name": "westcoasttas.png",
+    "featured": false,
+    "client": true,
+    "description": "Tasmania, Australia tourism website."
+  },
+  {
+    "id": 7,
     "name": "James Dunlop Textiles",
     "url": "https://www.jamesdunloptextiles.com/",
     "file_name": "jamesdunlop.png",
@@ -64,7 +73,7 @@
     "description": "International textiles company."
   },
   {
-    "id": 7,
+    "id": 8,
     "name": "PlantMe",
     "url": "https://plantme.io/",
     "file_name": "plant_me.png",
@@ -73,7 +82,7 @@
     "description": "Founded by startup Greenback, a TradeMe-like eCommerce platform with an environmental focus - trade plants, seeds, produce, gardening equipment and more, along with guides to growing things in your garden."
   },
   {
-    "id": 8,
+    "id": 9,
     "name": "Welly",
     "url": "https://explore-welly.herokuapp.com/",
     "file_name": "welly_site.png",
@@ -82,21 +91,12 @@
     "description": "My final personal project at Enspiral Dev Academy: A tourism guide dedicated to the city of Wellington that pulls information about restaurants, bars, shops and more from the Yelp API. Includes an authentication system and search engine."
   },
   {
-    "id": 9,
+    "id": 10,
     "name": "RTA Studio",
     "url": "https://rtastudio.co.nz/",
     "file_name": "rtastudio.png",
     "featured": false,
     "client": true,
     "description": "New Zealand based architects."
-  },
-  {
-    "id": 10,
-    "name": "My Big Moments",
-    "url": "https://mybigmoments.com/",
-    "file_name": "mybigmoments.png",
-    "featured": true,
-    "client": true,
-    "description": "Custom children's book creation."
   }
 ]

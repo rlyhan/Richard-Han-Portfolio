@@ -1,0 +1,53 @@
+[
+  {
+    "category": "Music",
+    "text": "<p>Music is my other time-consuming passion. In my own time I love writing and recording music, performing at open mics, jamming with friends, or just putting on a good album.</p><br/><p>I generally listen to a mix of indie rock, post-punk and folk. (here’s some albums I’m listening to right now)</p>",
+    "gallery": [
+      {
+        "title": "Iceage",
+        "subtitle": "Plowing into the Field of Love",
+        "file_name": "iceage_plowing_into_the_field_of_love.jpeg"
+      },
+      {
+        "title": "Fleet Foxes",
+        "subtitle": "Shore",
+        "file_name": "fleet_foxes_shore.jpeg"
+      },
+      {
+        "title": "Boris",
+        "subtitle": "Pink",
+        "file_name": "boris_pink.jpeg"
+      },
+      {
+        "title": "Fontaines D.C.",
+        "subtitle": "Skinty Fia",
+        "file_name": "fontaines_dc_skinty_fia.jpeg"
+      },
+      {
+        "title": "Grizzly Bear",
+        "subtitle": "Yellow House",
+        "file_name": "grizzly_bear_yellow_house.jpeg"
+      },
+      {
+        "title": "My Bloody Valentine",
+        "subtitle": "Isn't Anything",
+        "file_name": "my_bloody_valentine_isnt_anything.jpeg"
+      },
+      {
+        "title": "Okkervil River",
+        "subtitle": "Black Sheep Boy",
+        "file_name": "okkervil_river_black_sheep_boy.jpeg"
+      }
+    ]
+  },
+  {
+    "category": "Outdoors",
+    "text": "<p>Although I’m a software developer, I go outside sometimes. When I get the chance I like to do a bit of skiing, kayaking and hiking, especially in some of New Zealand’s most beautiful spots.</p><br/><p>Here’s some photos from a recent trip to Abel Tasman National Park in NZ.</p>",
+    "gallery": []
+  },
+  {
+    "category": "Travels",
+    "text": "<p>I’ve travelled to a few places across the globe.</p><br/><p>In 2022 I went on a huge trip around Europe - visited London, Barcelona, Amsterdam, Bruges, Budapest, and various places in Greece, Croatia, and Italy. Check it out below.</p>",
+    "gallery": []
+  }
+]

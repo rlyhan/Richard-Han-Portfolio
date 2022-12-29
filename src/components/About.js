@@ -2,20 +2,10 @@ import React, { forwardRef, useState, useEffect } from "react";
 
 const About = forwardRef((props, ref) => {
   return (
-    <div className="about" ref={ref}>
-      <div className="page-content">
-        <div className="top-text-container">
-          <div className="top-section-wrap">
-            <div className="main-text">
-              <span className="coloured">Richard</span> is a software developer
-              currently based in Wellington, New Zealand.
-            </div>
-            <div className="map-container">
-              <div className="map"></div>
-              <div id="pinpoint-animation"></div>
-            </div>
-          </div>
-          <div className="body-text">
+    <div className="about site-page" ref={ref}>
+      <div className="page-content column-layout">
+        <div className="left-column">
+          <p>
             Richard is a naturally creative and visual person which drives his
             passion for bringing ideas to life digitally. He loves to
             collaborate with like-minded people and industries to produce
@@ -24,11 +14,16 @@ const About = forwardRef((props, ref) => {
             <br />
             From online stores and architectural portfolios to art galleries and
             tourism, Richard has produced work for a diverse range of clients.
-          </div>
+          </p>
         </div>
-        <div className="decorative"></div>
-        <div className="bottom-text-container">
-          <div className="body-text large">
+        <div className="right-column">
+          <div className="image-wrap">
+            <img
+              src={require("../images/about/portrait.png").default}
+              alt="profile-image"
+            />
+          </div>
+          <p className="bold">
             In collaboration with{" "}
             <a href="https://bestawards.co.nz/studios/sons-co/" target="_blank">
               Sons & Co,
@@ -48,21 +43,7 @@ const About = forwardRef((props, ref) => {
             <a href="https://voyage.studio/" target="_blank">
               Voyage.
             </a>
-            {/* <ul className="project-attributes">
-              <li>
-                <span className="coloured">Tailored</span> to the best of the
-                client's needs
-              </li>
-              <li>
-                <span className="coloured">Fully responsive</span> and utilise{" "}
-                <span className="coloured">modern frameworks</span>
-              </li>
-              <li>
-                <span className="coloured">Bespoke</span> interfaces and content
-                management systems
-              </li>
-            </ul> */}
-          </div>
+          </p>
         </div>
       </div>
     </div>

@@ -2,173 +2,20 @@
 
 .about {
   .page-content {
+    display: flex;
     @include desktop {
-      padding-left: 10vw;
       overflow: hidden;
     }
 
-    .main-text,
-    .body-text {
-      color: black;
-      span.coloured {
-        color: $golden-grey;
+    .right-column {
+      p {
+        margin-top: 8em;
       }
-    }
-
-    .body-text {
-      @include vh-font(29px);
-      line-height: 1.5;
-
-      @include below-desktop {
-        @include vw-font(18px);
-
-        @include tablet {
-          @include vw-font(30px);
-        }
-
-        @include phone {
-          @include vw-font(50px);
-        }
-      }
-
-      &.large {
-        @include roboto-bold();
-        @include vh-font(49px);
-      }
-    }
-
-    .top-text-container {
-      padding-top: 5vw;
-
-      .top-section-wrap {
-        display: flex;
-        align-items: center;
-        .main-text {
-          @include vw-font(39px);
-          @include prata();
-          line-height: 1.4;
-          letter-spacing: 0;
-          width: percentage(563px / $design-width);
-          text-align: right;
-          margin-bottom: 0;
-
-          @include phone {
-            @include vw-font(90px);
-          }
-        }
-
-        .map-container {
-          float: left;
-          width: 8vh;
-          height: 8vh;
-          position: relative;
-          background-color: $golden-grey;
-          border-radius: 50%;
-          padding: 2rem;
-          margin-left: 5vh;
-          @include phone {
-            margin-left: auto;
-          }
-          .map {
-            background-image: url("../images/nzmap.png");
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-            width: 8vh;
-            padding-top: 100%;
-          }
-          #pinpoint-animation {
-            position: absolute;
-            top: 3.5vh;
-            left: 6.5vh;
-            width: 3rem;
-          }
-        }
-      }
-
-      .body-text {
-        width: percentage(563px / $design-width);
-        margin-top: 3vh;
-        margin-bottom: 5vh;
-        text-align: right;
-
-        a {
-          text-decoration: none;
-          color: $golden-grey;
-        }
-
-        @include below-desktop {
-          width: 60%;
-          @include phone {
-            width: 100%;
-          }
-        }
-      }
-    }
-
-    .decorative {
-      clear: both;
-      $translate-amount: percentage(($design-width - 640px) / $design-width);
-      width: 200vw;
-      border-top: 1px solid black;
-      position: relative;
-      transform: translateX(#{$translate-amount});
-      &::before {
-        content: "";
-        left: 0;
-        position: absolute;
-        width: 1.5rem;
-        height: 1.5rem;
-        border-radius: 50%;
-        background: black;
-        margin-top: -0.75rem;
-        @include phone {
-          width: 1rem;
-          height: 1rem;
-          margin-top: -0.5rem;
-        }
-      }
-    }
-
-    .bottom-text-container {
-      @include desktop {
-        width: 100%;
-      }
-      .body-text {
-        width: percentage(610px / $design-width);
-        margin-top: 1em;
-        margin-right: 1em;
-        margin-left: auto;
-        text-align: right;
-
-        @include below-desktop {
-          margin-left: auto;
-          width: 80%;
-          @include phone {
-            width: 100%;
-          }
-        }
-
-        a {
-          text-decoration: none;
-          color: $golden-grey;
-        }
-
-        .project-attributes {
-          padding-left: 2em;
-          @include phone {
-            padding: 0;
-          }
-          li {
-            list-style-type: none;
-            span.coloured {
-              @include prata;
-              @include vh-font(65px);
-              @include phone {
-                @include vw-font(80px);
-              }
-            }
-          }
+      .image-wrap {
+        img {
+          width: 100%;
+          -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+          filter: grayscale(100%);
         }
       }
     }

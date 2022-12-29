@@ -1,6 +1,6 @@
-@mixin prata() {
-  font-family: "Prata", serif;
-  letter-spacing: -0.2vw;
+@mixin libre-caslon-display() {
+  font-family: "Libre Caslon Display", serif;
+  letter-spacing: -0.46vw;
 }
 
 @mixin roboto() {
@@ -8,9 +8,12 @@
   font-weight: 300;
 }
 
+@mixin roboto-light() {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
 @mixin roboto-bold() {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  line-height: 1;
-  letter-spacing: -3%;
 }

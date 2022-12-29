@@ -51,33 +51,49 @@ $design-height: 955px;
 $design-margin: 55px;
 $design-margin-percentage: percentage(55px / 1457px);
 
+$y-padding: 63px;
+$x-padding: 66px;
+
+$inner-design-width: $design-width - ($x-padding * 2);
+$inner-design-height: $design-height - ($y-padding * 2);
+
 // Colours
 
-$beige: #F6F0ED;
-$golden-grey: #B8B29D;
+$beige: #fff5f0;
+$golden-grey: #b8b29d;
 
 // Fonts
 
 @mixin vw-font($font-size, $screen-size: $design-width) {
   font-size: calc(($font-size / $screen-size) * 100vw);
+  letter-spacing: calc(((-0.03 * $font-size) / $screen-size) * 100vw);
 }
 
-@mixin vh-font($font-size, $screen-size: $design-width) {
+@mixin vh-font($font-size, $screen-size: $design-height) {
   font-size: calc(($font-size / $screen-size) * 100vh);
+  letter-spacing: calc(((-0.03 * $font-size) / $screen-size) * 100vw);
 }
 
-h1 {
-  font-weight: 100;
-  @include desktop {
-    font-size: 100px;
-  }
-  @include above-max-width {
-    font-size: 120px;
-  }
+@mixin paragraph-text($font-size: 24px) {
+  @include roboto();
+  @include vw-font($font-size);
+  line-height: 1.33;
 }
 
-h2 {
-  font-size: 40px;
-  color: #2d3142;
-  text-align: center;
+@mixin significant-text-serif($font-size: 64px) {
+  @include roboto-bold();
+  @include vw-font($font-size);
+  line-height: 1.1;
+}
+
+@mixin significant-text-sans-serif($font-size: 32px) {
+  @include roboto-bold();
+  @include vw-font($font-size);
+  line-height: 1;
+}
+
+@mixin large-title($font-size: 80px) {
+  @include roboto-bold();
+  @include vw-font($font-size);
+  line-height: 1;
 }

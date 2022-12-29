@@ -1,9 +1,10 @@
-@import './_styles.scss';
+@import "./_styles.scss";
 
 $title-z-index: 1;
 $circle-z-index: -1;
 
 .home {
+  height: 100vh;
   text-align: right;
   z-index: 4;
 
@@ -14,74 +15,31 @@ $circle-z-index: -1;
   // }
 
   > .page-content {
-    height: 100vh;
     position: relative;
 
-    .circle {
-      content: '';
-      width: 45vw;
-      height: auto;
-      padding-top: 45vw;
-      background: $beige;
-      border-radius: 50%;
+    .title {
+      @include large-title();
+      text-transform: uppercase;
+      $design-top: 363px - ($y-padding * 2);
+      margin-top: percentage($design-top / $design-width);
+      margin-bottom: 0;
+      margin-left: auto;
+      width: percentage(590px / $design-width);
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: $circle-z-index;
-
-      // &.clone {
-      //   opacity: 0;
-      //   z-index: $title-z-index + 1;
-      //   transition: opacity .4s ease;
-      //
-      //   &:hover {
-      //     transition: opacity .4s ease 3s;
-      //     opacity: 1;
-      //     cursor: pointer;
-      //   }
-      // }
+      $design-right: 130px;
+      right: percentage($design-right / $design-width);
     }
 
-    .h2 {
-      font-size: 1vw;
-    }
-
-    .title-wrap {
-      top: percentage(400px / $design-height);
-      left: percentage(128px / $design-width);
-      width: 74vw;
-      color: $golden-grey;
-      position: relative;
-      z-index: $title-z-index;
-
-      .title {
-        text-align: left;
-        h1 {
-          @include vw-font(140px);
-          @include prata();
-          margin: 0;
-          line-height: 0.81;
-          user-select: none;
-        }
-      }
-
-      .subtitle {
-        text-align: right;
-        margin-right: -5em;
-        margin-top: 1em;
-        @include phone {
-          margin-right: 0;
-        }
-        p {
-          @include vw-font(50px);
-          @include roboto;
-          font-style: italic;
-          margin: 0;
-          letter-spacing: -.35vw;
-          user-select: none;
-        }
-      }
+    .subtitle {
+      @include paragraph-text();
+      font-weight: bold;
+      text-transform: uppercase;
+      width: percentage(287px / $design-width);
+      position: absolute;
+      $design-left: 345px;
+      $design-top: 736px - ($y-padding * 2);
+      left: percentage($design-left / $design-width);
+      margin-top: percentage($design-top / $design-width);
     }
   }
 }
