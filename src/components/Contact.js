@@ -10,25 +10,26 @@ const Contact = () => {
 
   return (
     <div className="contact site-page" ref={containerRef}>
-      <div className="page-content upper">
-        <div className="contact-details">
-          <p className="heading">Send me a message</p>
+      <div className="page-content">
+        <p className="heading">
+          Keen to work
+          <br />
+          together?
+          <br />
+          Send me a message
+        </p>
+        <a href="mailto:richard.ly.han@gmail.com" className="email">
+          richard.ly.han@gmail.com
+        </a>
+        <div className="footer">
+          <p class="copyright">All Rights Reserved</p>
           <div className="contact-links">
-            <a href="mailto:richard.ly.han@gmail.com" className="email">
-              richard.ly.han@
-              <br />
-              gmail.com
-            </a>
             <a
               href="https://www.linkedin.com/in/richard-ly-han/"
               target="_blank"
               className="linkedin"
             >
               <span>LinkedIn</span>
-              <img
-                src={require("../images/linkedin.svg").default}
-                alt="linkedin-logo"
-              />
             </a>
             <a
               href="https://github.com/rlyhan"
@@ -36,10 +37,6 @@ const Contact = () => {
               className="github"
             >
               <span>GitHub</span>
-              <img
-                src={require("../images/github.png").default}
-                alt="github-logo"
-              />
             </a>{" "}
           </div>
         </div>
