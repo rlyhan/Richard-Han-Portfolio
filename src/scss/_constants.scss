@@ -110,3 +110,10 @@ $hr-color: #958e8e;
   @include vw-font(64px);
   line-height: 1;
 }
+
+@mixin listing-title($font-size: 32px) {
+  @include libre-caslon-display();
+  @include vw-font($font-size);
+  line-height: 1;
+  text-transform: uppercase;
+}

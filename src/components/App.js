@@ -9,7 +9,7 @@ import React, { Component, useState, useEffect, useRef } from "react";
 import Navbar from "./Navbar";
 import Home from "./Home";
 import About from "./About";
-import { FeaturedProjects, AllProjects } from "./Projects";
+import { FeaturedProjects } from "./Projects";
 import Contact from "./Contact";
 
 gsap.registerPlugin(ScrollToPlugin);
@@ -27,7 +27,6 @@ function App() {
   //   this.currentPage = null;
   //   this.state = {
   //     currentProject: null,
-  //     allProjectsHidden: true,
   //     currentContactAboutSection: null,
   //   };
   // }
@@ -51,30 +50,6 @@ function App() {
 
   // let scrollEndBreakpoint =
   //   pages[pages.length - 1].getBoundingClientRect().left * -1;
-
-  useEffect(() => {
-    const galleryScrollers = container?.querySelectorAll(
-      ".gallery-scroller-wrap"
-    );
-    const speed = 100;
-    galleryScrollers?.forEach((galleryScroller) => {
-      let tickerWidth = galleryScroller.offsetWidth;
-      let initDuration = tickerWidth / speed;
-
-      gsap.fromTo(
-        galleryScroller,
-        {
-          xPercent: 20,
-        },
-        {
-          duration: initDuration,
-          xPercent: -100,
-          ease: "none",
-          repeat: -1,
-        }
-      );
-    });
-  }, [container]);
 
   // const pinpointAnimation = bodymovin.loadAnimation({
   //   container: container.getElementById("pinpoint-animation"),

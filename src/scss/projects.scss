@@ -1,6 +1,7 @@
 @import "./_styles.scss";
 
 .projects {
+  $lists-width: 835px;
   .page-content {
     h3 {
       @include light-text(80px);
@@ -10,172 +11,118 @@
     hr {
       width: 100%;
     }
-    .project-list {
-      width: percentage(835px / $design-width);
+    .content-list {
+      width: percentage($lists-width / $design-width);
       margin-left: auto;
-      padding-left: 0;
-      list-style-type: none;
-      .project {
-        text-align: right;
-        margin: percentage(59px / $inner-design-height) 0;
-        a {
-          display: block;
-          transition: opacity 0.25s ease-in-out;
-          &:hover {
-            opacity: 0.5;
-            cursor: pointer;
-          }
-          .project-heading {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
-            border-bottom: 1px solid $hr-color;
-            padding-bottom: 10px;
-            margin-bottom: 10px;
-            line-height: 1;
-            .project-number {
-              @include paragraph-text();
-            }
-            .project-title {
-              @include significant-text(64px);
+      ul {
+        padding-left: 0;
+        list-style-type: none;
+        .list-item {
+          text-align: right;
+          a {
+            display: block;
+            .list-item-heading {
+              display: flex;
+              justify-content: space-between;
+              align-items: end;
+              border-bottom: 1px solid $hr-color;
+              padding-bottom: 10px;
+              margin-bottom: 10px;
+              line-height: 1;
+              .list-item-number {
+                @include paragraph-text();
+                white-space: nowrap;
+              }
             }
           }
-          .project-attributes {
-            @include light-text();
-            text-transform: uppercase;
-          }
         }
       }
-    }
-  }
-}
-
-.project-list-full {
-  width: 100vw;
-  z-index: $nav-z-index + 1;
-  background: black;
-  color: white;
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  overflow-y: auto;
-
-  .project-list-wrap {
-    height: auto;
-    min-height: 100vh;
-    padding: 5vh 10vw;
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: baseline;
-  }
-
-  .project-section {
-    @include vw-font(35px);
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    width: 100%;
-    border-bottom: 1px solid white;
-    margin-bottom: 0.5em;
-
-    @include phone {
-      @include vw-font(90px);
-    }
-  }
-
-  .project {
-    width: 50%;
-    @include phone {
-      width: 100%;
-    }
-    .project-title,
-    .project-wrap {
-      padding-right: 3rem;
-    }
-
-    .project-title {
-      @include vw-font(25px);
-      letter-spacing: 0.5px;
-      border-bottom: 1px solid white;
-      margin-right: 1em;
-      transition: opacity 0.5s ease;
-      opacity: 1;
-
-      @include phone {
-        @include vw-font(64px);
-      }
-
-      p {
-        margin-bottom: 0;
-      }
-
-      &:hover {
-        opacity: 0.5;
-        cursor: pointer;
-      }
-    }
-
-    .project-wrap {
-      height: 0;
-      overflow: hidden;
-
-      .image,
-      .project-description,
-      .links {
-        width: 100%;
-      }
-      .image {
-        margin: 1rem 0;
-
-        @include desktop {
-          margin: 1rem 0;
-        }
-
-        img {
-          width: 100%;
-        }
-      }
-      .project-description {
-        margin-bottom: 1rem;
-
-        @include desktop {
-          margin-bottom: 2rem;
-        }
-
-        p {
-          @include vw-font(14px);
-          margin: 0;
-
-          @include phone {
-            @include vw-font(50px);
-          }
-        }
-      }
-      .links {
-        a {
-          color: black;
-          text-decoration: none;
-          margin-right: 1rem;
-
-          span {
-            @include vw-font(9px);
-            background-color: white;
-            padding: 1em 2em;
-            border-radius: 2em;
-            display: inline-block;
-            transition: opacity 0.5s ease;
-            opacity: 1;
-
-            @include phone {
-              @include vw-font(40px);
+      &.project-list {
+        .list-item {
+          margin: percentage(59px / $inner-design-height) 0;
+          a {
+            .list-item-heading {
+              .list-item-title {
+                @include significant-text(64px);
+              }
             }
-
-            &:hover {
-              cursor: pointer;
-              opacity: 0.5;
+            .list-item-attributes {
+              @include light-text();
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+      &.additional-project-list,
+      &.more-about-list {
+        > .heading {
+          @include paragraph-text(32px);
+          margin: 3em 0 1em;
+          opacity: 0.2;
+        }
+        ul {
+          .list-item {
+            margin-bottom: 1.5rem;
+            a {
+              .list-item-heading {
+                .list-item-title {
+                  @include listing-title();
+                }
+              }
+            }
+          }
+        }
+      }
+      &.additional-project-list {
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          .list-item {
+            width: percentage(377px / $lists-width);
+            &:nth-child(2n + 2) {
+              margin-left: auto;
+            }
+            a {
+              .list-item-attributes {
+                @include light-text(16px);
+                text-transform: uppercase;
+              }
+            }
+          }
+        }
+      }
+      &.more-about-list {
+        .list-item-collapsible {
+          overflow: hidden;
+          .gallery-scroller {
+            border: 1px solid black;
+            padding: 0.5rem;
+            overflow: hidden;
+            .gallery-scroller-wrap {
+              display: flex;
+              overflow: visible;
+              width: max-content;
+              .gallery-item {
+                display: flex;
+                width: auto;
+                img,
+                .gallery-item-desc {
+                  @include significant-text();
+                  text-align: left;
+                  height: 8em;
+                }
+                img {
+                  width: auto;
+                }
+                .gallery-item-desc {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  max-width: 330px;
+                  margin: auto 1em;
+                  text-overflow: ellipsis;
+                }
+              }
             }
           }
         }
