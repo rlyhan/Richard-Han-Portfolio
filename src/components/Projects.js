@@ -1,5 +1,7 @@
 import { gsap } from "gsap";
 import ReactHtmlParser from "react-html-parser";
+import { Link } from "react-router-dom";
+
 import { TABLET_WIDTH } from "../content/widths.js";
 
 import React, { forwardRef, useState, useRef, useEffect } from "react";
@@ -7,7 +9,7 @@ import React, { forwardRef, useState, useRef, useEffect } from "react";
 const projects = require("../content/projects.json");
 const more_about = require("../content/more_about.json");
 
-const FeaturedProjects = () => {
+const Projects = () => {
   const ref = useRef(null);
   const [currentProject, setCurrentProject] = useState(null);
   const [allProjectsHidden, setAllProjectsHidden] = useState(true);
@@ -204,7 +206,7 @@ const FeaturedProjects = () => {
               .map((project, index) => {
                 return (
                   <li key={index} className="list-item">
-                    <a>
+                    <Link to={`projects/${project["slug"]}`}>
                       <div className="list-item-heading">
                         <span class="list-item-number">0{index + 1} /</span>
                         <span class="list-item-title">{project["name"]}</span>
@@ -213,7 +215,7 @@ const FeaturedProjects = () => {
                         {project["association"]}&nbsp;/&nbsp;
                         {project["category"]}&nbsp;/
                       </p>
-                    </a>
+                    </Link>
                   </li>
                   // <div
                   //   className="list-item"
@@ -327,4 +329,4 @@ const GalleryItem = ({ item, itemImageDirectory }) => {
   );
 };
 
-export { FeaturedProjects };
+export { Projects };

@@ -2,6 +2,7 @@
   {
     "id": 0,
     "name": "Neat Places",
+    "slug": "neat-places",
     "url": "https://neatplaces.co.nz/",
     "best_awards_url": "https://bestawards.co.nz/digital/large-scale-websites/sons-co/neat-places-1/",
     "file_name": "neatplaces.png",
@@ -18,6 +19,7 @@
   {
     "id": 1,
     "name": "Coloursmith",
+    "slug": "coloursmith",
     "url": "https://coloursmith.com.au/",
     "file_name": "coloursmith.png",
     "featured": true,
@@ -33,6 +35,7 @@
   {
     "id": 2,
     "name": "My Big Moments",
+    "slug": "my-big-moments",
     "url": "https://mybigmoments.com/",
     "file_name": "mybigmoments.png",
     "featured": true,
@@ -48,6 +51,7 @@
   {
     "id": 3,
     "name": "Deadly Ponies",
+    "slug": "deadly-ponies",
     "url": "https://deadlyponies.com/",
     "file_name": "deadlyponies.png",
     "featured": true,
@@ -63,6 +67,7 @@
   {
     "id": 4,
     "name": "The Physics Room",
+    "slug": "the-physics-room",
     "url": "https://physicsroom.org.nz/",
     "file_name": "physicsroom.png",
     "featured": true,
@@ -78,6 +83,7 @@
   {
     "id": 5,
     "name": "ECC",
+    "slug": "ecc",
     "url": "https://ecc.co.nz/",
     "file_name": "ecc.png",
     "featured": false,
@@ -93,6 +99,7 @@
   {
     "id": 6,
     "name": "West Cost Tas",
+    "slug": "west-coast-tas",
     "url": "https://westcoasttas.com.au/",
     "file_name": "westcoasttas.png",
     "featured": false,
@@ -108,6 +115,7 @@
   {
     "id": 7,
     "name": "James Dunlop Textiles",
+    "slug": "james-dunlop-textiles",
     "url": "https://www.jamesdunloptextiles.com/",
     "file_name": "jamesdunlop.png",
     "featured": false,
@@ -123,6 +131,7 @@
   {
     "id": 8,
     "name": "PlantMe",
+    "slug": "plantme",
     "url": "https://plantme.io/",
     "file_name": "plant_me.png",
     "featured": false,
@@ -138,6 +147,7 @@
   {
     "id": 9,
     "name": "Welly",
+    "slug": "welly",
     "url": "https://explore-welly.herokuapp.com/",
     "file_name": "welly_site.png",
     "featured": false,
@@ -153,6 +163,7 @@
   {
     "id": 10,
     "name": "RTA Studio",
+    "slug": "rta-studio",
     "url": "https://rtastudio.co.nz/",
     "file_name": "rtastudio.png",
     "featured": false,

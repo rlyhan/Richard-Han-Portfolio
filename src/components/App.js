@@ -1,5 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
+import { Outlet } from "react-router-dom";
+
 import bodymovin from "lottie-web";
 
 import { DESKTOP_WIDTH } from "../content/widths.js";
@@ -7,20 +9,11 @@ import { DESKTOP_WIDTH } from "../content/widths.js";
 import React, { Component, useState, useEffect, useRef } from "react";
 
 import Navbar from "./Navbar";
-import Home from "./Home";
-import About from "./About";
-import { FeaturedProjects } from "./Projects";
-import Contact from "./Contact";
 
 gsap.registerPlugin(ScrollToPlugin);
 
 function App() {
   const containerRef = useRef(null);
-  const container = containerRef.current;
-  const homeRef = useRef(null);
-  const aboutRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactRef = useRef(null);
   // constructor() {
   //   super();
   //   this.ref = [];
@@ -134,10 +127,7 @@ function App() {
     <div className="App" ref={containerRef}>
       <Navbar />
       <div className="pages-wrap">
-        <Home ref={homeRef} />
-        <About ref={aboutRef} />
-        <FeaturedProjects ref={projectsRef} />
-        <Contact />
+        <Outlet />
       </div>
     </div>
   );
