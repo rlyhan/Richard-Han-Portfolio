@@ -5,110 +5,108 @@
     "slug": "neat-places",
     "url": "https://neatplaces.co.nz/",
     "best_awards_url": "https://bestawards.co.nz/digital/large-scale-websites/sons-co/neat-places-1/",
-    "file_name": "neatplaces.png",
     "featured": true,
     "category": "Travel and tourism",
     "client": true,
     "association": "Sons & Co.",
-    "description": "New Zealand based tourism website with curated city guides and a large directory of places within them.",
+    "description": "New Zealand based tourism website consisting of curated guides to cities and places, and a large directory of shops, restaurants, bars, attractions, and more.",
     "work_involved": [
-      "Front end functionality, styling",
+      "Front end functionality and styling",
       "Content management system"
-    ]
+    ],
+    "images": ["neatplaces_01.png", "neatplaces_02.png"]
   },
   {
     "id": 1,
     "name": "Coloursmith",
     "slug": "coloursmith",
     "url": "https://coloursmith.com.au/",
-    "file_name": "coloursmith.png",
     "featured": true,
     "category": "Paints",
     "client": true,
     "association": "Sons & Co.",
     "description": "Australia based paint company.",
     "work_involved": [
-      "Front end functionality, styling",
+      "Front end functionality and styling",
       "Content management system"
-    ]
+    ],
+    "images": ["coloursmith_01.png", "coloursmith_02.png"]
   },
   {
     "id": 2,
     "name": "My Big Moments",
     "slug": "my-big-moments",
     "url": "https://mybigmoments.com/",
-    "file_name": "mybigmoments.png",
     "featured": true,
     "category": "Children's custom books",
     "client": true,
     "association": "Sons & Co.",
     "description": "Custom children's book creation.",
     "work_involved": [
-      "Front end functionality, styling",
+      "Front end functionality and styling",
       "Content management system"
-    ]
+    ],
+    "images": ["mybigmoments_01.png", "mybigmoments_02.png"]
   },
   {
     "id": 3,
     "name": "Deadly Ponies",
     "slug": "deadly-ponies",
     "url": "https://deadlyponies.com/",
-    "file_name": "deadlyponies.png",
     "featured": true,
     "category": "Fashion",
     "client": true,
     "association": "Sons & Co.",
     "description": "Australia based handbag and apparel brand.",
     "work_involved": [
-      "Front end functionality, styling",
+      "Front end functionality and styling",
       "Content management system"
-    ]
+    ],
+    "images": ["deadlyponies_01.png", "deadlyponies_02.png"]
   },
   {
     "id": 4,
     "name": "The Physics Room",
     "slug": "the-physics-room",
     "url": "https://physicsroom.org.nz/",
-    "file_name": "physicsroom.png",
     "featured": true,
     "category": "Art galleries",
     "client": true,
     "association": "Sons & Co.",
     "description": "Christchurch, New Zealand based art gallery.",
     "work_involved": [
-      "Front end functionality, styling",
+      "Front end functionality and styling",
       "Content management system"
-    ]
+    ],
+    "images": ["physicsroom_01.png", "physicsroom_02.png"]
   },
   {
     "id": 5,
     "name": "ECC",
     "slug": "ecc",
     "url": "https://ecc.co.nz/",
-    "file_name": "ecc.png",
     "featured": false,
     "category": "Furniture",
     "client": true,
     "association": "Sons & Co.",
     "description": "New Zealand based furniture company.",
     "work_involved": [
-      "Front end functionality, styling",
+      "Front end functionality and styling",
       "Content management system"
     ]
   },
   {
     "id": 6,
-    "name": "West Cost Tas",
-    "slug": "west-coast-tas",
-    "url": "https://westcoasttas.com.au/",
-    "file_name": "westcoasttas.png",
+    "name": "Never Have I Ever",
+    "slug": "never-have-i-ever",
+    "url": "https://neverhaveiever.neatplaces.co.nz/",
     "featured": false,
     "category": "Travel and tourism",
     "client": true,
     "association": "Sons & Co.",
-    "description": "Tasmania, Australia tourism website.",
+    "description": "City guides curated by some significant faces. In association with Neat Places.",
     "work_involved": [
-      "Front end functionality, styling",
+      "Front end functionality and styling",
       "Content management system"
     ]
   },
@@ -117,14 +115,13 @@
     "name": "James Dunlop Textiles",
     "slug": "james-dunlop-textiles",
     "url": "https://www.jamesdunloptextiles.com/",
-    "file_name": "jamesdunlop.png",
     "featured": false,
     "category": "Textiles",
     "client": true,
     "association": "Sons & Co.",
     "description": "International textiles company.",
     "work_involved": [
-      "Front end functionality, styling",
+      "Front end functionality and styling",
       "Content management system"
     ]
   },
@@ -133,14 +130,13 @@
     "name": "PlantMe",
     "slug": "plantme",
     "url": "https://plantme.io/",
-    "file_name": "plant_me.png",
     "featured": false,
     "category": "Ecommerce / Sustainability",
     "client": true,
     "association": "Greenback",
     "description": "Founded by startup Greenback, a TradeMe-like eCommerce platform with an environmental focus - trade plants, seeds, produce, gardening equipment and more, along with guides to growing things in your garden.",
     "work_involved": [
-      "Front end functionality, styling",
+      "Front end functionality and styling",
       "Content management system"
     ]
   },
@@ -149,14 +145,13 @@
     "name": "Welly",
     "slug": "welly",
     "url": "https://explore-welly.herokuapp.com/",
-    "file_name": "welly_site.png",
     "featured": false,
     "category": "Travel and tourism",
     "client": false,
     "association": "Personal project",
     "description": "My final personal project at Enspiral Dev Academy: A tourism guide dedicated to the city of Wellington that pulls information about restaurants, bars, shops and more from the Yelp API. Includes an authentication system and search engine.",
     "work_involved": [
-      "Front end functionality, styling",
+      "Front end functionality and styling",
       "Content management system"
     ]
   },
@@ -165,14 +160,13 @@
     "name": "RTA Studio",
     "slug": "rta-studio",
     "url": "https://rtastudio.co.nz/",
-    "file_name": "rtastudio.png",
     "featured": false,
     "category": "Architects",
     "client": true,
     "association": "Sons & Co.",
     "description": "New Zealand based architects.",
     "work_involved": [
-      "Front end functionality, styling",
+      "Front end functionality and styling",
       "Content management system"
     ]
   }

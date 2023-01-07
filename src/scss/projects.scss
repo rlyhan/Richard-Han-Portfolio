@@ -79,10 +79,13 @@
           flex-wrap: wrap;
           .list-item {
             width: percentage(377px / $lists-width);
+            display: flex;
+            align-items: end;
             &:nth-child(2n + 2) {
               margin-left: auto;
             }
             a {
+              width: 100%;
               .list-item-attributes {
                 @include light-text(16px);
                 text-transform: uppercase;

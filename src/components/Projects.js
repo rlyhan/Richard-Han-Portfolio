@@ -1,6 +1,7 @@
 import { gsap } from "gsap";
 import ReactHtmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
+import { getListNumbering } from "../helpers";
 
 import { TABLET_WIDTH } from "../content/widths.js";
 
@@ -11,11 +12,8 @@ const more_about = require("../content/more_about.json");
 
 const Projects = () => {
   const ref = useRef(null);
-  const [currentProject, setCurrentProject] = useState(null);
-  const [allProjectsHidden, setAllProjectsHidden] = useState(true);
 
   const [prevClickedListItem, setPrevClickedListItem] = useState(null);
-  const [currentAnimation, setCurrentAnimation] = useState(null);
   const [galleryAnimations, setGalleryAnimations] = useState([]);
 
   // const toggleProject = (newProjectId) => {
@@ -208,7 +206,9 @@ const Projects = () => {
                   <li key={index} className="list-item">
                     <Link to={`projects/${project["slug"]}`}>
                       <div className="list-item-heading">
-                        <span class="list-item-number">0{index + 1} /</span>
+                        <span class="list-item-number">
+                          {getListNumbering(project["id"])} /
+                        </span>
                         <span class="list-item-title">{project["name"]}</span>
                       </div>
                       <p className="list-item-attributes">
@@ -217,26 +217,6 @@ const Projects = () => {
                       </p>
                     </Link>
                   </li>
-                  // <div
-                  //   className="list-item"
-                  //   key={index}
-                  //   data-id={project["id"]}
-                  // >
-                  //   <div className="project-wrap">
-                  //     <div className="image">
-                  //       <img
-                  //         src={
-                  //           require(`../images/projects/${project["file_name"]}`)
-                  //             .default
-                  //         }
-                  //         alt="project-thumb"
-                  //       />
-                  //     </div>
-                  //     <div className="list-item-title">
-                  //       <p>{project["name"]}</p>
-                  //     </div>
-                  //   </div>
-                  // </div>
                 );
               })}
           </ul>
@@ -252,7 +232,9 @@ const Projects = () => {
                   <li key={index} className="list-item">
                     <a>
                       <div className="list-item-heading">
-                        <span class="list-item-number">0{index + 1} /</span>
+                        <span class="list-item-number">
+                          {getListNumbering(project["id"])} /
+                        </span>
                         <span class="list-item-title">{project["name"]}</span>
                       </div>
                       <p className="list-item-attributes">

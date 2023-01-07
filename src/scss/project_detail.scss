@@ -1,0 +1,72 @@
+@import "./_styles.scss";
+
+.project-detail {
+  .page-content {
+    .project-header {
+      padding-top: 8rem;
+      .project-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        border-bottom: 1px solid $hr-color;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        line-height: 1;
+        .project-number {
+          @include paragraph-text();
+          white-space: nowrap;
+        }
+        .project-title {
+          @include significant-text(80px);
+        }
+      }
+      .project-subheading {
+        @include paragraph-text();
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .project-content {
+      display: flex;
+      margin-top: 4rem;
+      .project-info {
+        @include paragraph-text();
+        width: percentage(409px / $inner-design-width);
+        margin-left: percentage(159px / $inner-design-width);
+        .project-info-subheading {
+          text-transform: uppercase;
+        }
+        .project-description {
+          margin-bottom: 4em;
+        }
+        .project-work {
+          text-align: right;
+          list-style-type: none;
+          li {
+            margin-bottom: 1em;
+          }
+        }
+      }
+      .project-gallery {
+        width: percentage(560px / $inner-design-width);
+        margin-left: auto;
+        .project-image {
+          width: 100%;
+          margin-bottom: 3rem;
+          &.portrait {
+            width: 80%;
+            margin-right: auto;
+          }
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .return-link {
+      @include paragraph-text();
+      text-transform: uppercase;
+    }
+  }
+}

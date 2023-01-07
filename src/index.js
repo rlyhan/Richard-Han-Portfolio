@@ -12,6 +12,7 @@ import "./scss/home.scss";
 import "./scss/about.scss";
 import "./scss/contact.scss";
 import "./scss/projects.scss";
+import "./scss/project_detail.scss";
 
 const router = createBrowserRouter([
   {
