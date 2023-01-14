@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { PAGE_IDS } from "../constants";
 
 const Contact = () => {
   const containerRef = useRef(null);
@@ -9,7 +10,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="contact site-page" ref={containerRef}>
+    <div className="contact site-page" id={PAGE_IDS.CONTACT} ref={containerRef}>
       <div className="page-content">
         <p className="heading">
           Keen to work
@@ -22,7 +23,7 @@ const Contact = () => {
           richard.ly.han@gmail.com
         </a>
         <div className="footer">
-          <p class="copyright">All Rights Reserved</p>
+          <p className="copyright">All Rights Reserved</p>
           <div className="contact-links">
             <a
               href="https://www.linkedin.com/in/richard-ly-han/"

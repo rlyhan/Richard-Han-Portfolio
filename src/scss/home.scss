@@ -28,6 +28,10 @@ $circle-z-index: -1;
       position: absolute;
       $design-right: 130px;
       right: ($design-right / $design-width) * 100vw;
+      @include phone {
+        width: 50%;
+        min-width: 200px;
+      }
     }
 
     .subtitle {
@@ -39,6 +43,11 @@ $circle-z-index: -1;
       $design-top: 736px - ($y-padding * 2);
       left: percentage($design-left / $design-width);
       margin-top: ($design-top / $design-height) * 100vh;
+      @include phone {
+        width: 40%;
+        min-width: 150px;
+        max-width: 170px;
+      }
     }
   }
 }

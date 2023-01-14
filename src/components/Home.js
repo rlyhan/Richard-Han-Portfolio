@@ -1,8 +1,9 @@
 import React, { forwardRef } from "react";
+import { PAGE_IDS } from "../constants";
 
 const Home = forwardRef((props, ref) => {
   return (
-    <div className="home site-page" ref={ref}>
+    <div className="home site-page" id={PAGE_IDS.HOME} ref={ref}>
       <div className="page-content column-layout">
         <h1 className="title">
           Bringing

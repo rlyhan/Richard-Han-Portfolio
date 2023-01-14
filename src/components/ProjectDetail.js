@@ -39,6 +39,7 @@ const ProjectDetail = () => {
                   <a href={project["best_awards_url"]} target="_blank">
                     View on Best Awards
                   </a>
+                  &nbsp;/
                 </span>
               )}
             </div>

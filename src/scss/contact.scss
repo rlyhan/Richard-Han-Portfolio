@@ -6,6 +6,9 @@
     display: block;
     margin-left: auto;
     width: percentage(835px / $inner-design-width);
+    @include phone {
+      width: 80%;
+    }
   }
   .heading {
     @include large-title(80px);

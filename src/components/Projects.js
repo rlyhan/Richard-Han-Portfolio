@@ -2,6 +2,7 @@ import { gsap } from "gsap";
 import ReactHtmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
 import { getListNumbering } from "../helpers";
+import { PAGE_IDS } from "../constants";
 
 import { TABLET_WIDTH } from "../content/widths.js";
 
@@ -192,7 +193,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="projects site-page" ref={ref}>
+    <div className="projects site-page" id={PAGE_IDS.PROJECTS} ref={ref}>
       <div className="page-content">
         <h3>Selected Works</h3>
         <hr></hr>
@@ -206,10 +207,12 @@ const Projects = () => {
                   <li key={index} className="list-item">
                     <Link to={`projects/${project["slug"]}`}>
                       <div className="list-item-heading">
-                        <span class="list-item-number">
+                        <span className="list-item-number">
                           {getListNumbering(project["id"])} /
                         </span>
-                        <span class="list-item-title">{project["name"]}</span>
+                        <span className="list-item-title">
+                          {project["name"]}
+                        </span>
                       </div>
                       <p className="list-item-attributes">
                         {project["association"]}&nbsp;/&nbsp;
@@ -222,7 +225,7 @@ const Projects = () => {
           </ul>
         </div>
         <div className="content-list additional-project-list">
-          <p class="heading">Additional Works</p>
+          <p className="heading">Additional Works</p>
           <ul>
             {projects
               .filter((project) => project["featured"] === false)
@@ -230,12 +233,14 @@ const Projects = () => {
               .map((project, index) => {
                 return (
                   <li key={index} className="list-item">
-                    <a>
+                    <a href={project["url"]} target="_blank">
                       <div className="list-item-heading">
-                        <span class="list-item-number">
+                        <span className="list-item-number">
                           {getListNumbering(project["id"])} /
                         </span>
-                        <span class="list-item-title">{project["name"]}</span>
+                        <span className="list-item-title">
+                          {project["name"]}
+                        </span>
                       </div>
                       <p className="list-item-attributes">
                         {project["association"]}&nbsp;/&nbsp;
@@ -262,8 +267,10 @@ const Projects = () => {
                 >
                   <a>
                     <div className="list-item-heading">
-                      <span class="list-item-number">0{index + 1} /</span>
-                      <span class="list-item-title">{item["category"]}</span>
+                      <span className="list-item-number">0{index + 1} /</span>
+                      <span className="list-item-title">
+                        {item["category"]}
+                      </span>
                     </div>
                   </a>
                   <div className="list-item-collapsible">

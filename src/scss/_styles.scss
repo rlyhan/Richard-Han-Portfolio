@@ -33,18 +33,6 @@ p {
 }
 
 .App {
-  .nav-bar {
-    position: fixed;
-    left: percentage($y-padding / $design-width);
-    top: percentage($x-padding / $design-width);
-    z-index: 100;
-
-    p {
-      @include nav-logo();
-      text-transform: uppercase;
-      margin: 0;
-    }
-  }
   .pages-wrap {
     .site-page {
       .page-content {
@@ -55,20 +43,46 @@ p {
         &.column-layout {
           display: flex;
           justify-content: space-between;
+          @include phone {
+            flex-direction: column;
+          }
         }
         .left-column {
           $width: 409px;
           $left: 223px;
           width: percentage($width / $inner-design-width);
           margin-left: percentage(($left - $x-padding) / $inner-design-width);
+          @include phone {
+            width: 70%;
+            margin-left: auto;
+            margin-bottom: 1em;
+          }
         }
-
         .right-column {
           $width: 476px;
           $right: 127px;
           width: percentage($width / $inner-design-width);
           margin-right: percentage(($right - $x-padding) / $inner-design-width);
+          @include phone {
+            width: 80%;
+            margin-left: auto;
+            margin-right: 0;
+          }
         }
+      }
+    }
+  }
+  &.nav-menu-open {
+    .nav-bar {
+      .logo {
+        @include phone {
+          display: none;
+        }
+      }
+    }
+    .pages-wrap {
+      @include phone {
+        opacity: 0.25;
       }
     }
   }

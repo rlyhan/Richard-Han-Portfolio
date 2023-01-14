@@ -1,8 +1,9 @@
 import React, { forwardRef, useState, useEffect } from "react";
+import { PAGE_IDS } from "../constants";
 
 const About = forwardRef((props, ref) => {
   return (
-    <div className="about site-page" ref={ref}>
+    <div className="about site-page" id={PAGE_IDS.ABOUT} ref={ref}>
       <div className="page-content column-layout">
         <div className="left-column">
           <p>

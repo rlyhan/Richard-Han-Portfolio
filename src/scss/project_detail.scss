@@ -18,6 +18,9 @@
         }
         .project-title {
           @include significant-text(80px);
+          @include phone {
+            font-size: 32px;
+          }
         }
       }
       .project-subheading {
@@ -25,15 +28,38 @@
         text-transform: uppercase;
         display: flex;
         justify-content: space-between;
+        @include phone {
+          font-size: 14px;
+          flex-direction: column;
+        }
+        .project-attributes,
+        .project-links {
+          @include phone {
+            text-align: right;
+          }
+        }
+        .project-attributes {
+          @include phone {
+            margin-bottom: 0.5em;
+          }
+        }
       }
     }
     .project-content {
       display: flex;
       margin-top: 4rem;
+      @include phone {
+        flex-direction: column;
+      }
       .project-info {
         @include paragraph-text();
         width: percentage(409px / $inner-design-width);
         margin-left: percentage(159px / $inner-design-width);
+        @include phone {
+          width: 80%;
+          margin-left: auto;
+          margin-bottom: 2em;
+        }
         .project-info-subheading {
           text-transform: uppercase;
         }
@@ -51,6 +77,9 @@
       .project-gallery {
         width: percentage(560px / $inner-design-width);
         margin-left: auto;
+        @include phone {
+          width: 100%;
+        }
         .project-image {
           width: 100%;
           margin-bottom: 3rem;

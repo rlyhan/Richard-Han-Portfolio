@@ -17,6 +17,12 @@ $above-max-width: 2180px;
   }
 }
 
+@mixin below-tablet-landscape {
+  @media screen and (max-width: $tablet-landscape - 1px) {
+    @content;
+  }
+}
+
 @mixin tablet-landscape {
   @media screen and (min-width: $tablet-landscape) {
     @content;
@@ -51,8 +57,8 @@ $design-height: 955px;
 $design-margin: 55px;
 $design-margin-percentage: percentage(55px / 1457px);
 
-$y-padding: 63px;
 $x-padding: 66px;
+$y-padding: $x-padding * 2;
 
 $inner-design-width: $design-width - ($x-padding * 2);
 $inner-design-height: $design-height - ($y-padding * 2);
@@ -72,43 +78,61 @@ $hr-color: #958e8e;
 
 @mixin vh-font($font-size, $screen-size: $design-height) {
   font-size: calc(($font-size / $screen-size) * 100vh);
-  letter-spacing: calc(((-0.03 * $font-size) / $design-height) * 100v);
+  letter-spacing: calc(((-0.03 * $font-size) / $design-height) * 100vh);
 }
 
 @mixin light-text($font-size: 24px) {
   @include roboto-light();
   @include vw-font($font-size);
   line-height: 1.33;
+  @include phone {
+    font-size: 12px;
+  }
 }
 
 @mixin paragraph-text($font-size: 24px) {
   @include roboto();
   @include vw-font($font-size);
   line-height: 1.33;
+  @include phone {
+    font-size: 16px;
+  }
 }
 
 @mixin significant-text($font-size: 32px) {
   @include roboto-medium();
   @include vw-font($font-size);
   line-height: 1;
+  @include phone {
+    font-size: 22px;
+  }
 }
 
 @mixin large-title($font-size: 80px) {
   @include roboto-bold();
   @include vh-font($font-size);
   line-height: 1;
+  @include phone {
+    font-size: 40px;
+  }
 }
 
 @mixin subtitle($font-size: 32px) {
   @include roboto-bold();
   @include vw-font($font-size);
   line-height: 1;
+  @include phone {
+    font-size: 22px;
+  }
 }
 
 @mixin nav-logo() {
   @include libre-caslon-display();
-  @include vw-font(64px);
+  @include vw-font(48px);
   line-height: 1;
+  @include phone {
+    font-size: 24px;
+  }
 }
 
 @mixin listing-title($font-size: 32px) {
@@ -116,4 +140,7 @@ $hr-color: #958e8e;
   @include vw-font($font-size);
   line-height: 1;
   text-transform: uppercase;
+  @include phone {
+    font-size: 18px;
+  }
 }

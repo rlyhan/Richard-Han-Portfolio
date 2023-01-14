@@ -7,6 +7,9 @@
       @include light-text(80px);
       text-align: right;
       margin-bottom: 0;
+      @include phone {
+        font-size: 40px;
+      }
     }
     hr {
       width: 100%;
@@ -14,6 +17,9 @@
     .content-list {
       width: percentage($lists-width / $design-width);
       margin-left: auto;
+      @include phone {
+        width: 100%;
+      }
       ul {
         padding-left: 0;
         list-style-type: none;
@@ -44,6 +50,9 @@
             .list-item-heading {
               .list-item-title {
                 @include significant-text(64px);
+                @include phone {
+                  font-size: 28px;
+                }
               }
             }
             .list-item-attributes {
@@ -59,10 +68,16 @@
           @include paragraph-text(32px);
           margin: 3em 0 1em;
           opacity: 0.2;
+          @include phone {
+            font-size: 24px;
+          }
         }
         ul {
           .list-item {
             margin-bottom: 1.5rem;
+            @include phone {
+              margin-bottom: 1rem;
+            }
             a {
               .list-item-heading {
                 .list-item-title {
@@ -81,6 +96,9 @@
             width: percentage(377px / $lists-width);
             display: flex;
             align-items: end;
+            @include phone {
+              width: 100%;
+            }
             &:nth-child(2n + 2) {
               margin-left: auto;
             }
