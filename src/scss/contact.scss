@@ -1,43 +1,49 @@
 @import "./_styles.scss";
 
 .contact {
-  .heading,
-  .email {
-    display: block;
-    margin-left: auto;
-    width: percentage(835px / $inner-design-width);
-    @include phone {
-      width: 80%;
+  margin-bottom: 0 !important;
+  .page-content {
+    @include tablet-plus {
+      padding-bottom: (($x-padding / $design-height) * 100vh) !important;
     }
-  }
-  .heading {
-    @include large-title(80px);
-    @include roboto-medium();
-    text-transform: uppercase;
-    margin-top: percentage((309px - ($y-padding * 2)) / $design-height);
-    margin-bottom: 0.5em;
-  }
-  .email {
-    @include large-title(64px);
-    @include roboto-light();
-    margin-bottom: 3em;
-    line-height: 1.1;
-    text-transform: uppercase;
-    text-decoration: underline;
-    text-align: right;
-    word-break: break-all;
-  }
-  .footer {
-    display: flex;
-    justify-content: space-between;
-    .copyright {
-      @include paragraph-text(24px);
-      margin: 0;
+    .heading,
+    .email {
+      display: block;
+      margin-left: auto;
+      width: percentage(935px / $inner-design-width);
+      @include phone {
+        width: 80%;
+      }
     }
-    .contact-links {
-      @include paragraph-text(24px);
-      .linkedin {
-        margin-right: 1em;
+    .heading {
+      @include large-title(80px);
+      @include roboto-medium();
+      text-transform: uppercase;
+      margin-top: percentage((309px - ($y-padding * 2)) / $design-height);
+      margin-bottom: 0.5em;
+    }
+    .email {
+      @include large-title(64px);
+      @include roboto-light();
+      margin-bottom: 3em;
+      line-height: 1.1;
+      text-transform: uppercase;
+      text-decoration: underline;
+      text-align: right;
+      word-break: break-all;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      .copyright {
+        @include paragraph-text(24px);
+        margin: 0;
+      }
+      .contact-links {
+        @include paragraph-text(24px);
+        .linkedin {
+          margin-right: 1em;
+        }
       }
     }
   }

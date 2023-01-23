@@ -8,45 +8,50 @@ $circle-z-index: -1;
   text-align: right;
   z-index: 4;
 
-  // @include phone {
-  //   visibility: hidden;
-  //   height: 0;
-  //   width: 0;
-  // }
-
   > .page-content {
     position: relative;
 
-    .title {
-      @include large-title();
-      text-transform: uppercase;
-      $design-top: 363px - ($y-padding * 2);
-      margin-top: ($design-top / $design-height) * 100vh;
-      margin-bottom: 0;
-      margin-left: auto;
-      width: (590px / $inner-design-width) * 100vw;
-      position: absolute;
-      $design-right: 130px;
-      right: ($design-right / $design-width) * 100vw;
+    .right-column {
+      position: relative;
       @include phone {
-        width: 50%;
-        min-width: 200px;
+        order: 1;
+      }
+      .title {
+        @include large-title();
+        text-transform: uppercase;
+        $design-top: 363px - ($y-padding * 2);
+        margin-top: ($design-top / $design-height) * 100vh;
+        margin-bottom: 0;
+        margin-left: auto;
+        width: (590px / $inner-design-width) * 100vw;
+        position: absolute;
+        right: 0;
+        @include phone {
+          width: 50%;
+          min-width: 200px;
+        }
       }
     }
 
-    .subtitle {
-      @include subtitle();
-      text-transform: uppercase;
-      width: percentage(287px / $design-width);
-      position: absolute;
-      $design-left: 345px;
-      $design-top: 736px - ($y-padding * 2);
-      left: percentage($design-left / $design-width);
-      margin-top: ($design-top / $design-height) * 100vh;
+    .left-column {
+      position: relative;
       @include phone {
-        width: 40%;
-        min-width: 150px;
-        max-width: 170px;
+        order: 2;
+      }
+      .subtitle {
+        @include subtitle();
+        text-transform: uppercase;
+        width: percentage(287px / $left-column-width);
+        margin-left: auto;
+        $design-top: 736px - ($y-padding * 2);
+        margin-top: ($design-top / $design-height) * 100vh;
+        @include phone {
+          width: 40%;
+          min-width: 150px;
+          max-width: 170px;
+          margin-top: 3rem;
+          position: relative;
+        }
       }
     }
   }

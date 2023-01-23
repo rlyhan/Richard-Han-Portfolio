@@ -3,10 +3,9 @@ import ReactHtmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
 import { getListNumbering } from "../helpers";
 import { PAGE_IDS } from "../constants";
+import { DESKTOP_WIDTH } from "../content/widths.js";
 
-import { TABLET_WIDTH } from "../content/widths.js";
-
-import React, { forwardRef, useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 const projects = require("../content/projects.json");
 const more_about = require("../content/more_about.json");
@@ -16,6 +15,42 @@ const Projects = () => {
 
   const [prevClickedListItem, setPrevClickedListItem] = useState(null);
   const [galleryAnimations, setGalleryAnimations] = useState([]);
+
+  useEffect(() => {
+    if (window.innerWidth >= DESKTOP_WIDTH) {
+      gsap.utils
+        .toArray(".projects-title, .projects .content-list .heading")
+        .forEach(function (elem) {
+          gsap.to(elem, {
+            yPercent: -30,
+            duration: 0.1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: elem,
+              scrub: 1,
+              start: "bottom 90%",
+              end: "bottom 80%",
+            },
+          });
+        });
+
+      gsap.utils
+        .toArray(".projects .content-list:not(.more-about-list) ul li")
+        .forEach(function (elem) {
+          gsap.to(elem, {
+            yPercent: -15,
+            duration: 0.1,
+            ease: "none",
+            scrollTrigger: {
+              trigger: elem,
+              scrub: 1,
+              start: "bottom 90%",
+              end: "bottom 80%",
+            },
+          });
+        });
+    }
+  }, []);
 
   // const toggleProject = (newProjectId) => {
   //   let prevProject = currentProject;
@@ -195,8 +230,10 @@ const Projects = () => {
   return (
     <div className="projects site-page" id={PAGE_IDS.PROJECTS} ref={ref}>
       <div className="page-content">
-        <h3>Selected Works</h3>
-        <hr></hr>
+        <div className="projects-title">
+          <h3>Selected Works</h3>
+          <hr></hr>
+        </div>
         <div className="content-list project-list">
           <ul>
             {projects

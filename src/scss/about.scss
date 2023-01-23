@@ -1,23 +1,33 @@
 @import "./_styles.scss";
 
 .about {
+  position: relative;
   .page-content {
     display: flex;
-    @include desktop {
-      overflow: hidden;
+    .left-column {
+      position: relative;
     }
-
     .right-column {
-      p {
-        @include subtitle();
-        margin-top: 8em;
+      .paragraph-wrapper {
+        margin-top: 3rem;
+        p {
+          @include subtitle();
+        }
       }
       .image-wrap {
+        position: relative;
+        padding-top: 125%;
+        overflow: hidden;
         @include phone {
           max-width: 300px;
           margin-left: auto;
         }
         img {
+          position: absolute;
+          top: -5vh;
+          left: 0;
+          right: 0;
+          bottom: 0;
           width: 100%;
           -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
           filter: grayscale(100%);

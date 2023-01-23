@@ -35,11 +35,17 @@ p {
 .App {
   .pages-wrap {
     .site-page {
+      @include desktop-plus {
+        margin-bottom: 50vh;
+      }
       .page-content {
         height: 100%;
         padding: (($y-padding / $design-height) * 100vh)
           (($x-padding / $design-width) * 100vw);
         box-sizing: border-box;
+        @include phone {
+          padding: $mobile-y-padding $mobile-x-padding;
+        }
         &.column-layout {
           display: flex;
           justify-content: space-between;
@@ -48,10 +54,10 @@ p {
           }
         }
         .left-column {
-          $width: 409px;
-          $left: 223px;
-          width: percentage($width / $inner-design-width);
-          margin-left: percentage(($left - $x-padding) / $inner-design-width);
+          width: percentage($left-column-width / $inner-design-width);
+          margin-left: percentage(
+            ($left-column-pos - $x-padding) / $inner-design-width
+          );
           @include phone {
             width: 70%;
             margin-left: auto;
@@ -59,10 +65,8 @@ p {
           }
         }
         .right-column {
-          $width: 476px;
-          $right: 127px;
-          width: percentage($width / $inner-design-width);
-          margin-right: percentage(($right - $x-padding) / $inner-design-width);
+          width: percentage($right-column-width / $inner-design-width);
+          margin-right: $page-right-margin;
           @include phone {
             width: 80%;
             margin-left: auto;
@@ -99,41 +103,33 @@ $contact-z-index: 1;
 .contact {
   background-color: $beige;
 }
-
-@mixin curved-divider($z-index, $color: white) {
-  &::after {
-    content: "";
-    background: $color;
-    z-index: $z-index + 1;
-    border-top-right-radius: 5vw;
-    border-bottom-right-radius: 5vw;
-    position: absolute;
-    height: 100vh;
-    width: 5vw;
-    top: 0;
-    left: 0;
+.projects,
+.contact {
+  .page-content {
+    @include tablet-plus {
+      margin-right: $page-right-margin;
+    }
   }
 }
-
 .home {
-  @include desktop {
+  @include tablet-plus {
     z-index: $home-z-index;
     transform: translateX(0);
   }
 }
 .about {
-  @include desktop {
+  @include tablet-plus {
     z-index: $about-z-index;
     display: flex;
   }
 }
 .projects {
-  @include desktop {
+  @include tablet-plus {
     z-index: $projects-z-index;
   }
 }
 .contact {
-  @include desktop {
+  @include tablet-plus {
     z-index: $contact-z-index;
   }
 }

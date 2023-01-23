@@ -12,7 +12,6 @@ const Navbar = ({ navMenuOpen, setNavMenuOpen }) => {
     gsap.set(window, {
       scrollTo: newPage,
     });
-    handleBurgerClick();
   };
 
   const handleBurgerClick = () => {
@@ -22,7 +21,15 @@ const Navbar = ({ navMenuOpen, setNavMenuOpen }) => {
 
   return (
     <div className="nav-bar">
-      <div className="logo" onClick={() => handleSetPage(PAGE_IDS.HOME)}>
+      <div
+        className="logo"
+        onClick={(e) => {
+          if (window.location.pathname === "/") {
+            e.preventDefault();
+            handleSetPage(PAGE_IDS.HOME);
+          }
+        }}
+      >
         <a href="/">Richard Han</a>
       </div>
       <div className={`nav-menu ${navMenuClass}`}>
@@ -30,21 +37,30 @@ const Navbar = ({ navMenuOpen, setNavMenuOpen }) => {
           <a
             href={`#${PAGE_IDS.ABOUT}`}
             id={`about ${currentPage === PAGE_IDS.ABOUT ? "active" : ""}`}
-            onClick={() => handleSetPage(PAGE_IDS.ABOUT)}
+            onClick={() => {
+              handleSetPage(PAGE_IDS.ABOUT);
+              handleBurgerClick();
+            }}
           >
             About
           </a>
           <a
             href={`#${PAGE_IDS.PROJECTS}`}
             id={`projects ${currentPage === PAGE_IDS.PROJECTS ? "active" : ""}`}
-            onClick={() => handleSetPage(PAGE_IDS.PROJECTS)}
+            onClick={() => {
+              handleSetPage(PAGE_IDS.PROJECTS);
+              handleBurgerClick();
+            }}
           >
             Projects
           </a>
           <a
             href={`#${PAGE_IDS.CONTACT}`}
             id={`contact ${currentPage === PAGE_IDS.CONTACT ? "active" : ""}`}
-            onClick={() => handleSetPage(PAGE_IDS.CONTACT)}
+            onClick={() => {
+              handleSetPage(PAGE_IDS.CONTACT);
+              handleBurgerClick();
+            }}
           >
             Contact
           </a>

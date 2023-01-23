@@ -11,7 +11,7 @@ $above-max-width: 2180px;
   }
 }
 
-@mixin tablet {
+@mixin tablet-plus {
   @media screen and (min-width: $tablet) {
     @content;
   }
@@ -35,7 +35,7 @@ $above-max-width: 2180px;
   }
 }
 
-@mixin desktop {
+@mixin desktop-plus {
   @media screen and (min-width: $desktop) {
     @content;
   }
@@ -46,6 +46,8 @@ $above-max-width: 2180px;
     @content;
   }
 }
+
+$burger-size: 45px;
 
 // Z indexes
 $nav-z-index: 99;
@@ -60,8 +62,20 @@ $design-margin-percentage: percentage(55px / 1457px);
 $x-padding: 66px;
 $y-padding: $x-padding * 2;
 
+$mobile-x-padding: 1.5rem;
+$mobile-y-padding: 1.5rem;
+
 $inner-design-width: $design-width - ($x-padding * 2);
 $inner-design-height: $design-height - ($y-padding * 2);
+
+$left-column-pos: 223px;
+$left-column-width: 409px;
+$right-column-pos: 127px;
+$right-column-width: 476px;
+
+// Margins
+
+$page-right-margin: calc(#{$burger-size} + 1.5rem);
 
 // Colours
 
@@ -112,8 +126,11 @@ $hr-color: #958e8e;
   @include roboto-bold();
   @include vh-font($font-size);
   line-height: 1;
-  @include phone {
-    font-size: 40px;
+  @include below-desktop {
+    @include vh-font(60px);
+    @include phone {
+      font-size: 40px;
+    }
   }
 }
 

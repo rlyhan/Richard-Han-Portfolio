@@ -14,24 +14,26 @@
     margin: 0;
     position: fixed;
     left: percentage($x-padding / $design-width);
+    @include phone {
+      left: $mobile-x-padding;
+    }
   }
 
   .nav-menu {
     right: percentage($x-padding / $design-width);
-    height: 45px;
+    height: $burger-size;
     display: flex;
     cursor: pointer;
 
     @include phone {
-      left: percentage($x-padding / $design-width);
+      height: $burger-size;
+      left: $mobile-x-padding;
       justify-content: space-between;
     }
 
     .nav-links {
       @include roboto-medium();
       font-size: 12px;
-      // $design-right: 130px;
-      // right: ($design-right / $design-width) * 100vw;
       display: flex;
       align-items: center;
       visibility: hidden;
@@ -71,7 +73,7 @@
     }
 
     .burger {
-      width: 45px;
+      width: $burger-size;
       height: 100%;
       position: relative;
       background-color: black;
@@ -110,105 +112,5 @@
         }
       }
     }
-
-    // transition: all 0.4s ease-in-out;
-
-    //   #burger,
-    //   #toggle {
-    //     top: 2rem;
-    //     right: 2rem;
-    //     position: fixed;
-    //   }
-
-    //   #toggle {
-    //     opacity: 0;
-    //     width: 25px;
-    //     height: 25px;
-    //     z-index: 99;
-    //     display: none;
-
-    //     @include phone {
-    //       display: block;
-    //     }
-    //   }
-
-    //   #burger {
-    //     z-index: 98;
-
-    //     @include tablet {
-    //       display: none;
-    //     }
-
-    //     & > div {
-    //       background-color: $golden-grey;
-    //       width: 25px;
-    //       height: 3px;
-    //       margin: 5px;
-    //     }
-    //   }
-
-    //   .page-titles {
-    //     transform: translate(-5vh, -5vh);
-    //     list-style-type: none;
-    //     display: flex;
-    //     margin: 0;
-
-    //     @include phone {
-    //       position: fixed;
-    //       transform: none;
-    //       left: 0;
-    //       top: 0;
-    //       width: 100vw;
-    //       height: 22vh;
-    //       padding: 3rem;
-    //       background: black;
-    //       box-sizing: border-box;
-    //       display: none;
-    //     }
-
-    //     li {
-    //       @include roboto;
-    //       @include vw-font(20px);
-    //       padding: 0;
-    //       margin-left: 2em;
-    //       letter-spacing: -0.15vw;
-    //       text-decoration: none;
-    //       text-transform: uppercase;
-    //       color: $golden-grey;
-    //       transition: opacity 0.25s ease-in-out;
-
-    //       @include below-desktop {
-    //         font-size: 20px;
-    //         @include phone {
-    //           margin-left: 0;
-    //           margin-bottom: 0.5em;
-    //         }
-    //       }
-
-    //       &:hover {
-    //         cursor: pointer;
-    //         opacity: 0.5;
-    //       }
-
-    //       &:first-child {
-    //         visibility: hidden;
-
-    //         @include phone {
-    //           display: none;
-    //         }
-    //       }
-
-    //       &.current {
-    //         opacity: 0.5;
-    //       }
-    //     }
-    //   }
-
-    //   #toggle:checked ~ .page-titles {
-    //     @include phone {
-    //       display: block;
-    //     }
-    //   }
-    // }
   }
 }
