@@ -3,7 +3,7 @@
 .contact {
   margin-bottom: 0 !important;
   @include below-tablet-landscape {
-    height: 100vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

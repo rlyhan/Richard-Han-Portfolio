@@ -5,19 +5,11 @@ import { Projects } from "./Projects";
 import Contact from "./Contact";
 
 function MainPages({ currentPage, setCurrentPage }) {
-  const homeRef = useRef(null);
-  const aboutRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactRef = useRef(null);
   return (
     <>
-      <Home
-        ref={homeRef}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-      />
-      <About ref={aboutRef} />
-      <Projects ref={projectsRef} />
+      <Home currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <About />
+      <Projects />
       <Contact />
       <div className="footer">
         <p className="copyright">All Rights Reserved</p>

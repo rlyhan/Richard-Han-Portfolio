@@ -1,22 +1,36 @@
-import { gsap } from "gsap";
-import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
-import { Outlet } from "react-router-dom";
-
+import { Outlet, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-
+import { gsap } from "gsap";
 import Navbar from "./Navbar";
-
-gsap.registerPlugin(ScrollToPlugin);
+import { PAGE_IDS } from "../constants";
 
 function App() {
+  const { hash } = useLocation();
   const [navMenuOpen, setNavMenuOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(null);
+
+  const handleSetPage = (page) => {
+    setCurrentPage(page);
+    const newPage = document.getElementById(page);
+    gsap.set(window, {
+      scrollTo: newPage,
+    });
+  };
+
+  useEffect(() => {
+    if (hash) {
+      const hashVal = hash.split("#")[1];
+      if (Object.values(PAGE_IDS).includes(hashVal)) {
+        handleSetPage(hashVal);
+      }
+    }
+  }, [hash]);
 
   return (
     <div className={`App ${navMenuOpen ? "nav-menu-open" : ""}`}>
       <Navbar
+        handleSetPage={handleSetPage}
         currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
         navMenuOpen={navMenuOpen}
         setNavMenuOpen={setNavMenuOpen}
       />

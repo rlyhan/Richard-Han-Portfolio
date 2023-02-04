@@ -3,20 +3,12 @@ import { gsap } from "gsap";
 import { PAGE_IDS } from "../constants";
 
 const Navbar = ({
+  handleSetPage,
   currentPage,
-  setCurrentPage,
   navMenuOpen,
   setNavMenuOpen,
 }) => {
   const [navMenuClass, setNavMenuClass] = useState("");
-
-  const handleSetPage = (page) => {
-    setCurrentPage(page);
-    const newPage = document.getElementById(page);
-    gsap.set(window, {
-      scrollTo: newPage,
-    });
-  };
 
   const handleBurgerClick = () => {
     setNavMenuClass(navMenuClass === "" ? "active" : "");
@@ -24,19 +16,20 @@ const Navbar = ({
   };
 
   useEffect(() => {
-    if (!document.querySelector(".project-detail")) {
-      gsap.to(".nav-bar", {
-        opacity: 1,
-        duration: 0.5,
-        visibility: "visible",
-        scrub: true,
-        scrollTrigger: {
-          trigger: ".about",
-          start: "top 20%",
-          toggleActions: "play pause resume reverse",
-        },
-      });
-    }
+    gsap.to(".nav-bar", {
+      opacity: 1,
+      duration: 0.5,
+      visibility: "visible",
+      scrub: true,
+      scrollTrigger: {
+        fastScrollEnd: true,
+        trigger: document.querySelector(".project-detail")
+          ? ".project-detail"
+          : ".about",
+        start: "top 20%",
+        toggleActions: "play pause resume reverse",
+      },
+    });
   }, []);
 
   return (

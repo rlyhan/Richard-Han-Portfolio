@@ -147,7 +147,7 @@ const Projects = () => {
               .map((project, index) => {
                 return (
                   <li key={index} className="list-item">
-                    <Link to={`projects/${project["slug"]}`}>
+                    <Link to={`projects/${project["slug"]}`} reloadDocument>
                       <div className="list-item-heading">
                         <span className="list-item-number">
                           {getListNumbering(project["id"])} /

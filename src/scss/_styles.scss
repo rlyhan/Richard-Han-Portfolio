@@ -58,6 +58,12 @@ p {
             flex-direction: column;
           }
         }
+        .left-column,
+        .right-column {
+          @include tablet-plus {
+            margin-top: 5rem;
+          }
+        }
         .left-column {
           width: percentage($left-column-width / $inner-design-width);
           margin-left: percentage(

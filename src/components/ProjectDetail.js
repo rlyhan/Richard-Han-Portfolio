@@ -1,4 +1,4 @@
-import React, { forwardRef, useState, useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { useLoaderData, Link } from "react-router-dom";
 import { getListNumbering } from "../helpers";
 
@@ -69,8 +69,8 @@ const ProjectDetail = () => {
             })}
           </div>
         </div>
-        <Link to="/" className="return-link">
-          {"< Back"}
+        <Link to="/" className="return-link" reloadDocument>
+          {"← Back"}
         </Link>
       </div>
     </div>
