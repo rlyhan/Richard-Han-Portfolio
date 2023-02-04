@@ -70,7 +70,7 @@ const ProjectDetail = () => {
           </div>
         </div>
         <Link to="/" className="return-link">
-          Return
+          {"< Back"}
         </Link>
       </div>
     </div>

@@ -1,10 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { PAGE_IDS } from "../constants";
 
-const Navbar = ({ navMenuOpen, setNavMenuOpen }) => {
+const Navbar = ({
+  currentPage,
+  setCurrentPage,
+  navMenuOpen,
+  setNavMenuOpen,
+}) => {
   const [navMenuClass, setNavMenuClass] = useState("");
-  const [currentPage, setCurrentPage] = useState(null);
 
   const handleSetPage = (page) => {
     setCurrentPage(page);
@@ -18,6 +22,22 @@ const Navbar = ({ navMenuOpen, setNavMenuOpen }) => {
     setNavMenuClass(navMenuClass === "" ? "active" : "");
     setNavMenuOpen(!navMenuOpen);
   };
+
+  useEffect(() => {
+    if (!document.querySelector(".project-detail")) {
+      gsap.to(".nav-bar", {
+        opacity: 1,
+        duration: 0.5,
+        visibility: "visible",
+        scrub: true,
+        scrollTrigger: {
+          trigger: ".about",
+          start: "top 20%",
+          toggleActions: "play pause resume reverse",
+        },
+      });
+    }
+  }, []);
 
   return (
     <div className="nav-bar">
@@ -35,7 +55,7 @@ const Navbar = ({ navMenuOpen, setNavMenuOpen }) => {
       <div className={`nav-menu ${navMenuClass}`}>
         <div className="nav-links">
           <a
-            href={`#${PAGE_IDS.ABOUT}`}
+            href={`/#${PAGE_IDS.ABOUT}`}
             id={`about ${currentPage === PAGE_IDS.ABOUT ? "active" : ""}`}
             onClick={() => {
               handleSetPage(PAGE_IDS.ABOUT);
@@ -45,7 +65,7 @@ const Navbar = ({ navMenuOpen, setNavMenuOpen }) => {
             About
           </a>
           <a
-            href={`#${PAGE_IDS.PROJECTS}`}
+            href={`/#${PAGE_IDS.PROJECTS}`}
             id={`projects ${currentPage === PAGE_IDS.PROJECTS ? "active" : ""}`}
             onClick={() => {
               handleSetPage(PAGE_IDS.PROJECTS);
@@ -55,7 +75,7 @@ const Navbar = ({ navMenuOpen, setNavMenuOpen }) => {
             Projects
           </a>
           <a
-            href={`#${PAGE_IDS.CONTACT}`}
+            href={`/#${PAGE_IDS.CONTACT}`}
             id={`contact ${currentPage === PAGE_IDS.CONTACT ? "active" : ""}`}
             onClick={() => {
               handleSetPage(PAGE_IDS.CONTACT);

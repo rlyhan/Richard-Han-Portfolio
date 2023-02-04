@@ -23,13 +23,13 @@ const Projects = () => {
         .forEach(function (elem) {
           gsap.to(elem, {
             yPercent: -30,
-            duration: 0.1,
+            duration: 0.25,
             ease: "none",
             scrollTrigger: {
               trigger: elem,
               scrub: 1,
-              start: "bottom 90%",
-              end: "bottom 80%",
+              start: "bottom 98%",
+              end: "bottom 95%",
             },
           });
         });
@@ -39,7 +39,7 @@ const Projects = () => {
         .forEach(function (elem) {
           gsap.to(elem, {
             yPercent: -15,
-            duration: 0.1,
+            duration: 0.25,
             ease: "none",
             scrollTrigger: {
               trigger: elem,
@@ -51,100 +51,6 @@ const Projects = () => {
         });
     }
   }, []);
-
-  // const toggleProject = (newProjectId) => {
-  //   let prevProject = currentProject;
-  //   let newProject = this.projectListFull.querySelector(
-  //     `.project[data-id="${newProjectId}"]`
-  //   );
-  //   if (!newProject) return;
-  //   if (prevProject) {
-  //     gsap.timeline().to(prevProject.querySelector(".project-wrap"), {
-  //       duration: 0.5,
-  //       height: 0,
-  //     });
-  //     if (!(newProject === prevProject)) {
-  //       gsap.timeline().to(newProject.querySelector(".project-wrap"), {
-  //         duration: 0.5,
-  //         height: "auto",
-  //       });
-  //     }
-  //   } else {
-  //     gsap
-  //       .timeline()
-  //       .to(newProject.querySelector(".project-wrap"), {
-  //         duration: 0.5,
-  //         height: "auto",
-  //       })
-  //       .to(this.projectListFull, {
-  //         duration: 0.5,
-  //         scrollTo: newProject,
-  //       });
-  //   }
-  //   setCurrentProject(newProject === prevProject ? null : newProject);
-  // };
-
-  // const toggleAllProjects = () => {
-  //   if (allProjectsHidden) {
-  //     gsap.to(this.projectListFull, {
-  //       yPercent: 0,
-  //       duration: 0.5,
-  //       ease: "expo",
-  //     });
-  //     setAllProjectsHidden(false);
-  //   } else {
-  //     gsap.to(this.projectListFull, {
-  //       yPercent: -100,
-  //       duration: 0.5,
-  //       ease: "expo",
-  //     });
-  //     setAllProjectsHidden(true);
-  //   }
-  // };
-
-  // useState to get current project
-  // set state by passing project id from links on right column
-  // display project on left if state else if null display significant text
-
-  // const viewMore = this.refs.viewMore;
-  // viewMore.addEventListener("click", (e) => {
-  //   toggleAllProjects();
-  // });
-  // const projects = container.querySelectorAll(".project");
-  // projects.forEach((project) => {
-  //   project.querySelector(".project-wrap").addEventListener("click", (e) => {
-  //     toggleAllProjects();
-  //     toggleProject(project.dataset.id);
-  //   });
-  //   project
-  //     .querySelector(".project-wrap")
-  //     .addEventListener("mouseenter", (e) => {
-  //       if (window.innerWidth >= TABLET_WIDTH) {
-  //         gsap.to(project, {
-  //           duration: 0.5,
-  //           scale: 1.25,
-  //         });
-  //         gsap.to(project.querySelector(".image"), {
-  //           duration: 0.5,
-  //           opacity: 1,
-  //         });
-  //       }
-  //     });
-  //   project
-  //     .querySelector(".project-wrap")
-  //     .addEventListener("mouseleave", (e) => {
-  //       if (window.innerWidth >= TABLET_WIDTH) {
-  //         gsap.to(project, {
-  //           duration: 0.5,
-  //           scale: 1,
-  //         });
-  //         gsap.to(project.querySelector(".image"), {
-  //           duration: 0.5,
-  //           opacity: 0.7,
-  //         });
-  //       }
-  //     });
-  // });
 
   useEffect(() => {
     if (ref.current) {
@@ -232,7 +138,6 @@ const Projects = () => {
       <div className="page-content">
         <div className="projects-title">
           <h3>Selected Works</h3>
-          <hr></hr>
         </div>
         <div className="content-list project-list">
           <ul>
@@ -316,9 +221,10 @@ const Projects = () => {
                     </div>
                     <div className="gallery-scroller">
                       <div className="gallery-scroller-wrap">
-                        {item.gallery.map((album) => {
+                        {item.gallery.map((album, index) => {
                           return (
                             <GalleryItem
+                              key={index}
                               item={album}
                               itemImageDirectory={item[
                                 "category"

@@ -2,14 +2,21 @@
 
 .contact {
   margin-bottom: 0 !important;
+  @include below-tablet-landscape {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .page-content {
-    @include tablet-plus {
-      padding-bottom: (($x-padding / $design-height) * 100vh) !important;
+    padding-bottom: (($x-padding / $design-height) * 100vh) !important;
+    @include below-tablet-landscape {
+      height: auto !important;
     }
     .heading,
     .email {
       display: block;
-      margin-left: auto;
       width: percentage(935px / $inner-design-width);
       @include phone {
         width: 80%;
@@ -21,6 +28,13 @@
       text-transform: uppercase;
       margin-top: percentage((309px - ($y-padding * 2)) / $design-height);
       margin-bottom: 0.5em;
+      margin-left: auto;
+      @include below-desktop() {
+        font-size: 64px;
+        @include phone() {
+          font-size: 48px;
+        }
+      }
     }
     .email {
       @include large-title(64px);
@@ -31,18 +45,11 @@
       text-decoration: underline;
       text-align: right;
       word-break: break-all;
-    }
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      .copyright {
-        @include paragraph-text(24px);
-        margin: 0;
-      }
-      .contact-links {
-        @include paragraph-text(24px);
-        .linkedin {
-          margin-right: 1em;
+      margin-left: auto;
+      @include below-desktop() {
+        font-size: 48px;
+        @include phone() {
+          font-size: 36px;
         }
       }
     }

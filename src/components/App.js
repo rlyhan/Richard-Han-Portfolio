@@ -10,16 +10,18 @@ gsap.registerPlugin(ScrollToPlugin);
 
 function App() {
   const [navMenuOpen, setNavMenuOpen] = useState(false);
-
-  window.addEventListener("resize", () => {
-    window.location.reload();
-  });
+  const [currentPage, setCurrentPage] = useState(null);
 
   return (
     <div className={`App ${navMenuOpen ? "nav-menu-open" : ""}`}>
-      <Navbar navMenuOpen={navMenuOpen} setNavMenuOpen={setNavMenuOpen} />
+      <Navbar
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        navMenuOpen={navMenuOpen}
+        setNavMenuOpen={setNavMenuOpen}
+      />
       <div className="pages-wrap">
-        <Outlet />
+        <Outlet context={[currentPage, setCurrentPage]} />
       </div>
     </div>
   );

@@ -63,7 +63,7 @@ $x-padding: 66px;
 $y-padding: $x-padding * 2;
 
 $mobile-x-padding: 1.5rem;
-$mobile-y-padding: 1.5rem;
+$mobile-y-padding: 25vh;
 
 $inner-design-width: $design-width - ($x-padding * 2);
 $inner-design-height: $design-height - ($y-padding * 2);
@@ -81,6 +81,7 @@ $page-right-margin: calc(#{$burger-size} + 1.5rem);
 
 $beige: #fff5f0;
 $golden-grey: #b8b29d;
+$light-grey: #d2cac5;
 $hr-color: #958e8e;
 
 // Fonts
@@ -99,7 +100,7 @@ $hr-color: #958e8e;
   @include roboto-light();
   @include vw-font($font-size);
   line-height: 1.33;
-  @include phone {
+  @include below-tablet-landscape() {
     font-size: 12px;
   }
 }
@@ -108,7 +109,16 @@ $hr-color: #958e8e;
   @include roboto();
   @include vw-font($font-size);
   line-height: 1.33;
-  @include phone {
+  @include below-tablet-landscape() {
+    font-size: 16px;
+  }
+}
+
+@mixin paragraph-text-serif($font-size: 24px) {
+  @include libre-caslon-display();
+  @include vw-font($font-size);
+  line-height: 1.33;
+  @include below-tablet-landscape() {
     font-size: 16px;
   }
 }
@@ -117,19 +127,31 @@ $hr-color: #958e8e;
   @include roboto-medium();
   @include vw-font($font-size);
   line-height: 1;
-  @include phone {
+  @include below-tablet-landscape() {
     font-size: 22px;
   }
 }
 
-@mixin large-title($font-size: 80px) {
-  @include roboto-bold();
-  @include vh-font($font-size);
+@mixin significant-text-serif($font-size: 32px) {
+  @include libre-caslon-display();
+  @include vw-font($font-size);
   line-height: 1;
-  @include below-desktop {
-    @include vh-font(60px);
-    @include phone {
-      font-size: 40px;
+  text-transform: uppercase;
+  @include below-tablet-landscape() {
+    font-size: 22px;
+  }
+}
+
+@mixin large-title($font-size: 164px) {
+  @include libre-caslon-display();
+  @include vh-font($font-size);
+  font-weight: normal;
+  line-height: 1;
+  margin: 0.5em 0;
+  @include below-desktop() {
+    font-size: 100px;
+    @include phone() {
+      font-size: 64px;
     }
   }
 }
@@ -137,18 +159,38 @@ $hr-color: #958e8e;
 @mixin subtitle($font-size: 32px) {
   @include roboto-bold();
   @include vw-font($font-size);
+  font-weight: normal;
   line-height: 1;
-  @include phone {
+  @include below-tablet-landscape() {
     font-size: 22px;
   }
 }
 
-@mixin nav-logo() {
+@mixin subtitle-serif($font-size: 46px) {
   @include libre-caslon-display();
-  @include vw-font(48px);
+  font-size: $font-size;
+  font-weight: normal;
   line-height: 1;
-  @include phone {
-    font-size: 24px;
+  text-transform: uppercase;
+  @include below-desktop() {
+    font-size: 36px;
+    @include phone() {
+      font-size: 22px;
+    }
+  }
+}
+
+@mixin nav-logo($font-size: 46px) {
+  @include libre-caslon-display();
+  font-size: $font-size;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: uppercase;
+  @include below-desktop() {
+    font-size: 36px;
+    @include phone() {
+      font-size: 22px;
+    }
   }
 }
 
@@ -157,7 +199,7 @@ $hr-color: #958e8e;
   @include vw-font($font-size);
   line-height: 1;
   text-transform: uppercase;
-  @include phone {
-    font-size: 18px;
+  @include below-tablet-landscape() {
+    font-size: 22px;
   }
 }

@@ -1,9 +1,13 @@
 @import "./_styles.scss";
 
 .project-detail {
+  margin-bottom: 0 !important;
+
   .page-content {
     .project-header {
-      padding-top: 8rem;
+      @include tablet-plus {
+        padding-top: 5rem;
+      }
       .project-heading {
         display: flex;
         justify-content: space-between;
@@ -18,7 +22,7 @@
         }
         .project-title {
           @include significant-text(80px);
-          @include phone {
+          @include below-tablet-landscape {
             font-size: 32px;
           }
         }
@@ -28,19 +32,25 @@
         text-transform: uppercase;
         display: flex;
         justify-content: space-between;
-        @include phone {
+        @include below-tablet-landscape {
           font-size: 14px;
           flex-direction: column;
         }
         .project-attributes,
         .project-links {
-          @include phone {
+          @include below-tablet-landscape {
             text-align: right;
           }
         }
         .project-attributes {
-          @include phone {
+          @include below-tablet-landscape {
             margin-bottom: 0.5em;
+          }
+        }
+        .project-links {
+          @include below-tablet-landscape {
+            border-top: 1px solid $hr-color;
+            padding-top: 0.5em;
           }
         }
       }
@@ -48,19 +58,20 @@
     .project-content {
       display: flex;
       margin-top: 4rem;
-      @include phone {
+      @include below-tablet-landscape {
         flex-direction: column;
       }
       .project-info {
         @include paragraph-text();
         width: percentage(409px / $inner-design-width);
         margin-left: percentage(159px / $inner-design-width);
-        @include phone {
+        @include below-tablet-landscape {
           width: 80%;
           margin-left: auto;
           margin-bottom: 2em;
         }
         .project-info-subheading {
+          @include paragraph-text-serif();
           text-transform: uppercase;
         }
         .project-description {
@@ -77,7 +88,7 @@
       .project-gallery {
         width: percentage(560px / $inner-design-width);
         margin-left: auto;
-        @include phone {
+        @include below-tablet-landscape {
           width: 100%;
         }
         .project-image {
@@ -94,8 +105,7 @@
       }
     }
     .return-link {
-      @include paragraph-text();
-      text-transform: uppercase;
+      @include significant-text();
     }
   }
 }

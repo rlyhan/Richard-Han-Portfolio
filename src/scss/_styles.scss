@@ -33,10 +33,15 @@ p {
 }
 
 .App {
+  .nav-bar {
+    z-index: 100;
+  }
   .pages-wrap {
+    z-index: 1;
+    overflow: hidden;
     .site-page {
       @include desktop-plus {
-        margin-bottom: 50vh;
+        margin-bottom: 25vh;
       }
       .page-content {
         height: 100%;
@@ -72,6 +77,36 @@ p {
             margin-left: auto;
             margin-right: 0;
           }
+        }
+      }
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 (($x-padding / $design-width) * 100vw)
+        (($x-padding / $design-width) * 100vw);
+      @include tablet-plus {
+        margin-right: $page-right-margin;
+      }
+      @include phone {
+        padding-bottom: 2rem;
+      }
+      .copyright {
+        @include paragraph-text();
+        font-size: 24px;
+        margin: 0;
+        @include phone {
+          font-size: 18px;
+        }
+      }
+      .contact-links {
+        @include paragraph-text();
+        font-size: 24px;
+        @include phone {
+          font-size: 18px;
+        }
+        .linkedin {
+          margin-right: 1em;
         }
       }
     }
@@ -113,23 +148,11 @@ $contact-z-index: 1;
 }
 .home {
   @include tablet-plus {
-    z-index: $home-z-index;
     transform: translateX(0);
   }
 }
 .about {
   @include tablet-plus {
-    z-index: $about-z-index;
     display: flex;
-  }
-}
-.projects {
-  @include tablet-plus {
-    z-index: $projects-z-index;
-  }
-}
-.contact {
-  @include tablet-plus {
-    z-index: $contact-z-index;
   }
 }

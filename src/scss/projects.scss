@@ -6,21 +6,22 @@
     .projects-title {
       h3 {
         @include light-text(80px);
+        color: $light-grey;
         text-align: right;
         margin-bottom: 0;
         margin-top: 0;
-        @include phone {
+        @include below-tablet-landscape() {
           font-size: 40px;
         }
       }
-      hr {
-        width: 100%;
-      }
+      padding-bottom: 10px;
+      border-bottom: 1px solid $hr-color;
     }
     .content-list {
       width: percentage($lists-width / $design-width);
       margin-left: auto;
-      @include phone {
+      margin-bottom: 10rem;
+      @include below-tablet-landscape() {
         width: 100%;
       }
       ul {
@@ -49,11 +50,15 @@
       &.project-list {
         .list-item {
           margin: percentage(59px / $inner-design-height) 0;
+          @include below-tablet-landscape() {
+            margin: 2rem 0;
+          }
           a {
             .list-item-heading {
               .list-item-title {
+                // @include significant-text-serif(64px);
                 @include significant-text(64px);
-                @include phone {
+                @include below-tablet-landscape() {
                   font-size: 28px;
                 }
               }
@@ -70,8 +75,8 @@
         > .heading {
           @include paragraph-text(32px);
           margin: 3em 0 1em;
-          opacity: 0.2;
-          @include phone {
+          color: $light-grey;
+          @include below-tablet-landscape() {
             font-size: 24px;
           }
         }
@@ -99,7 +104,7 @@
             width: percentage(385px / $lists-width);
             display: flex;
             align-items: end;
-            @include phone {
+            @include below-tablet-landscape() {
               width: 100%;
             }
             &:nth-child(2n + 2) {
