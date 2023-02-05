@@ -2,6 +2,7 @@
   {
     "category": "Music",
     "text": "<p>Music is my other time-consuming passion. In my own time I love writing and recording music, performing at open mics, jamming with friends, or just putting on a good album.</p><br/><p>I generally listen to a mix of indie rock, post-punk and folk. (here’s some albums I’m listening to right now)</p>",
+    "scrolling_speed": 100,
     "gallery": [
       {
         "caption": "Iceage - Plowing into the Field of Love",
@@ -36,13 +37,14 @@
   {
     "category": "Outdoors",
     "text": "<p>Although I’m a software developer, I go outside sometimes. When I get the chance I like to do a bit of skiing, kayaking and hiking, especially in some of New Zealand’s most beautiful spots.</p><br/><p>Here’s some photos from a recent trip to Abel Tasman National Park in NZ.</p>",
+    "scrolling_speed": 75,
     "gallery": [
       {
         "caption": "Kayaking the Tasman Bay",
         "file_name": "kayak.png"
       },
       {
-        "caption": "Swimming in the bluest waters",
+        "caption": "Swimming in the pure blue waters",
         "file_name": "beach.png"
       },
       {
@@ -66,13 +68,14 @@
   {
     "category": "Travels",
     "text": "<p>I’ve travelled to a few places across the globe.</p><br/><p>In 2022 I went on a huge trip around Europe - visited London, Barcelona, Amsterdam, Bruges, Budapest, and various places in Greece, Croatia, and Italy. Check it out below.</p>",
+    "scrolling_speed": 70,
     "gallery": [
       {
         "caption": "Having breakfast by the canal (Amsterdam, Netherlands)",
         "file_name": "amsterdam.png"
       },
       {
-        "caption": "Observing centuries-old monasteries amongst gigantic rocks (Meteora, Greece)",
+        "caption": "Observing centuries-old monasteries built atop mountainous rocks (Meteora, Greece)",
         "file_name": "meteora.png"
       },
       {

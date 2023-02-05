@@ -12,7 +12,8 @@
     "description": "New Zealand based tourism website consisting of curated guides to cities and places, and a large directory of shops, restaurants, bars, attractions, and more.",
     "work_involved": [
       "Front end functionality and styling",
-      "Content management system"
+      "Integrating APIs such as Instagram",
+      "Back end development including highly customisable content management system, data optimisation"
     ],
     "images": ["neatplaces_01.png", "neatplaces_02.png"]
   },
@@ -28,7 +29,7 @@
     "description": "Australia based paint company.",
     "work_involved": [
       "Front end functionality and styling",
-      "Content management system"
+      "Back end development including highly customisable content management system, data optimisation"
     ],
     "images": ["coloursmith_01.png", "coloursmith_02.png"]
   },
@@ -44,7 +45,8 @@
     "description": "Custom children's book creation.",
     "work_involved": [
       "Front end functionality and styling",
-      "Content management system"
+      "Integrating/working with APIs such as Instagram and Shopify",
+      "Back end development including highly customisable content management system, data optimisation"
     ],
     "images": ["mybigmoments_01.png", "mybigmoments_02.png"]
   },
@@ -60,7 +62,7 @@
     "description": "Australia based handbag and apparel brand.",
     "work_involved": [
       "Front end functionality and styling",
-      "Content management system"
+      "Back end development including highly customisable content management system, data optimisation, e-commerce integration"
     ],
     "images": ["deadlyponies_01.png", "deadlyponies_02.png"]
   },
@@ -76,7 +78,8 @@
     "description": "Christchurch, New Zealand based art gallery.",
     "work_involved": [
       "Front end functionality and styling",
-      "Content management system"
+      "Fully customisable content management system to add various media including articles, videos, audio",
+      "Full e-commerce integration"
     ],
     "images": ["physicsroom_01.png", "physicsroom_02.png"]
   },
@@ -92,7 +95,7 @@
     "description": "New Zealand based furniture company.",
     "work_involved": [
       "Front end functionality and styling",
-      "Content management system"
+      "Back end development including highly customisable content management system, data optimisation"
     ]
   },
   {
@@ -107,7 +110,7 @@
     "description": "City guides curated by some significant faces. In association with Neat Places.",
     "work_involved": [
       "Front end functionality and styling",
-      "Content management system"
+      "Back end development including highly customisable content management system, data optimisation"
     ]
   },
   {
@@ -122,7 +125,7 @@
     "description": "International textiles company.",
     "work_involved": [
       "Front end functionality and styling",
-      "Content management system"
+      "Back end development including highly customisable content management system, data optimisation"
     ]
   },
   {
@@ -137,7 +140,7 @@
     "description": "New Zealand based architects.",
     "work_involved": [
       "Front end functionality and styling",
-      "Content management system"
+      "Back end development including highly customisable content management system, data optimisation"
     ]
   }
 ]

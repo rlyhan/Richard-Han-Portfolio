@@ -35,7 +35,7 @@ const Projects = () => {
         });
 
       gsap.utils
-        .toArray(".projects .content-list:not(.more-about-list) ul li")
+        .toArray(".projects .project-list ul li")
         .forEach(function (elem) {
           gsap.to(elem, {
             yPercent: -15,
@@ -67,7 +67,7 @@ const Projects = () => {
         const galleryScroller = listItem.querySelector(
           ".gallery-scroller-wrap"
         );
-        const speed = 85;
+        const speed = listItem.dataset.speed;
         let tickerWidth = galleryScroller.offsetWidth;
         let initDuration = tickerWidth / speed;
         const galleryAnimation = gsap.fromTo(
@@ -194,6 +194,18 @@ const Projects = () => {
               })}
           </ul>
         </div>
+        <div className="paragraph-wrap">
+          <p>
+            + Versatile across a range of frameworks and third party software
+            <br />
+            <br />
+            + Works independently or within Agile teams
+            <br />
+            <br />+ Dedicated to the development process including designing,
+            testing and close collaboration to create a highly optimised
+            experience
+          </p>
+        </div>
         <div className="content-list more-about-list">
           <p className="heading">A little more about me...</p>
           <ul>
@@ -202,6 +214,7 @@ const Projects = () => {
                 <li
                   key={index}
                   className="list-item"
+                  data-speed={item.scrolling_speed}
                   onClick={(e) => {
                     collapseListItem(e.currentTarget);
                     toggleGallery(e.currentTarget);

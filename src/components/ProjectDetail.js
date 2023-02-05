@@ -20,7 +20,9 @@ const ProjectDetail = () => {
             <span className="project-number">
               {getListNumbering(project["id"])} /
             </span>
-            <span className="project-title">{project["name"]}</span>
+            <a href={project["url"]} target="_blank" className="project-title">
+              {project["name"]}
+            </a>
           </div>
           <div className="project-subheading">
             <div className="project-attributes">

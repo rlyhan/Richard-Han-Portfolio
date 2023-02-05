@@ -30,15 +30,15 @@ const About = forwardRef((props, ref) => {
         <div className="left-column">
           <div className="paragraph-wrapper">
             <p>
-              Richard is a naturally creative and visual person which drives his
-              passion for bringing ideas to life digitally. He loves to
-              collaborate with like-minded people and industries to produce
-              ambitious and beautiful applications.
+              Richard is a natural creative who loves to see ambitious ideas
+              brought to life digitally, with visually sleek interfaces and an
+              exceptional user experience.
               <br />
               <br />
-              From online stores and architectural portfolios to art galleries
-              and tourism, Richard has produced work for a diverse range of
-              clients.
+              He has collaborated with interesting and like-minded people to
+              produce high end web experiences across a diverse range of
+              industries, from fashion brands and architecture studios to art
+              galleries and tourism.
             </p>
           </div>
         </div>
