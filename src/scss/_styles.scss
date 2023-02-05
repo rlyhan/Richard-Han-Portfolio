@@ -32,6 +32,19 @@ p {
   margin-top: 0;
 }
 
+.error-page {
+  z-index: 1;
+  padding: (($y-padding / $design-height) * 100vh)
+    (($x-padding / $design-width) * 100vw);
+  box-sizing: border-box;
+  @include phone {
+    padding: $mobile-y-padding $mobile-x-padding;
+  }
+  p {
+    text-align: left;
+  }
+}
+
 .App {
   .nav-bar {
     z-index: 100;

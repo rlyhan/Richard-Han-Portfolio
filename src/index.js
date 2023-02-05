@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import App from "./components/App";
+import { App, ErrorPage } from "./components/App";
 import MainPages from "./components/MainPages";
 import ProjectDetail, {
   loader as projectDetailLoader,
@@ -18,10 +18,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <MainPages /> },
+      { path: "/", index: true, element: <MainPages /> },
       {
-        path: "projects/:projectSlug",
+        path: "/projects/:projectSlug",
         element: <ProjectDetail />,
         loader: projectDetailLoader,
       },

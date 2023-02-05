@@ -41,4 +41,14 @@ function App() {
   );
 }
 
-export default App;
+const ErrorPage = () => {
+  return (
+    <div className="error-page">
+      <p>
+        This page does not exist. <a href="/">Click here to return home</a>
+      </p>
+    </div>
+  );
+};
+
+export { App, ErrorPage };
