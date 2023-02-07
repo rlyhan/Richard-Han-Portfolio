@@ -13,15 +13,13 @@ const About = forwardRef((props, ref) => {
   useEffect(() => {
     setContainer(containerRef.current);
 
-    if (window.innerWidth >= DESKTOP_WIDTH) {
-      gsap.to(".about .right-column .image-wrap img", {
-        yPercent: 40,
-        ease: "none",
-        scrollTrigger: {
-          scrub: 0.5,
-        },
-      });
-    }
+    gsap.to(".about .right-column .image-wrap img", {
+      yPercent: 40,
+      ease: "none",
+      scrollTrigger: {
+        scrub: 0.5,
+      },
+    });
   }, []);
 
   return (

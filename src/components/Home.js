@@ -32,7 +32,7 @@ const Home = forwardRef((props, ref) => {
         y: 0,
       },
       {
-        y: window.innerWidth >= TABLET_WIDTH ? "-45%" : "-15%",
+        y: window.innerWidth >= TABLET_WIDTH ? "-45%" : "-25%",
         duration: 0.1,
         delay: 0.2,
         ease: true,
@@ -44,7 +44,7 @@ const Home = forwardRef((props, ref) => {
         y: 0,
       },
       {
-        y: window.innerWidth >= TABLET_WIDTH ? "45%" : "15%",
+        y: window.innerWidth >= TABLET_WIDTH ? "45%" : "25%",
         duration: 0.1,
         delay: 0.2,
         ease: true,
@@ -56,7 +56,7 @@ const Home = forwardRef((props, ref) => {
         y: 0,
       },
       {
-        y: window.innerWidth >= TABLET_WIDTH ? "-70%" : "-30%",
+        y: window.innerWidth >= TABLET_WIDTH ? "-70%" : "-40%",
         duration: 0.2,
         delay: 0.3,
         ease: true,
@@ -68,7 +68,7 @@ const Home = forwardRef((props, ref) => {
         y: 0,
       },
       {
-        y: window.innerWidth >= TABLET_WIDTH ? "70%" : "30%",
+        y: window.innerWidth >= TABLET_WIDTH ? "70%" : "40%",
         duration: 0.2,
         delay: 0.3,
         ease: true,

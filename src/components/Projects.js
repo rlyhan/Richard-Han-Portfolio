@@ -17,39 +17,37 @@ const Projects = () => {
   const [galleryAnimations, setGalleryAnimations] = useState([]);
 
   useEffect(() => {
-    if (window.innerWidth >= DESKTOP_WIDTH) {
-      gsap.utils
-        .toArray(".projects-title, .projects .content-list .heading")
-        .forEach(function (elem) {
-          gsap.to(elem, {
-            yPercent: -30,
-            duration: 0.25,
-            ease: "none",
-            scrollTrigger: {
-              trigger: elem,
-              scrub: 1,
-              start: "bottom 98%",
-              end: "bottom 95%",
-            },
-          });
+    gsap.utils
+      .toArray(".projects-title, .projects .content-list .heading")
+      .forEach(function (elem) {
+        gsap.to(elem, {
+          yPercent: -30,
+          duration: 0.25,
+          ease: "none",
+          scrollTrigger: {
+            trigger: elem,
+            scrub: 1,
+            start: "bottom 98%",
+            end: "bottom 95%",
+          },
         });
+      });
 
-      gsap.utils
-        .toArray(".projects .project-list ul li")
-        .forEach(function (elem) {
-          gsap.to(elem, {
-            yPercent: -15,
-            duration: 0.25,
-            ease: "none",
-            scrollTrigger: {
-              trigger: elem,
-              scrub: 1,
-              start: "bottom 90%",
-              end: "bottom 80%",
-            },
-          });
+    gsap.utils
+      .toArray(".projects .project-list ul li")
+      .forEach(function (elem) {
+        gsap.to(elem, {
+          yPercent: -15,
+          duration: 0.25,
+          ease: "none",
+          scrollTrigger: {
+            trigger: elem,
+            scrub: 1,
+            start: "bottom 90%",
+            end: "bottom 80%",
+          },
         });
-    }
+      });
   }, []);
 
   useEffect(() => {

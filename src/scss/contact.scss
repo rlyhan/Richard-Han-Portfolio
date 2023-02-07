@@ -39,10 +39,10 @@
     .email {
       @include large-title(64px);
       @include roboto-light();
+      max-width: 500px;
       margin-bottom: 3em;
       line-height: 1.1;
       text-transform: uppercase;
-      text-decoration: underline;
       text-align: right;
       word-break: break-all;
       margin-left: auto;
@@ -51,6 +51,10 @@
         @include phone() {
           font-size: 36px;
         }
+      }
+      span {
+        display: inline-block;
+        border-bottom: 2px solid black;
       }
     }
   }

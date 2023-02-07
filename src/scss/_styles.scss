@@ -108,22 +108,16 @@ p {
         margin-right: $page-right-margin;
       }
       @include phone {
-        padding-bottom: 2rem;
+        padding-bottom: 1.5rem;
       }
       .copyright {
         @include paragraph-text();
         font-size: 24px;
         margin: 0;
-        @include phone {
-          font-size: 18px;
-        }
       }
       .contact-links {
         @include paragraph-text();
         font-size: 24px;
-        @include phone {
-          font-size: 18px;
-        }
         .linkedin {
           margin-right: 1em;
         }
