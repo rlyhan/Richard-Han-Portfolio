@@ -154,9 +154,14 @@
                   display: flex;
                   flex-direction: column;
                   justify-content: center;
-                  max-width: 330px;
+                  width: 15vw;
+                  padding-right: 50px;
                   margin: auto 1em;
                   text-overflow: ellipsis;
+                  @include below-tablet-landscape {
+                    width: 30vw;
+                    font-size: 18px;
+                  }
                 }
               }
             }

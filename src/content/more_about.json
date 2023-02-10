@@ -37,7 +37,7 @@
   {
     "category": "Outdoors",
     "text": "<p>Although I’m a software developer, I go outside sometimes. When I get the chance I like to do a bit of skiing, kayaking and hiking, especially in some of New Zealand’s most beautiful spots.</p><br/><p>Here’s some photos from a recent trip to Abel Tasman National Park in NZ.</p>",
-    "scrolling_speed": 75,
+    "scrolling_speed": 65,
     "gallery": [
       {
         "caption": "Kayaking the Tasman Bay",
@@ -68,7 +68,7 @@
   {
     "category": "Travels",
     "text": "<p>I’ve travelled to a few places across the globe.</p><br/><p>In 2022 I went on a huge trip around Europe - visited London, Barcelona, Amsterdam, Bruges, Budapest, and various places in Greece, Croatia, and Italy. Check it out below.</p>",
-    "scrolling_speed": 70,
+    "scrolling_speed": 65,
     "gallery": [
       {
         "caption": "Having breakfast by the canal (Amsterdam, Netherlands)",

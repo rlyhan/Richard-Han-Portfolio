@@ -67,19 +67,28 @@ const Projects = () => {
         );
         const speed = listItem.dataset.speed;
         let tickerWidth = galleryScroller.offsetWidth;
-        let initDuration = tickerWidth / speed;
-        const galleryAnimation = gsap.fromTo(
-          galleryScroller,
-          {
-            xPercent: 25,
-          },
-          {
-            duration: initDuration,
-            xPercent: -100,
-            ease: "none",
+        let firstItem = galleryScroller.querySelector(".gallery-item");
+        let initDuration = firstItem.offsetWidth / speed;
+        const galleryAnimation = gsap
+          .timeline({
             repeat: -1,
-          }
-        );
+          })
+          .fromTo(
+            galleryScroller,
+            {
+              xPercent: 0,
+            },
+            {
+              duration: initDuration,
+              xPercent: `-${((firstItem.offsetWidth + 1) / tickerWidth) * 100}`,
+              ease: "none",
+              onComplete: () => {
+                firstItem.parentNode.appendChild(firstItem);
+                firstItem = galleryScroller.querySelector(".gallery-item");
+                initDuration = firstItem.offsetWidth / speed;
+              },
+            }
+          );
         galleryAnimation.pause();
         animationsArray.push({
           el: listItem,
