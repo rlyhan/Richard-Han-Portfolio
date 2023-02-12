@@ -3,7 +3,7 @@ import ReactHtmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
 import { getListNumbering } from "../helpers";
 import { PAGE_IDS } from "../constants";
-import { DESKTOP_WIDTH } from "../content/widths.js";
+import { TABLET_WIDTH } from "../content/widths.js";
 
 import React, { useState, useRef, useEffect } from "react";
 
@@ -221,7 +221,11 @@ const Projects = () => {
                 <li
                   key={index}
                   className="list-item"
-                  data-speed={item.scrolling_speed}
+                  data-speed={
+                    window.innerWidth >= TABLET_WIDTH
+                      ? item.scrolling_speed
+                      : 40
+                  }
                   onClick={(e) => {
                     collapseListItem(e.currentTarget);
                     toggleGallery(e.currentTarget);
