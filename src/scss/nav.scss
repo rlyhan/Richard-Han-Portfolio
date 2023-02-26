@@ -1,8 +1,6 @@
 @import "./_styles.scss";
 
 .nav-bar {
-  opacity: 0;
-  visibility: hidden;
   position: fixed;
 
   .logo,
@@ -17,12 +15,22 @@
     margin: 0;
     position: fixed;
     left: percentage($x-padding / $design-width);
+    opacity: 0;
     @include phone {
       left: $mobile-x-padding;
+    }
+
+    img {
+      width: 80px;
+      @include phone {
+        width: 60px;
+      }
     }
   }
 
   .nav-menu {
+    visibility: hidden;
+    opacity: 0;
     right: percentage($x-padding / $design-width);
     height: $burger-size;
     display: flex;
@@ -35,7 +43,7 @@
     }
 
     .nav-links {
-      @include libre-caslon-display();
+      @include qwergi-regular();
       font-size: 14px;
       display: flex;
       align-items: center;

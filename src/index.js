@@ -6,6 +6,7 @@ import MainPages from "./components/MainPages";
 import ProjectDetail, {
   loader as projectDetailLoader,
 } from "./components/ProjectDetail";
+import "./index.scss";
 import "./scss/_styles.scss";
 import "./scss/nav.scss";
 import "./scss/home.scss";

@@ -2,7 +2,7 @@
   {
     "category": "Music",
     "text": "<p>Music is my other time-consuming passion. In my own time I love writing and recording music, performing at open mics, jamming with friends, or just putting on a good album.</p><br/><p>I generally listen to a mix of indie rock, post-punk and folk. (here’s some albums I’m listening to right now)</p>",
-    "scrolling_speed": 100,
+    "scrolling_speed": 90,
     "gallery": [
       {
         "caption": "Iceage - Plowing into the Field of Love",
@@ -67,7 +67,7 @@
   },
   {
     "category": "Travels",
-    "text": "<p>I’ve travelled to a few places across the globe.</p><br/><p>In 2022 I went on a huge trip around Europe - visited London, Barcelona, Amsterdam, Bruges, Budapest, and various places in Greece, Croatia, and Italy. Check it out below.</p>",
+    "text": "<p>A little reel of some travels I've done recently.</p>",
     "scrolling_speed": 65,
     "gallery": [
       {

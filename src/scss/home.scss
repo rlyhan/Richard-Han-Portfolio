@@ -15,6 +15,7 @@ $title-z-index: 2;
 
   > .page-content {
     position: relative;
+    padding: ((242px / $design-height) * 100vh) 0 !important;
     @include below-tablet-landscape {
       height: auto !important;
     }
@@ -23,103 +24,55 @@ $title-z-index: 2;
       position: relative;
 
       .title {
-        @include large-title();
+        font-size: 64px;
+        line-height: 1.125;
         text-transform: uppercase;
-        text-align: center;
-        margin: 0.25em 0 1.25em;
+        margin: 0 auto;
         position: relative;
         z-index: $title-z-index;
+        width: 535px;
         @include phone {
-          width: auto;
-          margin: 1em auto;
+          font-size: 40px;
+          width: 320px;
         }
-        &.clone {
-          opacity: 0.7;
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          margin: 0;
-          transition: transform 1s ease;
-
-          &.grey {
-            color: #f6f1f1;
-            z-index: $title-z-index - 1;
+        span {
+          display: block;
+          &.left {
+            text-align: left;
           }
-
-          &.white {
-            color: white;
-            z-index: $title-z-index - 2;
+          &.right {
+            text-align: right;
+          }
+          &.indent {
+            text-indent: 1em;
+          }
+          &.serif {
+            @include qwergi-regular();
+          }
+          &.sans-serif {
+            @include roboto-medium();
+            font-style: italic;
           }
         }
       }
     }
 
     $lower-content-max-width: 640px;
-    .subtitle-wrap {
-      max-width: $lower-content-max-width;
-      margin: 4rem auto;
+  }
 
-      .subtitle {
-        @include subtitle-serif();
-        text-transform: uppercase;
-        text-align: center;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin: 0;
-        @include phone {
-          max-width: 250px;
-          margin: 0 auto;
-          position: relative;
-          &:last-child {
-            span {
-              margin: 0 auto;
-            }
-          }
-        }
-      }
-    }
+  .home-nav-links,
+  .name {
+    @include paragraph-text();
+    font-size: 24px;
+    position: absolute;
+    bottom: percentage($x-padding / $design-width);
+  }
 
-    .decorator {
-      display: flex;
-      justify-content: space-between;
-      max-width: $lower-content-max-width;
-      margin: 0 auto;
-      height: 0;
-      .line {
-        width: percentage(245px / 690px);
-        &:first-child {
-          transform: rotate(180deg);
-        }
-        .inner {
-          border-top: 1px solid black;
-        }
-      }
-      .circle {
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background-color: black;
-        transform: translateY(-50%);
-        @include phone {
-          width: 40px;
-          height: 40px;
-        }
-      }
-    }
+  .home-nav-links {
+    left: percentage($x-padding / $design-width);
+  }
 
-    .home-nav-links {
-      @include subtitle-serif();
-      text-transform: uppercase;
-      display: flex;
-      justify-content: space-between;
-      max-width: $lower-content-max-width;
-      margin: 4rem auto 0;
-
-      @include phone {
-        max-width: 320px;
-      }
-    }
+  .name {
+    right: percentage($x-padding / $design-width);
   }
 }

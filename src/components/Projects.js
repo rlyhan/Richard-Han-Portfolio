@@ -203,14 +203,12 @@ const Projects = () => {
         </div>
         <div className="paragraph-wrap">
           <p>
-            + Versatile across a range of frameworks and third party software
+            + Versatile across a range of frameworks and technologies
             <br />
+            <br />+ Dedicated to the development process including designing and
+            testing to create a highly optimised experience
             <br />
-            + Works independently or within Agile teams
-            <br />
-            <br />+ Dedicated to the development process including designing,
-            testing and close collaboration to create a highly optimised
-            experience
+            <br />+ Experienced working in Agile teams
           </p>
         </div>
         <div className="content-list more-about-list">
@@ -222,7 +220,8 @@ const Projects = () => {
                   key={index}
                   className="list-item"
                   data-speed={
-                    window.innerWidth >= TABLET_WIDTH
+                    window.innerWidth >= TABLET_WIDTH ||
+                    item.category === "Music"
                       ? item.scrolling_speed
                       : 40
                   }

@@ -16,7 +16,7 @@ const Navbar = ({
   };
 
   useEffect(() => {
-    gsap.to(".nav-bar", {
+    gsap.to(".nav-menu", {
       opacity: 1,
       duration: 0.5,
       visibility: "visible",
@@ -29,6 +29,11 @@ const Navbar = ({
         start: "top 20%",
         toggleActions: "play pause resume reverse",
       },
+    });
+    gsap.timeline({}).to(".logo", {
+      opacity: 1,
+      duration: document.querySelector(".home") ? 1.5 : 0,
+      delay: document.querySelector(".home") ? 0.5 : 0,
     });
   }, []);
 
@@ -43,7 +48,9 @@ const Navbar = ({
           }
         }}
       >
-        <a href="/">Richard Han</a>
+        <a href="/">
+          <img src={require(`../images/logo.png`).default} alt="logo" />
+        </a>
       </div>
       <div className={`nav-menu ${navMenuClass}`}>
         <div className="nav-links">

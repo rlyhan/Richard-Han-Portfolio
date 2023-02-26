@@ -115,7 +115,7 @@ $hr-color: #958e8e;
 }
 
 @mixin paragraph-text-serif($font-size: 24px) {
-  @include libre-caslon-display();
+  @include qwergi-regular();
   @include vw-font($font-size);
   line-height: 1.33;
   @include below-tablet-landscape() {
@@ -133,7 +133,7 @@ $hr-color: #958e8e;
 }
 
 @mixin significant-text-serif($font-size: 32px) {
-  @include libre-caslon-display();
+  @include qwergi-regular();
   @include vw-font($font-size);
   line-height: 1;
   text-transform: uppercase;
@@ -143,7 +143,21 @@ $hr-color: #958e8e;
 }
 
 @mixin large-title($font-size: 164px) {
-  @include libre-caslon-display();
+  @include qwergi-regular();
+  @include vh-font($font-size);
+  font-weight: normal;
+  line-height: 1;
+  margin: 0.5em 0;
+  @include below-desktop() {
+    font-size: 100px;
+    @include phone() {
+      font-size: 64px;
+    }
+  }
+}
+
+@mixin large-title($font-size: 164px) {
+  @include qwergi-regular();
   @include vh-font($font-size);
   font-weight: normal;
   line-height: 1;
@@ -167,7 +181,7 @@ $hr-color: #958e8e;
 }
 
 @mixin subtitle-serif($font-size: 46px) {
-  @include libre-caslon-display();
+  @include qwergi-regular();
   font-size: $font-size;
   font-weight: normal;
   line-height: 1;
@@ -181,7 +195,7 @@ $hr-color: #958e8e;
 }
 
 @mixin nav-logo($font-size: 46px) {
-  @include libre-caslon-display();
+  @include qwergi-regular();
   font-size: $font-size;
   font-weight: normal;
   line-height: 1;
@@ -195,10 +209,9 @@ $hr-color: #958e8e;
 }
 
 @mixin listing-title($font-size: 32px) {
-  @include libre-caslon-display();
+  @include roboto-medium();
   @include vw-font($font-size);
   line-height: 1;
-  text-transform: uppercase;
   @include below-tablet-landscape() {
     font-size: 22px;
   }
