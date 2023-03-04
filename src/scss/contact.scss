@@ -32,7 +32,7 @@
       @include below-desktop() {
         font-size: 64px;
         @include phone() {
-          font-size: 48px;
+          font-size: 40px;
         }
       }
     }
@@ -40,7 +40,7 @@
       @include large-title(64px);
       @include roboto-light();
       max-width: 500px;
-      margin-bottom: 3em;
+      margin-bottom: 2em;
       line-height: 1.1;
       text-transform: uppercase;
       text-align: right;
@@ -49,7 +49,7 @@
       @include below-desktop() {
         font-size: 48px;
         @include phone() {
-          font-size: 36px;
+          font-size: 32px;
         }
       }
       span {

@@ -6,8 +6,8 @@ $title-z-index: 2;
   text-align: right;
   z-index: 4;
   opacity: 0;
+  height: 100vh;
   @include below-tablet-landscape {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,16 +21,19 @@ $title-z-index: 2;
     }
 
     .title-wrap {
+      height: 100%;
       position: relative;
 
       .title {
         font-size: 64px;
         line-height: 1.125;
         text-transform: uppercase;
-        margin: 0 auto;
+        margin: auto;
         position: relative;
         z-index: $title-z-index;
         width: 535px;
+        top: 50%;
+        transform: translateY(-50%);
         @include phone {
           font-size: 40px;
           width: 320px;

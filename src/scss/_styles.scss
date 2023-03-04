@@ -151,14 +151,6 @@ $contact-z-index: 1;
 .contact {
   background-color: $beige;
 }
-.projects,
-.contact {
-  .page-content {
-    @include tablet-plus {
-      margin-right: $page-right-margin;
-    }
-  }
-}
 .home {
   @include tablet-plus {
     transform: translateX(0);
@@ -167,5 +159,12 @@ $contact-z-index: 1;
 .about {
   @include tablet-plus {
     display: flex;
+  }
+}
+.contact {
+  .page-content {
+    @include tablet-plus {
+      margin-right: $page-right-margin;
+    }
   }
 }
