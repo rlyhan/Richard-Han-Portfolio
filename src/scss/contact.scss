@@ -2,8 +2,10 @@
 
 .contact {
   margin-bottom: 0 !important;
+  height: 100vh;
+  position: relative;
+
   @include below-tablet-landscape {
-    height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,50 +13,80 @@
 
   .page-content {
     padding-bottom: (($x-padding / $design-height) * 100vh) !important;
-    @include below-tablet-landscape {
-      height: auto !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .content-wrap {
+      top: 50%;
+      transform: translateY(-50%);
+      position: relative;
+      .heading,
+      .email {
+        display: block;
+        width: percentage(935px / $inner-design-width);
+        @include phone {
+          width: 80%;
+        }
+      }
+      .heading {
+        @include large-title(80px);
+        @include roboto-medium();
+        text-transform: uppercase;
+        margin-top: percentage((309px - ($y-padding * 2)) / $design-height);
+        margin-bottom: 0.5em;
+        margin-left: auto;
+        @include below-desktop() {
+          font-size: 64px;
+          @include phone() {
+            font-size: 40px;
+          }
+        }
+      }
+      .email {
+        @include large-title(64px);
+        @include roboto-light();
+        max-width: 500px;
+        margin-bottom: 2em;
+        line-height: 1.1;
+        text-transform: uppercase;
+        text-align: right;
+        word-break: break-all;
+        margin-left: auto;
+        @include below-desktop() {
+          font-size: 48px;
+          @include phone() {
+            font-size: 32px;
+          }
+        }
+        span {
+          display: inline-block;
+          border-bottom: 2px solid black;
+        }
+      }
     }
-    .heading,
-    .email {
-      display: block;
-      width: percentage(935px / $inner-design-width);
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      box-sizing: border-box;
+      @include tablet-plus {
+        margin-right: $page-right-margin;
+      }
       @include phone {
-        width: 80%;
+        padding-bottom: 1.5rem;
       }
-    }
-    .heading {
-      @include large-title(80px);
-      @include roboto-medium();
-      text-transform: uppercase;
-      margin-top: percentage((309px - ($y-padding * 2)) / $design-height);
-      margin-bottom: 0.5em;
-      margin-left: auto;
-      @include below-desktop() {
-        font-size: 64px;
-        @include phone() {
-          font-size: 40px;
+      .copyright {
+        @include paragraph-text();
+        font-size: 24px;
+        margin: 0;
+      }
+      .contact-links {
+        @include paragraph-text();
+        font-size: 24px;
+        .linkedin {
+          margin-right: 1em;
         }
-      }
-    }
-    .email {
-      @include large-title(64px);
-      @include roboto-light();
-      max-width: 500px;
-      margin-bottom: 2em;
-      line-height: 1.1;
-      text-transform: uppercase;
-      text-align: right;
-      word-break: break-all;
-      margin-left: auto;
-      @include below-desktop() {
-        font-size: 48px;
-        @include phone() {
-          font-size: 32px;
-        }
-      }
-      span {
-        display: inline-block;
-        border-bottom: 2px solid black;
       }
     }
   }

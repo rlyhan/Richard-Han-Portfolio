@@ -99,30 +99,6 @@ p {
         }
       }
     }
-    .footer {
-      display: flex;
-      justify-content: space-between;
-      padding: 0 (($x-padding / $design-width) * 100vw)
-        (($x-padding / $design-width) * 100vw);
-      @include tablet-plus {
-        margin-right: $page-right-margin;
-      }
-      @include phone {
-        padding-bottom: 1.5rem;
-      }
-      .copyright {
-        @include paragraph-text();
-        font-size: 24px;
-        margin: 0;
-      }
-      .contact-links {
-        @include paragraph-text();
-        font-size: 24px;
-        .linkedin {
-          margin-right: 1em;
-        }
-      }
-    }
   }
   &.nav-menu-open {
     .nav-bar {
