@@ -34,8 +34,7 @@ const Home = forwardRef((props, ref) => {
             <span class="serif right">Developer</span>
             <span class="sans-serif right">Currently</span>
             <span class="sans-serif right">Based in</span>
-            <span class="serif left indent">Wellington,</span>
-            <span class="sans-serif left">New Zealand</span>
+            <span class="serif left indent">London...</span>
           </h1>
         </div>
       </div>
