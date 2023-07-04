@@ -1,3 +1,5 @@
+Note: You may need to use Node version 14 (I use v14.18.1) to run this locally.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
