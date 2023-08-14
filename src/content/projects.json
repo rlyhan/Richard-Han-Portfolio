@@ -85,6 +85,18 @@
   },
   {
     "id": 5,
+    "name": "Gigs of London",
+    "slug": "gigs-of-london",
+    "url": "https://gigs-of-london.vercel.app/",
+    "featured": false,
+    "category": "Events",
+    "client": false,
+    "association": "Personal",
+    "description": "Find events in London on a map",
+    "work_involved": []
+  },
+  {
+    "id": 6,
     "name": "ECC",
     "slug": "ecc",
     "url": "https://ecc.co.nz/",
@@ -99,7 +111,7 @@
     ]
   },
   {
-    "id": 6,
+    "id": 7,
     "name": "Never Have I Ever",
     "slug": "never-have-i-ever",
     "url": "https://neverhaveiever.neatplaces.co.nz/",
@@ -114,7 +126,7 @@
     ]
   },
   {
-    "id": 7,
+    "id": 8,
     "name": "James Dunlop Textiles",
     "slug": "james-dunlop-textiles",
     "url": "https://www.jamesdunloptextiles.com/",
@@ -129,7 +141,7 @@
     ]
   },
   {
-    "id": 8,
+    "id": 9,
     "name": "RTA Studio",
     "slug": "rta-studio",
     "url": "https://rtastudio.co.nz/",
