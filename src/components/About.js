@@ -3,6 +3,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import React, { forwardRef, useState, useEffect, useRef } from "react";
 import { PAGE_IDS } from "../constants";
 import { DESKTOP_WIDTH } from "../content/widths.js";
+import portrait from "../images/about/portrait.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,10 +43,7 @@ const About = forwardRef((props, ref) => {
         </div>
         <div className="right-column">
           <div className="image-wrap">
-            <img
-              src={require("../images/about/portrait.png").default}
-              alt="profile-image"
-            />
+            <img src={portrait} alt="profile-image" />
           </div>
           <div className="paragraph-wrapper">
             <p>

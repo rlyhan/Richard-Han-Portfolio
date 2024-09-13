@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { PAGE_IDS } from "../constants";
+import logo from "../images/logo.png";
 
 const Navbar = ({
   handleSetPage,
@@ -49,14 +50,16 @@ const Navbar = ({
         }}
       >
         <a href="/">
-          <img src={require(`../images/logo.png`).default} alt="logo" />
+          <img src={logo} alt="logo" />
         </a>
       </div>
       <div className={`nav-menu ${navMenuClass}`}>
         <div className="nav-links">
           <a
             href={`/#${PAGE_IDS.ABOUT}`}
-            id={`about ${currentPage === PAGE_IDS.ABOUT ? "active" : ""}`}
+            className={`about ${
+              currentPage === PAGE_IDS.ABOUT ? "active" : ""
+            }`}
             onClick={() => {
               handleSetPage(PAGE_IDS.ABOUT);
               handleBurgerClick();
@@ -66,7 +69,9 @@ const Navbar = ({
           </a>
           <a
             href={`/#${PAGE_IDS.PROJECTS}`}
-            id={`projects ${currentPage === PAGE_IDS.PROJECTS ? "active" : ""}`}
+            className={`projects ${
+              currentPage === PAGE_IDS.PROJECTS ? "active" : ""
+            }`}
             onClick={() => {
               handleSetPage(PAGE_IDS.PROJECTS);
               handleBurgerClick();
@@ -76,7 +81,9 @@ const Navbar = ({
           </a>
           <a
             href={`/#${PAGE_IDS.CONTACT}`}
-            id={`contact ${currentPage === PAGE_IDS.CONTACT ? "active" : ""}`}
+            className={`contact ${
+              currentPage === PAGE_IDS.CONTACT ? "active" : ""
+            }`}
             onClick={() => {
               handleSetPage(PAGE_IDS.CONTACT);
               handleBurgerClick();

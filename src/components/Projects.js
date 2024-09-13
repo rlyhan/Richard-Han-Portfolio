@@ -273,10 +273,7 @@ const GalleryItem = ({ item, itemImageDirectory }) => {
     <div className="gallery-item">
       <img
         className="gallery-item-image"
-        src={
-          require(`../images/about/${itemImageDirectory}/${item["file_name"]}`)
-            .default
-        }
+        src={require(`../images/about/${itemImageDirectory}/${item["file_name"]}`)}
         alt="gallery-item-thumb"
       />
       <div className="gallery-item-desc">{item.caption}</div>

@@ -11,7 +11,7 @@
       .project-heading {
         display: flex;
         justify-content: space-between;
-        align-items: end;
+        align-items: flex-end;
         border-bottom: 1px solid $hr-color;
         padding-bottom: 10px;
         margin-bottom: 10px;
@@ -73,6 +73,10 @@
         .project-info-subheading {
           @include paragraph-text();
           text-transform: uppercase;
+        }
+        .project-description,
+        .project-work {
+          @include paragraph-text(18px);
         }
         .project-description {
           margin-bottom: 4em;
