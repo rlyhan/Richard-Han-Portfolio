@@ -1,7 +1,7 @@
 [
   {
     "category": "Music",
-    "text": "<p>Music is my other time-consuming passion. In my own time I love writing and recording music, performing at open mics, jamming with friends, or just putting on a good album.</p><br/><p>I generally listen to a mix of indie rock, post-punk and folk. (here’s some albums I’m listening to right now)</p>",
+    "text": "<p>Music is my other time-consuming passion. In my own time I love writing and recording music, jamming with friends, or just putting on a good album.</p><br/><p>Here’s some albums I’m listening to right now.</p>",
     "scrolling_speed": 90,
     "gallery": [
       {
@@ -36,7 +36,7 @@
   },
   {
     "category": "Outdoors",
-    "text": "<p>Although I’m a software developer, I go outside sometimes. When I get the chance I like to do a bit of skiing, kayaking and hiking, especially in some of New Zealand’s most beautiful spots.</p><br/><p>Here’s some photos from a recent trip to Abel Tasman National Park in NZ.</p>",
+    "text": "<p>Although I’m a software developer, I go outside sometimes :-) When I get the chance I like to do a bit of skiing, kayaking and hiking, especially in some of New Zealand’s most beautiful spots.</p><br/><p>Here’s some photos from a recent trip to Abel Tasman National Park in NZ.</p>",
     "scrolling_speed": 65,
     "gallery": [
       {
@@ -44,7 +44,7 @@
         "file_name": "kayak.png"
       },
       {
-        "caption": "Swimming in the pure blue waters",
+        "caption": "Swimming in the blue waters",
         "file_name": "beach.png"
       },
       {
@@ -66,29 +66,33 @@
     ]
   },
   {
-    "category": "Travels",
-    "text": "<p>A little reel of some travels I've done recently.</p>",
+    "category": "Films",
+    "text": "<p>Am a bit of a cinephile, here are a few recent favourites.</p>",
     "scrolling_speed": 65,
     "gallery": [
       {
-        "caption": "Having breakfast by the canal (Amsterdam, Netherlands)",
-        "file_name": "amsterdam.png"
+        "caption": "Dune Part Two (2024)",
+        "file_name": "dune2.webp"
       },
       {
-        "caption": "Observing centuries-old monasteries built atop mountainous rocks (Meteora, Greece)",
-        "file_name": "meteora.png"
+        "caption": "Crossing (2024)",
+        "file_name": "crossing.jpeg"
       },
       {
-        "caption": "Rekindling my love for Game of Thrones after that last season (Dubrovnik, Croatia)",
-        "file_name": "dubrovnik.png"
+        "caption": "Whiplash (2014)",
+        "file_name": "whiplash.webp"
       },
       {
-        "caption": "Visiting the Parthenon (Athens, Greece)",
-        "file_name": "athens.png"
+        "caption": "All of Us Strangers (2023)",
+        "file_name": "allofusstrangers.jpg"
       },
       {
-        "caption": "Exploring Parc Güell (Barcelona, Spain)",
-        "file_name": "barcelona.png"
+        "caption": "Oldboy (2003)",
+        "file_name": "oldboy.webp"
+      },
+      {
+        "caption": "Coco (2017)",
+        "file_name": "coco.webp"
       }
     ]
   }

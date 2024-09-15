@@ -2,7 +2,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import React, { forwardRef, useState, useEffect, useRef } from "react";
 import { PAGE_IDS } from "../constants";
-import { DESKTOP_WIDTH } from "../content/widths.js";
 import portrait from "../images/about/portrait.png";
 const projects = require("../content/projects.json");
 

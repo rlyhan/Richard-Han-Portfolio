@@ -30,11 +30,11 @@ const Home = forwardRef((props, ref) => {
       <div className="page-content">
         <div className="title-wrap">
           <h1 className="title">
-            <span class="left">Creative</span>
-            <span class="right">Developer</span>
-            <span class="right faded">Currently</span>
-            <span class="right faded">Based in</span>
-            <span class="left indent">London...</span>
+            <span className="left">Creative</span>
+            <span className="right">Developer</span>
+            <span className="right faded">Currently</span>
+            <span className="right faded">Based in</span>
+            <span className="left indent">London...</span>
           </h1>
         </div>
       </div>
