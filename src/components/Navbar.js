@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { PAGE_IDS } from "../constants";
-import logo from "../images/logo.png";
 
 const Navbar = ({
   handleSetPage,
@@ -50,7 +49,7 @@ const Navbar = ({
         }}
       >
         <a href="/">
-          <img src={logo} alt="logo" />
+          <img src="/images/logo.png" alt="logo" />
         </a>
       </div>
       <div className={`nav-menu ${navMenuClass}`}>

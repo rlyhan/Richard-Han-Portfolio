@@ -107,7 +107,7 @@ $hr-color: #958e8e;
   }
 }
 
-@mixin paragraph-text($font-size: 24px) {
+@mixin paragraph-text($font-size: 20px) {
   @include roboto();
   @include vw-font($font-size);
   line-height: 1.33;

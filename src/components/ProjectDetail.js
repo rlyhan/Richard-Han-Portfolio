@@ -63,7 +63,7 @@ const ProjectDetail = () => {
               return (
                 <div className="project-image" key={index}>
                   <img
-                    src={require(`../images/projects/${image}`)}
+                    src={`/images/projects/${image}`}
                     alt={`${project["name"]} ${index}`}
                   />
                 </div>

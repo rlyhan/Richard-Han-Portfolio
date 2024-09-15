@@ -2,7 +2,6 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import React, { forwardRef, useState, useEffect, useRef } from "react";
 import { PAGE_IDS } from "../constants";
-import portrait from "../images/about/portrait.png";
 const projects = require("../content/projects.json");
 
 gsap.registerPlugin(ScrollTrigger);
@@ -43,7 +42,7 @@ const About = forwardRef((props, ref) => {
         </div>
         <div className="right-column">
           <div className="image-wrap">
-            <img src={portrait} alt="profile-image" />
+            <img src="/images/about/portrait.png" alt="profile-image" />
           </div>
           <div className="paragraph-wrapper">
             <p>
