@@ -56,11 +56,12 @@ const Navbar = ({
       <div className={`nav-menu ${navMenuClass}`}>
         <div className="nav-links">
           <a
-            href={`/#${PAGE_IDS.ABOUT}`}
+            href={`#${PAGE_IDS.ABOUT}`}
             className={`about ${
               currentPage === PAGE_IDS.ABOUT ? "active" : ""
             }`}
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               handleSetPage(PAGE_IDS.ABOUT);
               handleBurgerClick();
             }}
@@ -68,11 +69,12 @@ const Navbar = ({
             About
           </a>
           <a
-            href={`/#${PAGE_IDS.PROJECTS}`}
+            href={`#${PAGE_IDS.PROJECTS}`}
             className={`projects ${
               currentPage === PAGE_IDS.PROJECTS ? "active" : ""
             }`}
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               handleSetPage(PAGE_IDS.PROJECTS);
               handleBurgerClick();
             }}
@@ -80,11 +82,12 @@ const Navbar = ({
             Projects
           </a>
           <a
-            href={`/#${PAGE_IDS.CONTACT}`}
+            href={`#${PAGE_IDS.CONTACT}`}
             className={`contact ${
               currentPage === PAGE_IDS.CONTACT ? "active" : ""
             }`}
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
               handleSetPage(PAGE_IDS.CONTACT);
               handleBurgerClick();
             }}

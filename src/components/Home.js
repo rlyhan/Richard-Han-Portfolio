@@ -41,7 +41,8 @@ const Home = forwardRef((props, ref) => {
       <div className="home-nav-links">
         <a
           href={`#${PAGE_IDS.ABOUT}`}
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             handleSetPage(PAGE_IDS.ABOUT);
           }}
         >
@@ -50,7 +51,8 @@ const Home = forwardRef((props, ref) => {
         <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
         <a
           href={`#${PAGE_IDS.PROJECTS}`}
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             handleSetPage(PAGE_IDS.PROJECTS);
           }}
         >
@@ -59,7 +61,8 @@ const Home = forwardRef((props, ref) => {
         <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
         <a
           href={`#${PAGE_IDS.CONTACT}`}
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             handleSetPage(PAGE_IDS.CONTACT);
           }}
         >
