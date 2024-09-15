@@ -4,6 +4,7 @@ import React, { forwardRef, useState, useEffect, useRef } from "react";
 import { PAGE_IDS } from "../constants";
 import { DESKTOP_WIDTH } from "../content/widths.js";
 import portrait from "../images/about/portrait.png";
+const projects = require("../content/projects.json");
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,7 +25,7 @@ const About = forwardRef((props, ref) => {
   }, []);
 
   return (
-    <div className="about site-page" ref={ref} id={PAGE_IDS.ABOUT}>
+    <div className="about site-page black-scheme" ref={ref} id={PAGE_IDS.ABOUT}>
       <div className="page-content column-layout">
         <div className="left-column">
           <div className="paragraph-wrapper">
@@ -55,8 +56,15 @@ const About = forwardRef((props, ref) => {
                 Sons & Co,
               </a>{" "}
               he has worked on a variety of projects with a strong focus on
-              visual aesthetic and customised interfaces, for clients such as
-              Deadly Ponies, Coloursmith, and{" "}
+              visual aesthetic and customised interfaces, for clients such as{" "}
+              <a href={projects[3].url} target="_blank">
+                Deadly Ponies
+              </a>
+              ,{" "}
+              <a href={projects[1].url} target="_blank">
+                Coloursmith
+              </a>
+              , and{" "}
               <a
                 href="https://bestawards.co.nz/digital/large-scale-websites/sons-co/neat-places-1/"
                 target="_blank"
@@ -65,9 +73,9 @@ const About = forwardRef((props, ref) => {
               </a>{" "}
               <br />
               <br />
-              He is currently contracting for{" "}
-              <a href="https://voyage.studio/" target="_blank">
-                Voyage.
+              He is currently working with{" "}
+              <a href="https://makeagency.co.uk/" target="_blank">
+                Make Agency.
               </a>
             </p>
           </div>

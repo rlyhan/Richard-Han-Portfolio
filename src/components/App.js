@@ -1,8 +1,11 @@
 import { Outlet, useLocation } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 import Navbar from "./Navbar";
 import { PAGE_IDS } from "../constants";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 function App() {
   const { hash } = useLocation();

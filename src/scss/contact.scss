@@ -31,7 +31,7 @@
       }
       .heading {
         @include large-title(80px);
-        @include roboto-medium();
+        @include fjalla-one-regular();
         text-transform: uppercase;
         margin-top: percentage((309px - ($y-padding * 2)) / $design-height);
         margin-bottom: 0.5em;
@@ -45,7 +45,7 @@
       }
       .email {
         @include large-title(64px);
-        @include roboto-light();
+        @include fjalla-one-regular();
         max-width: 500px;
         margin-bottom: 2em;
         line-height: 1.1;
@@ -78,12 +78,12 @@
       }
       .copyright {
         @include paragraph-text();
-        font-size: 24px;
+        font-size: 20px;
         margin: 0;
       }
       .contact-links {
         @include paragraph-text();
-        font-size: 24px;
+        font-size: 20px;
         .linkedin {
           margin-right: 1em;
         }

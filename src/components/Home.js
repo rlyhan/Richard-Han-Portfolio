@@ -1,10 +1,10 @@
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 import React, { forwardRef, useEffect } from "react";
 import { PAGE_IDS } from "../constants";
 import { useOutletContext } from "react-router-dom";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollToPlugin);
 
 const Home = forwardRef((props, ref) => {
   const [currentPage, setCurrentPage] = useOutletContext();
@@ -30,11 +30,11 @@ const Home = forwardRef((props, ref) => {
       <div className="page-content">
         <div className="title-wrap">
           <h1 className="title">
-            <span class="serif left">Creative</span>
-            <span class="serif right">Developer</span>
-            <span class="sans-serif right">Currently</span>
-            <span class="sans-serif right">Based in</span>
-            <span class="serif left indent">London...</span>
+            <span class="left">Creative</span>
+            <span class="right">Developer</span>
+            <span class="right faded">Currently</span>
+            <span class="right faded">Based in</span>
+            <span class="left indent">London...</span>
           </h1>
         </div>
       </div>

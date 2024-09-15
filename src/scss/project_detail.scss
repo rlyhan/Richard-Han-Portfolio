@@ -72,6 +72,7 @@
         }
         .project-info-subheading {
           @include paragraph-text();
+          @include fjalla-one-regular();
           text-transform: uppercase;
         }
         .project-description,

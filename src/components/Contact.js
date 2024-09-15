@@ -26,7 +26,11 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="contact site-page" id={PAGE_IDS.CONTACT} ref={containerRef}>
+    <div
+      className="contact black-scheme site-page"
+      id={PAGE_IDS.CONTACT}
+      ref={containerRef}
+    >
       <div className="page-content">
         <div className="content-wrap">
           <p className="heading">

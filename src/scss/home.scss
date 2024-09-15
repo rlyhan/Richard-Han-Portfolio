@@ -25,21 +25,25 @@ $title-z-index: 2;
       position: relative;
 
       .title {
-        font-size: 64px;
+        font-size: 100px;
         line-height: 1.125;
         text-transform: uppercase;
         margin: auto;
         position: relative;
         z-index: $title-z-index;
-        width: 535px;
+        width: 635px;
         top: 50%;
         transform: translateY(-50%);
+        pointer-events: none;
+
         @include phone {
           font-size: 40px;
           width: 320px;
         }
         span {
+          @include fjalla-one-regular();
           display: block;
+
           &.left {
             text-align: left;
           }
@@ -48,13 +52,6 @@ $title-z-index: 2;
           }
           &.indent {
             text-indent: 1em;
-          }
-          &.serif {
-            @include qwergi-regular();
-          }
-          &.sans-serif {
-            @include roboto-medium();
-            font-style: italic;
           }
         }
       }
@@ -66,7 +63,7 @@ $title-z-index: 2;
   .home-nav-links,
   .name {
     @include paragraph-text();
-    font-size: 24px;
+    font-size: 20px;
     position: absolute;
     bottom: percentage($x-padding / $design-width);
   }

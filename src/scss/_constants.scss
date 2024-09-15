@@ -79,7 +79,9 @@ $page-right-margin: calc(#{$burger-size} + 1.5rem);
 
 // Colours
 
-$beige: #fff5f0;
+$beige: #f5f0eb;
+$grey: #e6e6e6;
+$dark-grey: #808080;
 $golden-grey: #b8b29d;
 $light-grey: #d2cac5;
 $hr-color: #958e8e;
@@ -124,8 +126,9 @@ $hr-color: #958e8e;
 }
 
 @mixin significant-text($font-size: 32px) {
-  @include roboto-medium();
+  @include fjalla-one-regular();
   @include vw-font($font-size);
+  text-transform: uppercase;
   line-height: 1;
   @include below-tablet-landscape() {
     font-size: 22px;
@@ -209,9 +212,10 @@ $hr-color: #958e8e;
 }
 
 @mixin listing-title($font-size: 32px) {
-  @include roboto-medium();
+  @include fjalla-one-regular();
   @include vw-font($font-size);
   line-height: 1;
+  text-transform: uppercase;
   @include below-tablet-landscape() {
     font-size: 22px;
   }

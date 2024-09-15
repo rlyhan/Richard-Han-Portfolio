@@ -4,15 +4,15 @@
   position: relative;
   .page-content {
     display: flex;
+    p {
+      @include subtitle();
+    }
     .left-column {
       position: relative;
     }
     .right-column {
       .paragraph-wrapper {
         margin-top: 3rem;
-        p {
-          @include subtitle();
-        }
       }
       .image-wrap {
         position: relative;

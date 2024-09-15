@@ -6,8 +6,10 @@
     .projects-title {
       h3 {
         @include light-text(80px);
+        @include fjalla-one-regular();
         color: $light-grey;
         text-align: right;
+        text-transform: uppercase;
         margin-bottom: 0;
         margin-top: 0;
         @include tablet-plus {
@@ -23,7 +25,7 @@
     .content-list,
     .paragraph-wrap {
       width: percentage($lists-width / $design-width);
-      margin-left: auto;
+
       margin-bottom: 10rem;
       @include below-tablet-landscape() {
         width: 100%;
@@ -77,6 +79,8 @@
       &.more-about-list {
         > .heading {
           @include paragraph-text(32px);
+          @include fjalla-one-regular();
+          text-transform: uppercase;
           margin: 3em 0 1.5em;
           color: $light-grey;
           @include below-tablet-landscape() {
@@ -169,10 +173,14 @@
         }
       }
     }
+    .content-list {
+      margin-left: auto;
+    }
     .paragraph-wrap {
       p {
+        font-weight: 500;
         max-width: 550px;
-        margin-left: auto;
+        margin-right: auto;
       }
     }
   }

@@ -32,6 +32,27 @@ p {
   margin-top: 0;
 }
 
+/* Text styles */
+
+.italic {
+  font-style: italic;
+}
+
+.faded {
+  color: $light-grey;
+}
+
+/* Colour schemes */
+
+.black-scheme {
+  background-color: black;
+  color: white;
+
+  a {
+    color: $dark-grey;
+  }
+}
+
 .error-page {
   z-index: 1;
   padding: (($y-padding / $design-height) * 100vh)
@@ -122,9 +143,7 @@ $projects-z-index: 10;
 $contact-z-index: 1;
 
 .home,
-.about,
-.projects,
-.contact {
+.projects {
   background-color: $beige;
 }
 .home {
