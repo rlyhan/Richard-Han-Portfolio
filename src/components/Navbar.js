@@ -49,7 +49,10 @@ const Navbar = ({
         }}
       >
         <a href="/">
-          <img src="/images/logo.png" alt="logo" />
+          <img
+            src="/images/logo.svg"
+            alt="Richard Han Software Developer logo"
+          />
         </a>
       </div>
       <div className={`nav-menu ${navMenuClass}`}>

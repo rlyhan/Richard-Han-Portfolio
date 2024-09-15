@@ -21,10 +21,7 @@
     }
 
     img {
-      width: 80px;
-      @include phone {
-        width: 60px;
-      }
+      width: 60px;
     }
   }
 

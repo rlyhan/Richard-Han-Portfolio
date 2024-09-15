@@ -42,7 +42,10 @@ const About = forwardRef((props, ref) => {
         </div>
         <div className="right-column">
           <div className="image-wrap">
-            <img src="/images/about/portrait.png" alt="profile-image" />
+            <img
+              src="/images/about/portrait.png"
+              alt="Richard Han Software Developer profile image"
+            />
           </div>
           <div className="paragraph-wrapper">
             <p>
