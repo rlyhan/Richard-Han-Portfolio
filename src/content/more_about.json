@@ -72,27 +72,27 @@
     "gallery": [
       {
         "caption": "Dune Part Two (2024)",
-        "file_name": "dune2.webp"
+        "file_name": "dune2.jpg"
       },
       {
         "caption": "Crossing (2024)",
-        "file_name": "crossing.jpeg"
+        "file_name": "crossing.jpg"
       },
       {
         "caption": "Whiplash (2014)",
-        "file_name": "whiplash.webp"
+        "file_name": "whiplash.jpg"
       },
       {
         "caption": "All of Us Strangers (2023)",
         "file_name": "allofusstrangers.jpg"
       },
       {
-        "caption": "Oldboy (2003)",
-        "file_name": "oldboy.webp"
+        "caption": "Godzilla Minus One (2023)",
+        "file_name": "godzillaminusone.jpg"
       },
       {
-        "caption": "Coco (2017)",
-        "file_name": "coco.webp"
+        "caption": "Didi (2024)",
+        "file_name": "didi.jpg"
       }
     ]
   }
