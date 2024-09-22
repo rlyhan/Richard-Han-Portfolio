@@ -275,6 +275,7 @@ const GalleryItem = ({ item, itemImageDirectory }) => {
         className="gallery-item-image"
         src={`/images/about/${itemImageDirectory}/${item["file_name"]}`}
         alt="gallery-item-thumb"
+        loading="lazy"
       />
       <div className="gallery-item-desc">{item.caption}</div>
     </div>
